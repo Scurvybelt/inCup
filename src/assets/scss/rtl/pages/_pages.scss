@@ -1,0 +1,47 @@
+//
+// _pages.scss
+//
+
+@import 'timeline';
+@import 'extra-pages';
+@import 'sellers';
+@import 'authentication';
+@import 'authentication';
+@import 'ecommerce';
+
+
+.auth-pass-inputgroup{
+    .form-control.pe-5 {
+        padding-right: $input-padding-x !important;
+    }
+}
+
+//passowrd validations 
+#password-contain {
+
+    p {
+        padding-right: 13px;
+        padding-left: 0;
+
+        &.valid {
+            &::before {
+                right: -8px;
+                left: auto;
+            }
+        }
+
+        &.invalid {
+
+            &::before {
+                right: -8px;
+                left: auto;
+            }
+        }
+    }
+}
+
+#goal_Completions{
+    .apexcharts-canvas{
+        margin-left: auto;
+    }
+}

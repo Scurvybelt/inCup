@@ -1,0 +1,714 @@
+<!-- Header -->
+<app-header></app-header>
+
+<section class="section pb-0 mt-4">
+    <div class="container-fluid">
+        <div class="row g-3">
+            <div class="col-lg-4 col-md-6">
+                <div class="product-banner-1 mt-3 mt-lg-0 rounded overflow-hidden">
+                    <img src="assets/images/ecommerce/features/img-3.jpg" class="img-fluid rounded" alt="" />
+                    <div class="bg-overlay blue"></div>
+                    <div class="product-content p-4">
+                        <p class="text-uppercase fw-semibold text-white mb-2">Up to 50-70%</p>
+                        <h1 class="text-white lh-base ff-secondary display-6 display-xl-5">Women's Sportwere Sales</h1>
+                        <div class="product-btn mt-3 mt-xl-4">
+                            <a routerLink="/catelog/product-list-defualt" class="link-effect link-light text-white fs-14">Shop Now
+                                <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-lg-4 col-md-6">
+                <div class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden right">
+                    <img src="assets/images/ecommerce/features/img-2.jpg" class="img-fluid rounded" alt="" />
+                    <div class="bg-overlay"></div>
+                    <div class="product-content p-4 text-end">
+                        <p class="text-uppercase text-white fw-semibold mb-2">MEGA SALE</p>
+                        <h1 class="text-white lh-base ff-secondary display-6 display-xl-5">Running Shoes Sales Up to 50%
+                        </h1>
+                        <div class="product-btn mt-3 mt-xl-4">
+                            <a routerLink="/catelog/product-list-sidebar-banner" class="link-effect link-light text-white fs-14">Shop Now <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-lg-4 col-md-6">
+                <div class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden">
+                    <img src="assets/images/ecommerce/features/img-1.jpg" class="img-fluid rounded" alt="" />
+                    <div class="product-content p-4">
+                        <p class="text-uppercase fw-semibold text-body mb-2">Summer Sales</p>
+                        <h1 class="lh-base ff-secondary display-6 display-xl-5">Trendy Fashion Clothes</h1>
+                        <div class="product-btn mt-3 mt-xl-4">
+                            <a routerLink="/catelog/product-list-right" class="link-effect link-primary fs-14">Shop Now
+                                <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-fluid-->
+</section>
+
+<section class="position-relative section">
+    <div class="container">
+        <div class="ecommerce-product gap-4">
+            <div class="sidebar small-sidebar flex-shrink-0">
+                <div class="card overflow-hidden">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <h5 class="fs-16 mb-0">Filters</h5>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <a (click)="dv.reset()" class="text-decoration-underline" id="clearall">Clear All</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion-flush filter-accordion">
+                        <div class="card-body border-bottom">
+                            <div>
+                                <p class="text-muted text-uppercase fs-12 fw-medium mb-3">Products</p>
+                                <ul class="list-unstyled mb-0 filter-list">
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filterGlobal('grocery', 'contains')">Grocery</h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filterGlobal('fashion', 'contains')">Fashion</h5>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-2">
+                                                <span class="badge bg-light text-muted">5</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filterGlobal('watches', 'contains')">Watches</h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filterGlobal('electronics', 'contains')">Electronics
+                                                </h5>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-2">
+                                                <span class="badge bg-light text-muted">5</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filterGlobal('furniture', 'contains')">Furniture</h5>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-2">
+                                                <span class="badge bg-light text-muted">6</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filterGlobal('automative', 'contains')">Automotive
+                                                    Accessories</h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filterGlobal('appliances', 'contains')">Appliances</h5>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-2">
+                                                <span class="badge bg-light text-muted">7</span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filterGlobal('kids', 'contains')">Kids</h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-body border-bottom">
+                            <p class="text-muted text-uppercase fs-12 fw-medium mb-4">Price</p>
+
+                            <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="0" [max]="2000" (onChange)="handleChange($event)"></p-slider>
+                            <div class="formCost d-flex gap-2 align-items-center mt-3">
+                                <input class="form-control form-control-sm" type="text" id="minCost" value="0" [(ngModel)]="range1" /> <span class="fw-semibold text-muted">to</span>
+                                <input class="form-control form-control-sm" type="text" id="maxCost" value="1000" [(ngModel)]="range2" />
+                            </div>
+                        </div>
+
+                        <p-accordion collapseIcon="mdi mdi-chevron-up" [multiple]="true" expandIcon="mdi mdi-chevron-down">
+                            <p-accordionTab styleClass="accordion-item" iconPos="end">
+                                <ng-template pTemplate="header" headerStyleClass="accordion-header accordion-button bg-transparent shadow-none">
+                                    <span class="text-muted text-uppercase fs-12 fw-medium">Colors</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                </ng-template>
+
+                                <ng-template pTemplate="content">
+                                    <div id="flush-collapseColors" class="accordion-collapse collapse show" aria-labelledby="flush-headingColors">
+                                        <ul class="clothe-colors list-unstyled hstack gap-3 mb-0 flex-wrap" id="color-filter">
+                                            <li>
+                                                <input type="radio" name="colors" value="success" id="color-1" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-success p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-1"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="info" id="color-2" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-info p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-2"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="warning" id="color-3" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-warning p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-3"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="danger" id="color-4" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-danger p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-4"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="primary" id="color-5" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-5"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="secondary" id="color-6" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-secondary p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-6"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="dark" id="color-7" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-dark p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-7"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="light" id="color-8" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-8"></label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </p-accordionTab>
+                            <!-- end accordion-item -->
+
+                            <p-accordionTab styleClass="accordion-item" iconPos="end">
+                                <ng-template pTemplate="header" headerStyleClass="accordion-header accordion-button bg-transparent shadow-none">
+                                    <span class="text-muted text-uppercase fs-12 fw-medium">Sizes</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                </ng-template>
+
+                                <ng-template pTemplate="content">
+                                    <div id="flush-collapseSize" class="accordion-collapse collapse show" aria-labelledby="flush-headingSize">
+                                        <ul class="clothe-size list-unstyled hstack gap-3 mb-0 flex-wrap" id="size-filter">
+                                            <li>
+                                                <input type="radio" name="sizes" value="xs" id="sizeXs" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeXs">XS</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="s" id="sizeS" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeS">S</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="m" id="sizeM" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeM">M</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="l" id="sizeL" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeL">L</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="xl" id="sizeXl" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeXl">XL</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="2xl" id="size2xl" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="size2xl">2XL</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="3xl" id="size3xl" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="size3xl">3XL</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="4xl" id="size4xl" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="size4xl">4XL</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </p-accordionTab>
+                            <!-- end accordion-item -->
+
+                            <p-accordionTab styleClass="accordion-item" iconPos="end">
+                                <ng-template pTemplate="header" headerStyleClass="accordion-header accordion-button bg-transparent shadow-none">
+                                    <span class="text-muted text-uppercase fs-12 fw-medium">Brands</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                </ng-template>
+
+                                <ng-template pTemplate="content">
+                                    <div id="flush-collapseBrands" class="accordion-collapse collapse show" aria-labelledby="flush-headingBrands">
+                                        <div class="search-box search-box-sm">
+                                            <input type="text" class="form-control bg-light border-0" id="searchBrandsList" placeholder="Search Brands..." />
+                                            <i class="ri-search-line search-icon"></i>
+                                        </div>
+                                        <div class="d-flex flex-column gap-2 mt-3 filter-check">
+                                            <div class="form-check">
+                                                <input class="form-check-input me-2" type="checkbox" value="Boat" id="productBrandRadio5" />
+                                                <label class="form-check-label" for="productBrandRadio5">Boat</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input me-2" type="checkbox" value="OnePlus" id="productBrandRadio4" />
+                                                <label class="form-check-label" for="productBrandRadio4">OnePlus</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input me-2" type="checkbox" value="Realme" id="productBrandRadio3" />
+                                                <label class="form-check-label" for="productBrandRadio3">Realme</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input me-2" type="checkbox" value="Sony" id="productBrandRadio2" />
+                                                <label class="form-check-label" for="productBrandRadio2">Sony</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input me-2" type="checkbox" value="JBL" id="productBrandRadio1" />
+                                                <label class="form-check-label" for="productBrandRadio1">JBL</label>
+                                            </div>
+
+                                            <div>
+                                                <button type="button" class="btn btn-link text-decoration-none text-uppercase fw-medium p-0">1,235
+                                                    More</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-accordionTab>
+                            <!-- end accordion-item -->
+
+                            <p-accordionTab styleClass="accordion-item" iconPos="end">
+                                <ng-template pTemplate="header" headerStyleClass="accordion-header accordion-button bg-transparent shadow-none">
+                                    <span class="text-muted text-uppercase fs-12 fw-medium">Discount</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                </ng-template>
+                                <ng-template pTemplate="content">
+                                    <div id="flush-collapseDiscount" class="accordion-collapse collapse show" aria-labelledby="flush-headingDiscount">
+                                        <div class="d-flex flex-column gap-2 filter-check" id="discount-filter">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="50" id="productdiscountRadio6" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="form-check-label" for="productdiscountRadio6">50% or
+                                                    more</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="40" id="productdiscountRadio5" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="form-check-label" for="productdiscountRadio5">40% or
+                                                    more</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="30" id="productdiscountRadio4" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="form-check-label" for="productdiscountRadio4">
+                                                    30% or more
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="20" id="productdiscountRadio3" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="form-check-label" for="productdiscountRadio3">
+                                                    20% or more
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="10" id="productdiscountRadio2" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="form-check-label" for="productdiscountRadio2">
+                                                    10% or more
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="0" id="productdiscountRadio1" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="form-check-label" for="productdiscountRadio1">
+                                                    Less than 10%
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-accordionTab>
+                            <!-- end accordion-item -->
+
+                            <p-accordionTab styleClass="accordion-item" iconPos="end">
+                                <ng-template pTemplate="header" headerStyleClass="accordion-header accordion-button bg-transparent shadow-none">
+                                    <span class="text-muted text-uppercase fs-12 fw-medium">Rating</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                </ng-template>
+
+                                <ng-template pTemplate="content">
+                                    <div id="flush-collapseRating" class="accordion-collapse collapse show" aria-labelledby="flush-headingRating">
+                                        <div class="d-flex flex-column gap-2 filter-check" id="rating-filter">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="4" id="productratingRadio4" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="form-check-label" for="productratingRadio4">
+                                                    <span class="text-muted">
+                                                        <i class="mdi mdi-star text-warning"></i>
+                                                        <i class="mdi mdi-star text-warning"></i>
+                                                        <i class="mdi mdi-star text-warning"></i>
+                                                        <i class="mdi mdi-star text-warning"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                    </span>
+                                                    4 & Above
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="3" id="productratingRadio3" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="form-check-label" for="productratingRadio3">
+                                                    <span class="text-muted">
+                                                        <i class="mdi mdi-star text-warning"></i>
+                                                        <i class="mdi mdi-star text-warning"></i>
+                                                        <i class="mdi mdi-star text-warning"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                    </span>
+                                                    3 & Above
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="2" id="productratingRadio2" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="form-check-label" for="productratingRadio2">
+                                                    <span class="text-muted">
+                                                        <i class="mdi mdi-star text-warning"></i>
+                                                        <i class="mdi mdi-star text-warning"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                    </span>
+                                                    2 & Above
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="productratingRadio1" (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                                                <label class="form-check-label" for="productratingRadio1">
+                                                    <span class="text-muted">
+                                                        <i class="mdi mdi-star text-warning"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                    </span>
+                                                    1
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-accordionTab>
+                            <!-- end accordion-item -->
+                        </p-accordion>
+                    </div>
+                </div>
+                <!-- end card -->
+            </div>
+            <div class="flex-grow-1">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-4">
+                    <div class="search-box">
+                        <input pInputText type="text" class="form-control" id="searchProductList" autocomplete="off" placeholder="Search Products..." (input)="dv.filterGlobal($event.target.value, 'contains')" />
+                        <i class="ri-search-line search-icon"></i>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <div class="d-flex gap-2">
+                            <div class="flex-shrink-0">
+                                <label for="sort-elem" class="col-form-label">Sort By:</label>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <select class="form-select w-md" id="sort-elem" (change)="onSortChange($event)">
+                                    <option value="">All</option>
+                                    <option value="low_to_high">Low to High</option>
+                                    <option value="high_to_low">High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <p-table #dv [value]="products" [paginator]="true" [rows]="10" [globalFilterFields]="['title','rating','discount','price,status','type','color','size']" (onPage)="onPageChange($event)">
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th pSortableColumn="title" style="width: 400px;">
+                                                Product Name
+                                                <p-sortIcon field="title"></p-sortIcon>
+                                            </th>
+                                            <th pSortableColumn="rate" style="width: 80px;">Rate <p-sortIcon field="name"></p-sortIcon></th>
+                                            <th pSortableColumn="price" style="width: 80px;">Price <p-sortIcon field="price"></p-sortIcon></th>
+                                            <th pSortableColumn="stock" style="width: 100px;">Status <p-sortIcon field="stock"></p-sortIcon></th>
+                                            <th style="width: 80px;">Action</th>
+                                        </tr>
+                                    </ng-template>
+
+                                    <ng-template pTemplate="body" let-product>
+                                        <tr class="gridjs-tr">
+                                            <td data-column-id="productName" class="gridjs-td">
+                                                <span>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-shrink-0 me-2 avatar-sm">
+                                                            <div class="avatar-title bg-light rounded"><img src="{{product.img}}" alt="" class="avatar-xs" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            <h6 class="fs-14">{{product.title}}</h6>
+                                                            <p class="mb-0 fs-13 text-muted">{{product.type}}</p>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </td>
+                                            <td data-column-id="rate" class="gridjs-td">
+                                                <span>
+                                                    <span class="badge bg-light text-body fs-12 fw-medium"><i class="mdi mdi-star text-warning me-1"></i>{{product.rate}}</span>
+                                                </span>
+                                            </td>
+                                            <td data-column-id="price" class="gridjs-td">
+                                                <span>
+                                                    <div>
+                                                        ${{product.price}}
+                                                        @if(product.mrp){ <span class="text-muted fs-12"><del>${{product.mrp}}</del></span>}
+                                                    </div>
+                                                </span>
+                                            </td>
+                                            <td data-column-id="status" class="gridjs-td">
+                                                <span><span class="badge align-middle ms-1" [ngClass]="{'bg-danger-subtle text-danger':product.stock === 'Out of stock','bg-success-subtle text-success':product.stock === 'In stock'}">{{product.stock}}</span></span>
+                                            </td>
+                                            <td data-column-id="action" class="gridjs-td">
+                                                <span>
+                                                    <div class="text-center dropdown">
+                                                        <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false" class="" (click)="osp.toggle($event)">
+                                                            <i class="mdi mdi-dots-horizontal"></i> </a>
+                                                        <p-overlayPanel #osp>
+                                                            <ul class="dropdown-menu dropdown-menu-end show">
+                                                                <a class="dropdown-item" href="javascript:void(0);"><i class="ri-eye-line me-2 align-bottom text-muted"></i>view</a>
+                                                                <a class="dropdown-item" href="javascript:void(0);"><i class="ri-shopping-cart-line me-2 align-bottom text-muted"></i>cart</a>
+                                                            </ul>
+                                                        </p-overlayPanel>
+                                                    </div>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="paginatorleft" let-state>
+                                        Showing {{first}} - {{endIndex}} of {{products.length}} results
+                                    </ng-template>
+                                    <ng-template pTemplate="emptymessage">
+                                        <tr id="row-empty">
+                                            <td [attr.colspan]="5">
+                                                <div class="text-center">
+                                                    No matching records found
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-1">
+                    <h3 class="flex-grow-1 mb-0">Deals Of The Day</h3>
+                    <div class="flex-shrink-0">
+                        <a href="javascript:void(0);" class="link-effect link-success">All Deals <i class="ri-arrow-right-line ms-1 align-bottom"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row gy-4 gy-lg-0">
+            <div class="col-xxl-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0">
+                        <div class="gallery-product">
+                            <img src="assets/images/ecommerce/img-5.jpg" alt="" class="mx-auto d-block object-fit-cover" />
+                        </div>
+                    </div>
+                    <div class="content mx-4">
+                        <div class="countdown-deals mb-3">
+                            <div data-countdown="Feb 30, 2024" class="countdownlist">
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Days</div>
+                                    <div class="count-num">{{_days}}</div>
+                                </div>
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Hours</div>
+                                    <div class="count-num">{{_hours}}</div>
+                                </div>
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Minutes</div>
+                                    <div class="count-num">{{_minutes}}</div>
+                                </div>
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Seconds</div>
+                                    <div class="count-num">{{_seconds}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">World's most expensive t-shirt
+                                </h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.9)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="text-secondary flex-grow-1 mb-0">
+                                    $124.99 <span class="text-muted fs-12"><del>$354.99</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-xxl-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0">
+                        <div class="gallery-product">
+                            <img src="assets/images/ecommerce/img-3.jpg" alt="" class="mx-auto d-block object-fit-cover" />
+                        </div>
+                    </div>
+                    <div class="content mx-4">
+                        <div class="countdown-deals mb-3">
+                            <div data-countdown="Oct 29, 2023" class="countdownlist">
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Days</div>
+                                    <div class="count-num">{{_days}}</div>
+                                </div>
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Hours</div>
+                                    <div class="count-num">{{_hours}}</div>
+                                </div>
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Minutes</div>
+                                    <div class="count-num">{{_minutes}}</div>
+                                </div>
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Seconds</div>
+                                    <div class="count-num">{{_seconds}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Best Footwear Collections</h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.3)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="text-secondary flex-grow-1 mb-0">
+                                    $80.00 <span class="text-muted fs-12"><del>$180.00</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-xxl-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0">
+                        <div class="gallery-product">
+                            <img src="assets/images/ecommerce/img-1.jpg" alt="" class="mx-auto d-block object-fit-cover" />
+                        </div>
+                    </div>
+                    <div class="content mx-4">
+                        <div class="countdown-deals mb-3">
+                            <div data-countdown="Dec 01, 2023" class="countdownlist">
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Days</div>
+                                    <div class="count-num">{{_days}}</div>
+                                </div>
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Hours</div>
+                                    <div class="count-num">{{_hours}}</div>
+                                </div>
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Minutes</div>
+                                    <div class="count-num">{{_minutes}}</div>
+                                </div>
+                                <div class="countdownlist-item">
+                                    <div class="count-title">Seconds</div>
+                                    <div class="count-num">{{_seconds}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Elegant Designer Western Dress
+                                </h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (5.0)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="text-secondary flex-grow-1 mb-0">
+                                    $30.10 <span class="text-muted fs-12"><del>$121.99</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+
+<section class="section" style="background-image: url('assets/images/profile-bg.jpg'); background-size: cover; background-position: center;">
+    <div class="bg-overlay bg-primary" style="opacity: 0.85;"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <h1 class="text-white lh-base text-capitalize">Don't miss out on special offers</h1>
+                    <p class="text-white-75 fs-15 mb-4 pb-2">Never Miss Anything From Toner By Signing Up To Our
+                        Newsletter.</p>
+                    <form action="#!">
+                        <div class="position-relative ecommerce-subscript">
+                            <input type="email" class="form-control rounded-pill border-0" placeholder="Enter your email" />
+                            <button type="submit" class="btn btn-darken-primary rounded-pill">Subscript Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-features></app-features>
+
+<!-- Footer -->
+<app-footer></app-footer>

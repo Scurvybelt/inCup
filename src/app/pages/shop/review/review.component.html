@@ -1,0 +1,54 @@
+<!-- Header -->
+<app-header></app-header>
+
+<!-- Start Breadcrumbs -->
+<app-breadcrumbs title="Product Reviews" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+<!-- End Breadcrumbs -->
+
+<section class="section">
+    <div class="container">
+        <ngx-masonry [options]="myOptions" class="row">
+            @for(data of reviews; track $index){
+            <div class="col-lg-4 col-md-6" ngxMasonryItem>
+                <div class="card">
+                    <div class="card-body">
+                        <img src="{{data.img}}" alt="" class="avatar-sm rounded" />
+                        <h5 class="mb-2 mt-3">{{data.name}}</h5>
+                        <div class="text-warning mb-3">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                        </div>
+                        <p class="mb-0 text-muted fs-15">{{data.content}}</p>
+                    </div>
+                </div>
+            </div>}
+            <!--end col-->
+        </ngx-masonry>
+    </div>
+    <!--end container-->
+</section>
+
+<section class="section" style="background-image: url('assets/images/profile-bg.jpg'); background-size: cover; background-position: center;">
+    <div class="bg-overlay bg-secondary" style="opacity: 0.85;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="d-flex align-items-center">
+                    <h2 class="text-white text-capitalize mb-0 flex-grow-1">Let us know how we can help you</h2>
+                    <div class="flex-shrink-0">
+                        <a routerLink="/extrapages/contact-us" class="btn btn-darken-secondary btn-hover"><i class="ph-phone align-middle me-1"></i> Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+
+<!-- Footer -->
+<app-footer></app-footer>

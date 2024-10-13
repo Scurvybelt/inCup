@@ -1,0 +1,316 @@
+<!-- Header -->
+<app-header></app-header>
+
+<section class="ecommerce-about" style="background-image: url('assets/images/profile-bg.jpg'); background-size: cover; background-position: center;">
+    <div class="bg-overlay bg-primary" style="opacity: 0.85;"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <h1 class="text-white mb-0">Product Grid No Sidebar</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb breadcrumb-light justify-content-center mt-4">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Product</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Grid View</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">No Sidebar</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+
+<div class="position-relative section">
+    <div class="container">
+        <div id="col-3-layout">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <div class="row gy-4">
+                                <div class="col-xl-3 col-md-6">
+                                    <div>
+                                        <label class="form-label">Category</label>
+                                        <select class="form-control" name="select-category" id="select-category" (change)="dv.filter($event.target.value)">
+                                            <option value="">Select Category</option>
+                                            <option value="Grocery">Grocery</option>
+                                            <option value="Fashion">Fashion</option>
+                                            <option value="Watches">Watches</option>
+                                            <option value="Electronics">Electronics</option>
+                                            <option value="Furniture">Furniture</option>
+                                            <option value="Automotive Accessories">Automotive Accessories</option>
+                                            <option value="Appliances">Appliances</option>
+                                            <option value="Kids">Kids</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-md-6">
+                                    <div>
+                                        <label class="form-label">Price</label>
+                                        <div class="pb-3">
+                                            <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="0" [max]="2000" (onChange)="handleChange($event)"></p-slider>
+                                            <div class="formCost d-flex gap-2 align-items-center mt-3">
+                                                <input class="form-control form-control-sm" type="text" id="minCost" value="0" [(ngModel)]="range1" /> <span class="fw-semibold text-muted">to</span>
+                                                <input class="form-control form-control-sm" type="text" id="maxCost" value="1000" [(ngModel)]="range2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-md-6">
+                                    <div>
+                                        <label class="form-label">Rating</label>
+                                        <p-multiSelect styleClass="form-control d-flex" [options]="rating" optionLabel="name" defaultLabel="Select rating" [filter]="true" display="chip"></p-multiSelect>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-md-6">
+                                    <div>
+                                        <label class="form-label">Discount</label>
+                                        <p-multiSelect styleClass="form-control d-flex" [options]="discount" defaultLabel="Select discount" [filter]="true" optionLabel="name" display="chip"></p-multiSelect>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p-dataView #dv [value]="products" dataKey="id" [paginator]="true" [rows]="12" filterBy="title,price,type,rating,discount" (onPage)="onPageChange($event)" [sortField]="sortField" [sortOrder]="sortOrder">
+                <ng-template pTemplate="header">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row align-items-center mb-4">
+                                <div class="col-md-auto">
+                                    <div class="search-box">
+                                        <input type="text" pInputText class="form-control" id="searchProductList" autocomplete="off" placeholder="Search Products..." (input)="dv.filter($event.target.value)" />
+                                        <i class="ri-search-line search-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="d-flex gap-2 justify-content-md-end">
+                                        <div class="flex-shrink-0">
+                                            <label for="sort-elem" class="col-form-label">Sort By:</label>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <select class="form-select w-md" id="sort-elem" (change)="onSortChange($event)">
+                                                <option value="">All</option>
+                                                <option value="low_to_high">Low to High</option>
+                                                <option value="high_to_low">High to Low</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+
+                <ng-template let-products pTemplate="listItem">
+                    <div class="row">
+                        @for(data of products; track $index){
+                        <div class="col-xxl-3 col-lg-4 col-md-6">
+                            <div class="card overflow-hidden element-item">
+                                <div class="bg-light py-4">
+                                    <div class="gallery-product"><img src="{{data.img}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" /></div>
+                                    @if(data.tag){
+                                    <p class=" fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival
+                                    </p>}
+                                    <div class="gallery-product-actions">
+                                        <div class="mb-2">
+                                            <button type="button" class="btn btn-danger btn-sm custom-toggle" data-bs-toggle="button">
+                                                <span class="icon-on"><i class="mdi mdi-heart-outline align-bottom fs-15"></i></span> <span class="icon-off"><i class="mdi mdi-heart align-bottom fs-15"></i></span>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn btn-success btn-sm custom-toggle" data-bs-toggle="button">
+                                                <span class="icon-on"><i class="mdi mdi-eye-outline align-bottom fs-15"></i></span> <span class="icon-off"><i class="mdi mdi-eye align-bottom fs-15"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-btn px-3">
+                                        <a href="javascript:void(0);" class="btn btn-primary btn-sm w-75 add-btn"><i class="mdi mdi-cart me-1"></i> Add to Cart</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div>
+                                        <ul class="clothe-colors list-unstyled hstack gap-1 mb-3 flex-wrap d-none">
+                                            <li>
+                                                <input type="radio" name="sizes1" id="product-color-12" />
+                                                <label class="avatar-xxs btn btn-success p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-12"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes1" id="product-color-13" />
+                                                <label class="avatar-xxs btn btn-info p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-13"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes1" id="product-color-14" />
+                                                <label class="avatar-xxs btn btn-warning p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-14"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes1" id="product-color-15" />
+                                                <label class="avatar-xxs btn btn-danger p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-15"></label>
+                                            </li>
+                                        </ul>
+                                        <a href="javascript:void(0);">
+                                            <h6 class="fs-16 lh-base text-truncate mb-0">{{data.title}}</h6>
+                                        </a>
+                                        <div class="mt-3">
+                                            <span class="float-end">{{data.rating}} <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                            <h5 class="mb-0">
+                                                ${{data.price}}
+                                                @if(data.mrp){
+                                                <span class="text-muted fs-12"><del>${{data.mrp}}</del></span>
+                                                }
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>}
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="empty" class="row" id="search-result-elem">
+                    <div class="col-lg-12">
+                        <div class="text-center py-5">
+                            <div class="avatar-lg mx-auto mb-4">
+                                <div class="avatar-title bg-primary-subtle text-primary rounded-circle fs-24">
+                                    <i class="bi bi-search"></i>
+                                </div>
+                            </div>
+
+                            <h5>No matching records found</h5>
+                        </div>
+                    </div>
+                    <!--end col-->
+                </ng-template>
+
+                <ng-template pTemplate="paginatorleft"></ng-template>
+            </p-dataView>
+        </div>
+    </div>
+    <!--end container-->
+</div>
+
+<section class="section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-1">
+                    <h2 class="flex-grow-1 mb-0">Deals Of The Day</h2>
+                    <div class="flex-shrink-0">
+                        <a href="javascript:void(0);" class="link-effect link-success">All Deals <i class="ri-arrow-right-line ms-1 align-bottom"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <div class="row">
+            <div class="col-xxl-4 col-lg-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0 border-0">
+                        <div class="gallery-product">
+                            <img src="assets/images/ecommerce/img-5.jpg" alt="" class="mx-auto d-block object-fit-cover" />
+                        </div>
+                    </div>
+                    <div class="content mx-4">
+                        <div class="countdown-deals mb-3">
+                            <div data-countdown="Oct 30, 2023" class="countdownlist"></div>
+                        </div>
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">World's most expensive t-shirt
+                                </h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.9)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="text-secondary flex-grow-1 mb-0">
+                                    $124.99 <span class="text-muted fs-12"><del>$354.99</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-xxl-4 col-lg-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0 border-0">
+                        <div class="gallery-product">
+                            <img src="assets/images/ecommerce/instagram/img-2.jpg" alt="" class="mx-auto d-block object-fit-cover" />
+                        </div>
+                    </div>
+                    <div class="content mx-4">
+                        <div class="countdown-deals mb-3">
+                            <div data-countdown="Oct 20, 2023" class="countdownlist"></div>
+                        </div>
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Branded Perfumes For Men</h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.8)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="text-secondary flex-grow-1 mb-0">
+                                    $56.00 <span class="text-muted fs-12"><del>$180.00</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-xxl-4 col-lg-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0 border-0">
+                        <div class="gallery-product">
+                            <img src="assets/images/ecommerce/img-3.jpg" alt="" class="mx-auto d-block object-fit-cover" />
+                        </div>
+                    </div>
+                    <div class="content mx-4">
+                        <div class="countdown-deals mb-3">
+                            <div data-countdown="Oct 15, 2023" class="countdownlist"></div>
+                        </div>
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Dressive Women Beige Heels</h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.9)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="text-secondary flex-grow-1 mb-0">
+                                    $124.99 <span class="text-muted fs-12"><del>$354.99</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+
+<app-discount-footer [discount]="25"></app-discount-footer>
+
+<app-features></app-features>
+
+<!-- Footer -->
+<app-footer></app-footer>

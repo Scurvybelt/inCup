@@ -1,0 +1,40 @@
+// 
+// print.scss
+//
+
+// Used invoice page
+@media print {
+
+    .vertical-menu,
+    .right-bar,
+    .page-title-box,
+    .navbar-header,
+    .page-topbar,
+    .top-tagbar,
+    .app-menu,
+    .footer,
+    #back-to-top,
+    .modal-header {
+        display: none !important;
+    }
+
+    .card-body,
+    .main-content,
+    .right-bar,
+    .page-content,
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .card {
+        border: 0;
+        box-shadow: none !important;
+    }
+
+    .modal-dialog {
+        &.modal-custom-size {
+            max-width: 100% !important;
+        }
+    }
+}

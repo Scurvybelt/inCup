@@ -1,0 +1,73 @@
+<section
+    class="auth-page-wrapper position-relative bg-light min-vh-100 d-flex align-items-center justify-content-between">
+    <!-- Header -->
+    <app-login-header></app-login-header>
+
+    <div class="w-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="auth-card mx-lg-3">
+                        <div class="card border-0 mb-0">
+                            <div class="card-body text-center p-4">
+                                <div class="text-center px-sm-5 mx-5">
+                                    <img src="assets/images/comingsoon.png" alt="" height="110" />
+                                </div>
+                                <div class="mt-4 text-center pt-3">
+                                    <div class="position-relative">
+                                        <h4 class="fs-22 error-subtitle text-uppercase mb-0">Coming Soon</h4>
+                                        <div>
+                                            <div class="row justify-content-center mt-5">
+                                                <div class="col-lg-10">
+                                                    <div data-countdown="Oct 30, 2023" class="countdownlist">
+                                                        <div class="countdownlist-item">
+                                                            <div class="count-title">Days</div>
+                                                            <div class="count-num">{{_days}}</div>
+                                                        </div>
+                                                        <div class="countdownlist-item">
+                                                            <div class="count-title">Hours</div>
+                                                            <div class="count-num">{{_hours}}</div>
+                                                        </div>
+                                                        <div class="countdownlist-item">
+                                                            <div class="count-title">Minutes</div>
+                                                            <div class="count-num">{{_minutes}}</div>
+                                                        </div>
+                                                        <div class="countdownlist-item">
+                                                            <div class="count-title">Seconds</div>
+                                                            <div class="count-num">{{_seconds}}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-5">
+                                                <h5 class="fs-16">Get notified when we launch</h5>
+                                                <p class="text-muted">Don't worry we will not spam you 😊</p>
+                                            </div>
+
+                                            <form action="#!">
+                                                <div class="countdown-input-subscribe mx-auto mt-4">
+                                                    <input type="email" class="form-control shadow"
+                                                        placeholder="Enter your email address" required />
+                                                    <button class="btn btn-primary" type="submit"
+                                                        id="button-email">Send<i
+                                                            class="ri-send-plane-2-fill align-bottom ms-2"></i></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+        <!-- Footer -->
+        <app-login-footer></app-login-footer>
+    </div>
+</section>

@@ -1,0 +1,45 @@
+// 
+// offcanvas
+// 
+
+.p-sidebar {
+	background: $offcanvas-bg-color !important;
+	color: $offcanvas-color;
+	border: 0 none;
+	box-shadow: $offcanvas-box-shadow;
+
+	.p-sidebar-header {
+		padding: 0.7rem 1rem;
+		border-bottom: 1px solid $border-color;
+
+		.p-sidebar-close,
+		.p-sidebar-icon {
+			width: 2rem;
+			height: 2rem;
+			color: $offcanvas-color;
+			border: 0 none;
+			background: transparent;
+			border-radius: 50%;
+			transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+
+			&:enabled:hover {
+				color: $offcanvas-color;
+				border-color: transparent;
+				background: $offcanvas-bg-color;
+			}
+
+			&:focus {
+				outline: 0 none;
+				outline-offset: 0;
+			}
+		}
+	}
+
+	.p-sidebar-content {
+		padding: 0px;
+	}
+
+	.p-sidebar-footer {
+		padding: 0.7rem 1rem;
+	}
+}

@@ -1,0 +1,135 @@
+{
+  "MENUITEMS": {
+    "MENU": {
+      "TEXT": "Startseite"
+    },
+    "HOME": {
+      "TEXT": "Startseite"
+    },
+    "CATELOG": {
+      "TEXT": "Katalog",
+      "LIST": {
+        "MEN": "Herren",
+        "CLOTHING": "Kleidung",
+        "WATCHES": "Uhren",
+        "BAGS": "Taschen & Gepäck",
+        "FOOTWEAR": "Schuhe",
+        "INNERWEAR": "Unterwäsche",
+        "OTHERACCESSORIES": "Andere Accessoires",
+        "WOMEN": "Damen",
+        "WESTERNWEAR": "Westernkleidung",
+        "HANDBAGS": "Handtaschen & Clutches",
+        "LINGERIE": "Dessous & Nachtwäsche",
+        "FASHION": "Mode & Silberschmuck",
+        "ACCESSORIES": "Accessoires & Andere",
+        "KITCHEN": "Zuhause, Küche, Haustiere",
+        "BEAUTY": "Schönheit, Gesundheit, Lebensmittel",
+        "SPORTS": "Sport, Fitness, Taschen, Gepäck",
+        "CAR": "Auto, Motorrad, Industrie",
+        "BOOKS": "Bücher",
+        "OTHERS": "Andere",
+        "SIGNUP": "Registrieren",
+        "SIGNIN": "Anmelden",
+        "RESETPASSWORD": "Passwort zurücksetzen",
+        "ERROR404": "Fehler 404",
+        "TOPBRANDS": "Top Marken"
+      }
+    },
+    "SHOP": {
+      "TEXT": "Einkaufen",
+      "LIST": {
+        "CHECKOUTPAGES": "Kassaseiten",
+        "ADDRESS": "Adresse",
+        "TRACKORDER": "Bestellung verfolgen",
+        "PAYMENT": "Bezahlung",
+        "REVIEW": "Überprüfung",
+        "CONFIRMATION": "Bestätigung",
+        "MYORDER": "Meine Bestellungen / Bestellverlauf",
+        "SUPPORT": "Unterstützung",
+        "SHOPPINGCART": "Einkaufswagen",
+        "CHECKOUT": "Kasse",
+        "WISHLIST": "Wunschliste"
+      }
+    },
+    "PAGES": {
+      "TEXT": "Seiten",
+      "LIST": {
+        "PRODUCTS": "Produkte",
+        "GRIDVIEW": "Rasteransicht",
+        "DEFAULT": "Standard",
+        "SIDEBAR": "Seitenleiste mit Banner",
+        "RIGHTSIDEBAR": "Seitenleiste rechts",
+        "NOSIDEBAR": "Ohne Seitenleiste",
+        "LISTVIEW": "Listenansicht",
+        "PRODUCTDETAILS": "Produktdetails",
+        "USERS": "Benutzer",
+        "MYACCOUNT": "Mein Konto",
+        "SIGNIN": "Anmelden",
+        "SIGNUP": "Registrieren",
+        "PASSWORDRESET": "Passwort zurücksetzen",
+        "PASSWORDCREATE": "Passwort erstellen",
+        "SUCCESSMESSAGE": "Erfolgsmeldung",
+        "TWOSTEPVERIFY": "Zwei-Schritte-Verifikation",
+        "LOGOUT": "Abmelden",
+        "ERROR404": "Fehler 404",
+        "ERROR500": "Fehler 500",
+        "COMINGSOON": "Kommt bald"
+      }
+    },
+    "CATEGORIES": {
+      "TEXT": "Kategorien"
+    },
+    "ABOUT": {
+      "TEXT": "Über uns"
+    },
+    "PURCHASEGUIDE": {
+      "TEXT": "Kaufanleitung"
+    },
+    "TERMSOFSERVICE": {
+      "TEXT": "Nutzungsbedingungen"
+    },
+    "PRIVACYPOLICY": {
+      "TEXT": "Datenschutzrichtlinie"
+    },
+    "STORELOCATOR": {
+      "TEXT": "Filialfinder"
+    },
+    "FAQ": {
+      "TEXT": "FAQ"
+    },
+    "INVOICE": {
+      "TEXT": "Rechnung"
+    },
+    "EMAILTEMPLATE": {
+      "TEXT": "E-Mail-Vorlage",
+      "LIST": {
+        "BLACKFRIDAY": "Black Friday",
+        "FLASHSALE": "Blitzverkauf",
+        "ORDERSUCCESS": "Bestellung erfolgreich",
+        "ORDERSUCCESS2": "Bestellung erfolgreich 2"
+      }
+    },
+    "MULTILEVEL": {
+      "TEXT": "Mehrstufig",
+      "LIST": {
+        "Level1": {
+          "1": "Ebene 1.1",
+          "2": "Ebene 1.2"
+        },
+        "Level2": {
+          "TEXT": "Ebene 1.3",
+          "1": "Ebene 2.1",
+          "2": "Ebene 2.2"
+        },
+        "Level3": {
+          "TEXT": "Ebene 2.3",
+          "1": "Ebene 3.1",
+          "2": "Ebene 3.2"
+        }
+      }
+    },
+    "CONTACT": {
+      "TEXT": "Kontakt"
+    }
+  }
+}

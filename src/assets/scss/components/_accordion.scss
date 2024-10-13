@@ -1,0 +1,87 @@
+//
+// accordion.scss
+//
+
+
+// rtl
+[dir="rtl"] {
+    .custom-accordionwithicon {
+        .accordion-button::after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+
+.p-accordion {
+    .p-accordion-header {
+        .p-accordion-header-link {
+            padding: 0.7rem 1rem;
+            border: 1px solid $accordion-border-color;
+            color: $accordion-button-color;
+            background: $accordion-bg;
+            font-weight: 500;
+            border-radius: $accordion-border-radius;
+            transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+            .p-accordion-toggle-icon {
+                margin-right: 0.5rem;
+            }
+
+            &:focus {
+                outline: 0 none;
+                outline-offset: 0;
+            }
+        }
+
+        &:not(.p-highlight):not(.p-disabled):hover,
+        &:not(.p-disabled).p-highlight:hover .p-accordion-header-link {
+            .p-accordion-header-link {
+                background: $accordion-bg;
+                border-color: $accordion-border-color;
+                color: $accordion-button-color;
+            }
+        }
+
+        &:not(.p-disabled).p-highlight .p-accordion-header-link {
+            background: $accordion-bg;
+            border-color: $accordion-border-color;
+            color: $accordion-button-color;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    .p-accordion-content {
+        padding: 1rem;
+        border: 1px solid $accordion-border-color;
+        background: $accordion-bg;
+        color: $accordion-button-color;
+        border-top: 0;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+
+        border-bottom-right-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+    }
+
+    p-accordiontab .p-accordion-tab {
+        margin-bottom: 0px;
+    }
+}
+
+.accordion-flush {
+    .p-accordion {
+        .p-accordion-header .p-accordion-header-link, p-accordiontab .p-accordion-content {
+            border-left: 0;
+            border-right: 0;
+        }
+
+        .p-accordion-header .p-accordion-header-link{
+            border-top: 0;
+        }
+    }
+}
+.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus{
+    box-shadow: none;
+}

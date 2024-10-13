@@ -1,0 +1,32 @@
+//
+// _timeline.scss
+//
+
+//activity-timeline
+.acitivity-timeline {
+    .acitivity-item {
+        &:before {
+            border-left: 0;
+            border-right: 1px dashed var(--#{$prefix}border-color);
+            right: 16px;
+            left: auto;
+        }
+    }
+}
+
+.acitivity-timeline-2 {
+
+    li {
+        border-left: 0;
+        padding-left: 0;
+        margin-left: 0;
+        border-right: 1px solid #abaaed;
+        padding-right: 20px;
+        margin-right: 10px;
+
+        &:before {
+            right: -8px;
+            left: auto;
+        }
+    }
+}

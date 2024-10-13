@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.p-dataview-content {
+    .p-grid {
+        margin-right: -0.5rem;
+        margin-left: -0.5rem;
+    }
+}
+
+.verticaltab {
+    display: flex;
+}
+
+.leaflet-container {
+    background-color: rgba(255, 0, 0, 0.0) !important;
+}
+
+.leaflet-container {
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.verticaltab .p-tabview-nav-content {
+    border: 1px solid #e9ebec;
+    padding: 1.2rem;
+    border-radius: 0.3rem;
+
+}
+
+.verticaltab .p-tabview-nav-container {
+    flex: 2;
+}
+
+.verticaltab .p-tabview-nav {
+    flex-direction: column;
+}
+
+.p-dialog .p-dialog-content {
+    padding: 0 !important;
+}
+
+// load modal image
+.p-dialog-content {
+    overflow-y: inherit !important;
+}
+
+// Accordian Header
+.p-element {
+    .p-dataview {
+        .p-dataview-header {
+            background: #ffffff;
+            border: none;
+            padding: 10px;
+        }
+    }
+}
+
+.category-slider {
+    .slick-slider {
+        margin-right: 24px;
+    }
+}
+
+.p-tabview-nav-content {
+    margin-right: 20px;
+}
+
+.ng-otp-input-wrapper[_ngcontent-ng-c3470639301] .otp-input[_ngcontent-ng-c3470639301]:not(:last-child) {
+    margin-right: 26px !important;
+}
+
+.otp-input {
+    background-color: #f3f6f9 !important;
+    border-color: #f3f6f9 !important;
+}
+
+
+@media (max-width:768px) {
+    .verticaltab {
+        display: block;
+
+        .p-tabview-nav-container {
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+[dir=ltr] {
+    .nav-item {
+        .dropdown-toggle::after {
+            margin-left: auto
+        }
+    }
+}

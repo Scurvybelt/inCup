@@ -1,0 +1,277 @@
+//
+// _fashion.scss
+//
+
+//modern fashion-home
+.modern-fashion-home{
+    .font-effect {
+        font-size: 14rem;
+        opacity: 0.04;
+        top: 50px;
+        @media (max-width: 991.98px) { 
+            font-size: 5rem;
+        }
+    }
+
+    .main-home-img {
+        img {
+            @media (max-width: 991.98px) {
+                height: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.feedback-slider {
+    :is(.swiper-button-next, .swiper-button-prev) {
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+    .swiper-slide{
+       margin-right: 24px;  
+    }
+    &:hover {
+        :is(.swiper-button-next, .swiper-button-prev) {
+            opacity: 1;
+        }
+    }
+}
+
+.subscribe-input {
+    input {
+        padding: calc($input-padding-y * 1.1) calc($input-padding-x * 1.1);
+        padding-right: 145px;
+    }
+
+    .btn {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+    }
+}
+
+//modern fashion home
+.modern-fashion-home {
+    position: relative;
+    padding: 170px 0 80px;
+
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        border: 50px solid $warning;
+        opacity: 0.1;
+        border-radius: 50%;
+    }
+
+    &::before {
+        right: -90px;
+        top: -90px;
+        height: 250px;
+        width: 250px;
+    }
+
+    &::after {
+        left: -120px;
+        bottom: -120px;
+        height: 350px;
+        width: 350px;
+    }
+}
+
+.fashion-offer-widgets {
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.cta-section {
+    position: relative;
+    padding: 150px 0;
+    background-size: cover;
+}
+
+//products
+.product-widget {
+    transition: all 0.5s ease;
+
+    .product-menu {
+        position: absolute;
+        right: calc($card-spacer-x * -0.5);
+        top: calc($card-spacer-y * 0.5);
+        opacity: 0;
+        transition: all 0.5s ease;
+
+        li {
+            a {
+                height: 42px;
+                width: 42px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--#{$prefix}body-color);
+                background-color: var(--#{$prefix}secondary-bg);
+                transition: all 0.5s ease;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+
+            .bookmark {
+                &:hover {
+                    color: $warning;
+                }
+
+                &.active {
+                    color: $warning;
+
+                    i {
+                        &::before {
+                            content: "\f586";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .product-btn {
+        position: absolute;
+        bottom: calc($card-spacer-y * -0.5);
+        left: calc($card-spacer-x * 0.5);
+        right: calc($card-spacer-x * 0.5);
+        opacity: 0;
+        transition: all 0.5s ease;
+
+    }
+
+    .product-img-2 {
+        transition: all 0.5s ease;
+        opacity: 0;
+        display: none;
+    }
+
+    &:hover {
+        box-shadow: $box-shadow-lg;
+
+        .product-menu {
+            right: calc($card-spacer-x * 0.5);
+            opacity: 1;
+        }
+
+        .product-btn {
+            opacity: 1;
+            bottom: calc($card-spacer-y * 0.5);
+        }
+
+        .product-img-main {
+            display: none;
+        }
+
+        .product-img-2 {
+            opacity: 1;
+            display: inline-block;
+            transform: scale(1.1);
+        }
+    }
+}
+
+.hidden-product {
+    display: none;
+}
+
+//category
+.category-widgets-main {
+    overflow: hidden;
+
+    img {
+        transition: all 0.5s ease;
+    }
+
+    .widgets-wrapper {
+        inset: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 25px;
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.1);
+        }
+    }
+
+    &::before {
+        content: "";
+        width: 0;
+        height: 2px;
+        position: absolute;
+        transition: all 0.2s linear;
+        background: rgba($dark, 0.1);
+        left: 50%;
+        top: 10px;
+        transition-duration: 0.4s;
+    }
+
+    &::after {
+        content: "";
+        width: 0;
+        height: 2px;
+        position: absolute;
+        transition: all 0.2s linear;
+        background: rgba($dark, 0.1);
+        left: 50%;
+        bottom: 10px;
+        transition-duration: 0.4s;
+    }
+
+    .effect::before,
+    .effect::after {
+        content: "";
+        width: 2px;
+        height: 0;
+        position: absolute;
+        transition: all 0.2s linear;
+        background: rgba($dark, 0.1);
+    }
+
+    .effect::before {
+        left: 10px;
+        top: 50%;
+        transition-duration: 0.4s;
+    }
+
+    .effect::after {
+        right: 10px;
+        top: 50%;
+        transition-duration: 0.4s;
+    }
+
+    &:hover::before,
+    &:hover::after {
+        width: calc(100% - 20px);
+        left: 10px;
+    }
+
+    &:hover .effect::before,
+    &:hover .effect::after {
+        top: 10px;
+        height: calc(100% - 20px);
+    }
+
+}
+
+//trend fashion home 
+
+.trend-fashion-home {
+    position: relative;
+    padding: 105px 0 60px;
+}
+
+.home-widgets {
+    min-height: 85vh;
+    height: 400px;
+}

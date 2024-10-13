@@ -1,0 +1,20 @@
+// 
+// sellers.scss
+// 
+
+.order-tracking{
+    &::before{
+        left: -70%;
+        right: auto;
+    }
+}
+.track-orders{
+    .order-tracking{
+        &::before{
+            left: -104%;
+            right: auto;
+        }
+
+    }
+
+} 

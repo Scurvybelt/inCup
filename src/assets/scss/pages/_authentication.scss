@@ -1,0 +1,97 @@
+//
+// _authentication.scss
+//
+.auth-page-wrapper {
+    padding: 90px 0 80px;
+
+    .auth-header {
+        .container-fluid {
+            max-width: 90%;
+        }
+
+        height: 70px;
+        display: flex;
+        align-items: center;
+        z-index: 1001;
+    }
+
+    .auth-card {
+        z-index: 1;
+
+        .card-header {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1000' height='350' preserveAspectRatio='none' viewBox='0 0 1000 350'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1157%26quot%3b)' fill='none'%3e%3cpath d='M328.58 394.08C431.67 392.73 512.94 277.58 722.85 273.08 932.75 268.58 1010.02 108.53 1117.11 105.08' stroke='rgba(95%2c 157%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M453.78 394.57C543.12 393.38 614.47 292.66 795.29 289.27 976.11 285.88 1045.21 158.59 1136.8 156.27' stroke='rgba(95%2c 157%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M121.76 365.13C209.07 363.92 287.72 260.74 455.05 260.68 622.38 260.62 621.7 304.43 788.34 304.43 954.99 304.43 1037.59 260.77 1121.63 260.68' stroke='rgba(95%2c 157%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M476.17 407.18C572.4 393.77 628.5 169.12 783.24 168.97 937.99 168.82 1003.77 325.19 1090.32 329.97' stroke='rgba(95%2c 157%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M409.3 365.09C484.19 357.63 470.42 198 659.61 197.82 848.8 197.64 1033.73 271.12 1160.23 271.32' stroke='rgba(95%2c 157%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1157'%3e%3crect width='1000' height='350' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+            background-size: cover;
+        }
+    }
+
+    .footer {
+        left: 0;
+        background-color: transparent;
+        color: var(--#{$prefix}body-color);
+    }
+}
+
+// auth-pass-inputgroup
+.auth-pass-inputgroup {
+    input[type="text"]+.btn .ri-eye-fill {
+        &:before {
+            content: "\ecb6";
+        }
+    }
+}
+
+// signin card title
+.signin-other-title {
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        right: 0;
+        border-top: 1px dashed var(--#{$prefix}border-color);
+        top: 10px;
+    }
+
+    .title {
+        display: inline-block;
+        position: relative;
+        z-index: 9;
+        background-color: var(--#{$prefix}secondary-bg);
+        padding: 2px 16px;
+    }
+}
+//passowrd validations 
+#password-contain {
+    display: none;
+
+    p {
+        padding-left: 13px;
+
+        &.valid {
+            color: $success;
+
+            &::before {
+                position: relative;
+                left: -8px;
+                content: "✔";
+            }
+        }
+
+        &.invalid {
+            color: $danger;
+
+            &::before {
+                position: relative;
+                left: -8px;
+                content: "✖";
+            }
+        }
+    }
+}
+
+.password-addon {
+    z-index: 5;
+}

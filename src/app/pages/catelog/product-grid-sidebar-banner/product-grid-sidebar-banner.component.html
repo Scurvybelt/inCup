@@ -1,0 +1,620 @@
+<!-- Header -->
+<app-header></app-header>
+
+<!-- content -->
+<section class="section pb-0 mt-4">
+    <div class="container-fluid">
+        <div class="position-relative rounded-3" style="background-image: url('assets/images/ecommerce/banner.jpg'); background-size: cover; background-position: center;">
+            <div class="row justify-content-end">
+                <div class="col-xxl-4">
+                    <div class="text-end py-4 px-5 mx-xxl-5">
+                        <h1 class="text-white display-5 lh-base text-capitalize ff-secondary mb-3 fst-italic">Original
+                            sound listem to nature</h1>
+                        <div>
+                            <a href="javascript:void(0);" class="link-effect link-light text-white">Show Collections <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+    </div>
+    <!--end container-->
+</section>
+
+<div class="position-relative section">
+    <div class="container-fluid">
+        <div class="ecommerce-product gap-4">
+            <div class="sidebar flex-shrink-0">
+                <div class="card overflow-hidden">
+                    <div class="card-header">
+                        <div class="d-flex mb-3">
+                            <div class="flex-grow-1">
+                                <h5 class="fs-16">Filters</h5>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <a (click)="dv.filter($event.target.value)" class="text-decoration-underline" id="clearall">Clear All</a>
+                            </div>
+                        </div>
+                        <div class="search-box">
+                            <input type="text" class="form-control" id="searchProductList" autocomplete="off" placeholder="Search Products..." (input)="dv.filter($event.target.value)" />
+                            <i class="ri-search-line search-icon"></i>
+                        </div>
+                    </div>
+                    <div class="accordion accordion-flush filter-accordion">
+                        <div class="card-body border-bottom">
+                            <div>
+                                <p class="text-muted text-uppercase fs-12 fw-medium mb-3">Products</p>
+                                <ul class="list-unstyled mb-0 filter-list">
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filter('grocery')">Grocery
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filter('fashion')">Fashion
+                                                </h5>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-2">
+                                                <span class="badge bg-light text-muted">5</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filter('watches')">Watches
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filter('electronics')">
+                                                    Electronics
+                                                </h5>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-2">
+                                                <span class="badge bg-light text-muted">5</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filter('furniture')">
+                                                    Furniture
+                                                </h5>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-2">
+                                                <span class="badge bg-light text-muted">6</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filter('automotive')">
+                                                    Automotive Accessories
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filter('appliances')">
+                                                    Appliances
+                                                </h5>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-2">
+                                                <span class="badge bg-light text-muted">7</span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:void(0);" class="d-flex py-1 align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fs-13 mb-0 listname" (click)="dv.filter('kids')">Kids</h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-body border-bottom">
+                            <p class="text-muted text-uppercase fs-12 fw-medium mb-4">Price</p>
+
+                            <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="0" [max]="2000" (onChange)="handleChange($event)" (ngModelChange)="dv.filter($event.values[0],$event.values[1])"></p-slider>
+                            <div class="formCost d-flex gap-2 align-items-center mt-3">
+                                <input class="form-control form-control-sm" type="text" id="minCost" value="0" [(ngModel)]="range1" /> <span class="fw-semibold text-muted">to</span>
+                                <input class="form-control form-control-sm" type="text" id="maxCost" value="1000" [(ngModel)]="range2" />
+                            </div>
+                        </div>
+                        <p-accordion collapseIcon="mdi mdi-chevron-up" [multiple]="true" expandIcon="mdi mdi-chevron-down">
+                            <p-accordionTab styleClass="accordion-item" iconPos="end">
+                                <ng-template pTemplate="header" headerStyleClass="accordion-header">
+                                    <span class="text-muted text-uppercase fs-12 fw-medium">Colors</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                </ng-template>
+                                <ng-template pTemplate="content">
+                                    <div id="flush-collapseColors" class="accordion-collapse collapse show" aria-labelledby="flush-headingColors">
+                                        <ul class="clothe-colors list-unstyled hstack gap-3 mb-0 flex-wrap" id="color-filter">
+                                            <li>
+                                                <input type="radio" name="colors" value="success" id="color-1" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-success p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-1"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="info" id="color-2" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-info p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-2"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="warning" id="color-3" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-warning p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-3"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="danger" id="color-4" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-danger p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-4"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="primary" id="color-5" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-5"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="secondary" id="color-6" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-secondary p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-6"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="dark" id="color-7" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-dark p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-7"></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="colors" value="light" id="color-8" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-8"></label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </p-accordionTab>
+                            <p-accordionTab styleClass="accordion-item" iconPos="end">
+                                <ng-template pTemplate="header" headerStyleClass="accordion-header accordion-button bg-transparent shadow-none">
+                                    <span class="text-muted text-uppercase fs-12 fw-medium">Sizes</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                </ng-template>
+                                <ng-template pTemplate="content">
+                                    <div id="flush-collapseSize" class="accordion-collapse collapse show" aria-labelledby="flush-headingSize">
+                                        <ul class="clothe-size list-unstyled hstack gap-3 mb-0 flex-wrap" id="size-filter">
+                                            <li>
+                                                <input type="radio" name="sizes" value="xs" id="sizeXs" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeXs">XS</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="s" id="sizeS" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeS">S</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="m" id="sizeM" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeM">M</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="l" id="sizeL" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeL">L</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="xl" id="sizeXl" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeXl">XL</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="2xl" id="size2xl" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="size2xl">2XL</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="3xl" id="size3xl" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="size3xl">3XL</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="sizes" value="4xl" id="size4xl" (input)="dv.filter($event.target.value)" />
+                                                <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="size4xl">4XL</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </p-accordionTab>
+                            <p-accordionTab styleClass="accordion-item" iconPos="end">
+                                <ng-template pTemplate="header" headerStyleClass="accordion-header" id="genques-headingOne">
+                                    <span class="text-muted text-uppercase fs-12 fw-medium">Brands</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                </ng-template>
+                                <div id="flush-collapseBrands" class="accordion-collapse collapse show" aria-labelledby="flush-headingBrands">
+                                    <div class="search-box search-box-sm">
+                                        <input type="text" class="form-control bg-light border-0" id="searchBrandsList" placeholder="Search Brands..." />
+                                        <i class="ri-search-line search-icon"></i>
+                                    </div>
+                                    <div class="d-flex flex-column gap-2 mt-3 filter-check">
+                                        <div class="form-check">
+                                            <p-checkbox name="groupname" class="p-element ng-valid ng-dirty ng-touched" value="val1" label="Boat"></p-checkbox>
+                                        </div>
+                                        <div class="form-check">
+                                            <p-checkbox name="groupname" value="val1" label="One plus"></p-checkbox>
+                                        </div>
+                                        <div class="form-check">
+                                            <p-checkbox name="groupname" value="val1" label="Realme"></p-checkbox>
+                                        </div>
+                                        <div class="form-check">
+                                            <p-checkbox name="groupname" value="val1" label="Sony"></p-checkbox>
+                                        </div>
+                                        <div class="form-check">
+                                            <p-checkbox name="groupname" value="val1" label="JBL"></p-checkbox>
+                                        </div>
+
+                                        <div>
+                                            <button type="button" class="btn btn-link text-decoration-none text-uppercase fw-medium p-0">1,235
+                                                More</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </p-accordionTab>
+
+                            <p-accordionTab styleClass="accordion-item" iconPos="end">
+                                <ng-template pTemplate="header" headerStyleClass="accordion-header accordion-button bg-transparent shadow-none">
+                                    <span class="text-muted text-uppercase fs-12 fw-medium">Discount</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                </ng-template>
+                                <ng-template pTemplate="content">
+                                    <div class="d-flex flex-column gap-2 filter-check" id="discount-filter">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="50" id="productdiscountRadio6" (input)="dv.filter($event.target.value)" />
+                                            <label class="form-check-label" for="productdiscountRadio6">50% or
+                                                more</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="40" id="productdiscountRadio5" (input)="dv.filter($event.target.value)" />
+                                            <label class="form-check-label" for="productdiscountRadio5">40% or
+                                                more</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="30" id="productdiscountRadio4" (input)="dv.filter($event.target.value)" />
+                                            <label class="form-check-label" for="productdiscountRadio4">
+                                                30% or more
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="20" id="productdiscountRadio3" (input)="dv.filter($event.target.value)" />
+                                            <label class="form-check-label" for="productdiscountRadio3">
+                                                20% or more
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="10" id="productdiscountRadio2" (input)="dv.filter($event.target.value)" />
+                                            <label class="form-check-label" for="productdiscountRadio2">
+                                                10% or more
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="0" id="productdiscountRadio1" (input)="dv.filter($event.target.value)" />
+                                            <label class="form-check-label" for="productdiscountRadio1">
+                                                Less than 10%
+                                            </label>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-accordionTab>
+
+                            <p-accordionTab styleClass="accordion-item" iconPos="end">
+                                <ng-template pTemplate="header" headerStyleClass="accordion-header accordion-button bg-transparent shadow-none">
+                                    <span class="text-muted text-uppercase fs-12 fw-medium">Rating</span> <span class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
+                                </ng-template>
+                                <ng-template pTemplate="content">
+                                    <div class="d-flex flex-column gap-2 filter-check" id="rating-filter">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="4" id="productratingRadio4" (input)="dv.filter($event.target.value)" />
+                                            <label class="form-check-label" for="productratingRadio4">
+                                                <span class="text-muted">
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                </span>
+                                                4 & Above
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="3" id="productratingRadio3" (input)="dv.filter($event.target.value)" />
+                                            <label class="form-check-label" for="productratingRadio3">
+                                                <span class="text-muted">
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                </span>
+                                                3 & Above
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="2" id="productratingRadio2" (input)="dv.filter($event.target.value)" />
+                                            <label class="form-check-label" for="productratingRadio2">
+                                                <span class="text-muted">
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                </span>
+                                                2 & Above
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="1" id="productratingRadio1" (input)="dv.filter($event.target.value)" />
+                                            <label class="form-check-label" for="productratingRadio1">
+                                                <span class="text-muted">
+                                                    <i class="mdi mdi-star text-warning"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                    <i class="mdi mdi-star"></i>
+                                                </span>
+                                                1
+                                            </label>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-accordionTab>
+                        </p-accordion>
+                        <!-- end accordion-item -->
+                    </div>
+                </div>
+                <!-- end card -->
+            </div>
+
+            <div class="flex-grow-1">
+                <p-dataView #dv [value]="products" [rows]="12" [layout]="'grid'">
+                    <ng-template pTemplate="header">
+                        <div class="d-flex align-items-center gap-2 mb-4">
+                            <p class="text-muted flex-grow-1 mb-0">Showing {{first}} - {{endIndex}} of
+                                {{products.length}} results</p>
+                            <div class="flex-shrink-0">
+                                <div class="d-flex gap-2">
+                                    <div class="flex-shrink-0">
+                                        <label for="sort-elem" class="col-form-label">Sort By:</label>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <select class="form-select w-md" id="sort-elem" (change)="onSortChange($event)">
+                                            <option value="">All</option>
+                                            <option value="low_to_high">Low to High</option>
+                                            <option value="high_to_low">High to Low</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                    <ng-template let-product pTemplate="grid" let-products class="template">
+                        <div class="row">
+                            @for(data of products; track $index){
+                            <div class="col-xxl-3 col-lg-4 col-md-6 px-2">
+                                <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden">
+                                    <div class="bg-light bg-opacity-50 rounded py-4 position-relative">
+                                        <img src="{{data.img}}" alt="" style="max-height: 200px; max-width: 100%;" class="mx-auto d-block rounded-2" />
+                                        <div class="action vstack gap-2">
+                                            <button class="btn btn-danger avatar-xs p-0 btn-soft-warning custom-toggle product-action" data-bs-toggle="button">
+                                                <span class="icon-on"><i class="ri-heart-line"></i></span> <span class="icon-off"><i class="ri-heart-fill"></i></span>
+                                            </button>
+                                        </div>
+                                        @if(data.discount){
+                                        <div class="avatar-xs label">
+                                            <div class="avatar-title bg-danger rounded-circle fs-11">{{data.discount}}</div>
+                                        </div>}
+                                    </div>
+                                    <div class="pt-4">
+                                        <div>
+                                            @if(data.color){
+                                            <ul class="clothe-colors list-unstyled hstack gap-1 mb-3 flex-wrap">
+                                                @for(color of data.color; track $index){
+                                                <li>
+                                                    <input type="radio" name="sizes1" id="product-color-12" />
+                                                    <label class="avatar-xxs btn btn-{{color}} p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-12"></label>
+                                                </li>}
+                                            </ul>}
+                                            @else if(data.size){
+                                            <ul class="clothe-size list-unstyled hstack gap-2 mb-3 flex-wrap">
+                                                @for(size of data.size; track $index){
+                                                <li>
+                                                    <input type="radio" name="sizes7" id="product-color-72" />
+                                                    <label class="avatar-xxs btn btn-soft-primary text-uppercase p-0 fs-12 d-flex align-items-center justify-content-center rounded-circle" for="product-color-72">{{size}}</label>
+                                                </li>
+                                                }
+                                            </ul>}
+                                            @else{
+                                            <div class="avatar-xxs mb-3">
+                                                <div class="avatar-title bg-light text-muted rounded cursor-pointer"><i class="ri-error-warning-line"></i></div>
+                                            </div>
+                                            }
+                                            <a href="javascript:void(0);">
+                                                <h6 class="text-capitalize fs-15 lh-base text-truncate mb-0">{{data.title}}
+                                                </h6>
+                                            </a>
+                                            <div class="mt-2">
+                                                <span class="float-end">{{data.rating}} <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                                <h5 class="text-secondary mb-0">
+                                                    ${{data.price}}
+                                                    @if(data.mrp){ <span class="text-muted fs-12"><del>${{data.mrp}}</del></span>}
+                                                </h5>
+                                            </div>
+                                            <div class="tn mt-3">
+                                                <a href="javascript:void(0);" class="btn btn-primary btn-hover w-100 add-btn"><i class="mdi mdi-cart me-1"></i> Add To Cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="paginatorleft"></ng-template>
+                </p-dataView>
+            </div>
+
+            <div class="offer-bar flex-shrink-0">
+                <div class="d-flex gap-3 flex-column">
+                    <div class="card fs-13 border border-primary border-opacity-25">
+                        <div class="card-header text-center bg-primary-subtle border-0">
+                            <h6 class="card-title text-uppercase fs-13 mb-0 text-primary">Deals of the week</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="px-5">
+                                <img src="assets/images/products/img-16.png" alt="" class="img-fluid d-block mx-auto" />
+                            </div>
+                            <div class="mt-4 text-center">
+                                <h4 class="text-body mb-3">
+                                    $63.00 <span class="text-muted fs-12"><del>$123.99</del></span>
+                                </h4>
+                                <a href="javascript:void(0);" class="stretched-link">
+                                    <h5 class="mb-4">Ninja Pro Max Smartwatch</h5>
+                                </a>
+                            </div>
+                            <div class="progress animated-progress custom-progress">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mt-2">
+                                <div class="flex-grow-1 fw-medium fs-12"><span class="text-muted">Sold</span>: 451 Items
+                                </div>
+                                <div class="fw-medium fs-12"><span class="text-muted">Available</span>: 90 Items</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offer-banner rounded-3" style="background-image: url('assets/images/ecommerce/offer-banner.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end container-fluid-->
+</div>
+
+<section class="section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-1">
+                    <h3 class="flex-grow-1 mb-0">Deals Of The Day</h3>
+                    <div class="flex-shrink-0">
+                        <a href="javascript:void(0);" class="link-effect link-success">All Deals <i class="ri-arrow-right-line ms-1 align-bottom"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0">
+                        <div class="gallery-product">
+                            <img src="assets/images/ecommerce/img-5.jpg" alt="" class="mx-auto d-block object-fit-cover" />
+                        </div>
+                    </div>
+                    <div class="content mx-4">
+                        <div class="countdown-deals mb-3">
+                            <div data-countdown="Oct 30, 2023" class="countdownlist"></div>
+                        </div>
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">World's most expensive t-shirt
+                                </h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.9)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="text-secondary flex-grow-1 mb-0">
+                                    $124.99 <span class="text-muted fs-12"><del>$354.99</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-lg-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0">
+                        <div class="gallery-product">
+                            <img src="assets/images/ecommerce/img-3.jpg" alt="" class="mx-auto d-block object-fit-cover" />
+                        </div>
+                    </div>
+                    <div class="content mx-4">
+                        <div class="countdown-deals mb-3">
+                            <div data-countdown="Oct 23, 2023" class="countdownlist"></div>
+                        </div>
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Best Footwear Collections</h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.3)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="text-secondary flex-grow-1 mb-0">
+                                    $80.00 <span class="text-muted fs-12"><del>$180.00</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-lg-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0">
+                        <div class="gallery-product">
+                            <img src="assets/images/ecommerce/img-1.jpg" alt="" class="mx-auto d-block object-fit-cover" />
+                        </div>
+                    </div>
+                    <div class="content mx-4">
+                        <div class="countdown-deals mb-3">
+                            <div data-countdown="Oct 20, 2023" class="countdownlist"></div>
+                        </div>
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Elegant Designer Western Dress
+                                </h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (5.0)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="text-secondary flex-grow-1 mb-0">
+                                    $30.10 <span class="text-muted fs-12"><del>$121.99</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+
+<app-discount-footer [discount]="25"></app-discount-footer>
+
+<app-features></app-features>
+
+<!-- Footer -->
+<app-footer></app-footer>

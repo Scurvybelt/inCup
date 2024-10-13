@@ -1,0 +1,36 @@
+<section class="section bg-light bg-opacity-25" style="background-image: url('assets/images/ecommerce/bg-effect.png');background-position: center; background-size: cover;">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-6">
+                <div>
+                    @if(discount == '25'){
+                    <p class="fs-15 text-uppercase fw-medium"><span class="fw-semibold text-danger">25% Up to</span> off all Products</p>
+                    <h1 class="lh-base text-capitalize mb-3">Stay home & get your daily needs
+                        from our shop</h1>
+                    }@else if(discount == '35'){
+                    <p class="fs-15 text-uppercase fw-medium"> <span class="fw-semibold text-danger">Summer</span>
+                        Collection</p>
+                    <h1 class="lh-base text-capitalize mb-3">Get 35% Discount For Couple
+                        Special</h1>
+                    }
+                    <p class="fs-15 mb-4 pb-2">Start You'r Daily Shopping with <a href="javascript:void(0);" class="link-primary text-decoration-underline fw-medium">Toner</a></p>
+                    <form action="#!">
+                        <div class="position-relative ecommerce-subscript">
+                            <input type="email" class="form-control rounded-pill" placeholder="Enter your email">
+                            <button type="submit" class="btn btn-primary btn-hover rounded-pill">Subscript Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-lg-4">
+                <div class="mt-4 mt-lg-0">
+                    <img src="assets/images/ecommerce/subscribe.png" alt="" class="img-fluid">
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end conatiner-->
+</section>

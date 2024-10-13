@@ -1,0 +1,73 @@
+//
+// _two-column.scss
+// 
+
+[data-layout="twocolumn"] {
+    .app-menu {
+        right: $twocolumn-menu-iconview-width;
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: calc(#{$twocolumn-menu-width} + #{$twocolumn-menu-iconview-width});
+
+        @media (max-width:767.98px) {
+            margin-right: $twocolumn-menu-iconview-width;
+            margin-left: 0;
+        }
+    }
+
+    .twocolumn-iconview {
+        right: calc(#{$twocolumn-menu-iconview-width} * -1);
+        left: auto;
+    }
+
+    .twocolumn-panel {
+        .app-menu {
+            border-left: 0;
+        }
+
+        .main-content {
+            margin-left: 0;
+            margin-right: $twocolumn-menu-iconview-width;
+        }
+
+        #page-topbar,
+        .footer {
+            right: $twocolumn-menu-iconview-width;
+            left: 0;
+        }
+
+        @media (max-width: 575.98px) {
+            .main-content {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            #page-topbar,
+            .footer {
+                right: 0;
+            }
+        }
+    }
+
+    #page-topbar,
+    .footer {
+        @media (max-width: 767.98px) {
+            right: $twocolumn-menu-iconview-width;
+            left: 0;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .main-content {
+            margin-right: 0;
+        }
+
+        #page-topbar,
+        .footer {
+            right: 0;
+        }
+    }
+}

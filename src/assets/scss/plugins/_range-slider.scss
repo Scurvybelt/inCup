@@ -1,0 +1,69 @@
+
+//
+// _range-slider.scss
+//
+
+.p-slider {
+  background: var(--#{$prefix}light);
+  border: 0 none;
+  border-radius: 0.25rem;
+  &.p-slider-horizontal {
+    height: 0.286rem;
+    .p-slider-handle {
+      margin-top: -0.5715rem;
+      margin-left: -0.5715rem;
+    }
+  }
+
+  &.p-slider-vertical {
+    width: 0.286rem;
+    .p-slider-handle {
+      margin-left: -0.5715rem;
+      margin-bottom: -0.5715rem;
+    }
+  }
+
+  .p-slider-handle {
+    height: 1.143rem;
+    width: 1.143rem;
+    background: $card-bg;
+    border: 2px solid $primary;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    &:focus {
+      outline: 0 none;
+      outline-offset: 0;
+    }
+  }
+
+  .p-slider-range {
+    background: $primary;
+  }
+
+  &:not(.p-disabled) {
+    .p-slider-handle:hover {
+      background: $primary;
+      border-color: $primary;
+    }
+  }
+
+  &.p-slider-animate.p-slider-horizontal{
+    .p-slider-handle {
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, left 0.2s;
+    }
+
+    .p-slider-range {
+      transition: width 0.2s;
+    }
+  }
+
+  &.p-slider-animate.p-slider-vertical{
+    .p-slider-handle {
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, bottom 0.2s;
+    }
+
+    .p-slider-range {
+      transition: width 0.2s;
+    }
+  }
+}

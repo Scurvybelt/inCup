@@ -1,0 +1,103 @@
+// 
+// picklist.scss
+// 
+
+.p-picklist{
+    .p-picklist-buttons {
+        padding: 1rem;
+        .p-button {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .p-picklist-header {
+        background: rgba(var(--#{$prefix}light-rgb), 0.6);
+        color: var(--#{$prefix}body-color);
+        border: 1px solid $input-border-color;
+        padding: 0.7rem 1rem;
+        border-bottom: 0 none;
+        border-top-right-radius: $input-border-radius;
+        border-top-left-radius: $input-border-radius;
+        .p-picklist-title {
+            font-weight: $font-weight-medium;
+        }
+    }
+
+
+    .p-picklist-filter-container {
+        padding: 0.7rem 1rem;
+        background: $input-bg;
+        border: 1px solid $input-border-color;
+        border-bottom: 0 none;
+
+        .p-picklist-filter-input {
+            padding-right: 1.5rem;
+        }
+
+        .p-picklist-filter-icon {
+            right: 0.5rem;
+            color: var(--#{$prefix}body-color);;
+        }
+    }
+
+    .p-picklist-list{
+        background-color: $input-bg;
+        color: $input-color;
+        padding: 0.5rem 0;
+        border-radius: $input-border-radius;
+        border: 1px solid $input-border-color;
+
+        .p-picklist-item{
+            color: $input-color;
+            padding: 0.5rem 1rem;
+            margin: 0;
+            border: 0 none;
+            color: var(--#{$prefix}body-color);
+            background: transparent;
+            transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+            &:focus {
+                outline: 0 none;
+                outline-offset: 0;
+            }
+
+            &.p-highlight {
+                color: $white;
+                background: $primary;
+            }
+        }
+
+        .p-picklist-empty-message {
+            padding: 0.5rem 1rem;
+            color: var(--#{$prefix}body-color);;
+        }
+
+        &:not(.cdk-drop-list-dragging) .p-picklist-item:not(.p-highlight):hover {
+            background: $dropdown-link-hover-bg;
+            color: $dropdown-link-hover-color;
+        }
+    }
+
+    &.p-picklist-striped{
+        .p-picklist-list {
+            .p-picklist-item:nth-child(even) {
+                background: rgba(var(--#{$prefix}light-rgb), 0.6);
+            }
+
+            .p-picklist-item:nth-child(even):hover {
+                background: rgba(var(--#{$prefix}light-rgb), 0.6);
+            }
+        }
+    }
+}
+
+  
+.p-picklist-item{
+    .cdk-drag-preview {
+        padding: 0.5rem 1rem;
+        border: 0 none;
+        color: $dropdown-color;
+        background: $dropdown-bg;
+        margin: 0;
+    }
+}

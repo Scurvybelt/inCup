@@ -1,0 +1,265 @@
+//
+// _landing-menu.scss
+//
+
+.ecommerce-navbar {
+    height: 70px;
+    transition: all 0.5s ease;
+    background-color: var(--#{$prefix}secondary-bg);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: px;
+    z-index: 1000;
+    padding: 0;
+    box-shadow: 0 5px 10px rgba(135, 138, 153, .12);
+
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                color: #637790;
+                font-size: 15px;
+                font-weight: 500;
+                padding: 0px 14px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover,
+                &.active {
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    .dropdown-menu-list {
+        .nav-item {
+            .nav-link {
+                height: auto;
+                display: inline-block;
+                font-size: 14px;
+                padding: $dropdown-item-padding-y 0px;
+                background-color: transparent !important;
+                transition: all 0.5s ease;
+
+                &::before {
+                    content: "";
+                    background-color: $primary;
+                    height: 5px;
+                    width: 5px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 15px;
+                    left: 2px;
+                    transition: all 0.5s ease;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    padding-left: 13px;
+                    color: $primary;
+
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &.submenu {
+            .nav-item {
+                .nav-link {
+                    &::before {
+                        left: 1.45rem;
+                    }
+
+                    &:hover {
+                        padding-left: 37px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-collapse {
+        height: 100% !important;
+    }
+
+    &.is-sticky {
+        background-color: var(--#{$prefix}secondary-bg) !important;
+        box-shadow: $box-shadow-lg;
+    }
+
+    .navbar-brand {
+        .logo-light {
+            display: var(--#{$prefix}card-logo-light);
+        }
+
+        .logo-dark {
+            display: var(--#{$prefix}card-logo-dark);
+        }
+    }
+}
+
+.dropdown-custom-right {
+    left: auto !important;
+    right: 100%;
+}
+
+@media (min-width:992px) {
+    .dropdown-hover {
+        &:hover {
+            >.dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-toggle {
+                &::after {
+                    transition: all 0.5s ease;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    .dropdown-hover-end {
+        &:hover {
+            >.dropdown-menu {
+                display: block;
+                top: 70px !important;
+                right: 0;
+            }
+
+            .dropdown-toggle {
+                &::after {
+                    transition: all 0.5s ease;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    .dropdown-menu {
+        &.dropdown-menu-center {
+            left: 50%;
+            transform: none;
+        }
+    }
+
+    .navbar-nav {
+        .dropdown {
+            .dropdown-menu {
+                &.submenu {
+                    width: 200px;
+
+                    &.dropdown-custom-right {
+                        left: -100% !important;
+                        right: 100%;
+                    }
+
+                    .nav-item {
+                        .nav-link {
+                            width: 100%;
+                            padding: .35rem 1.5rem;
+
+                            &.dropdown-toggle::after {
+                                float: right;
+                                transform: rotate(-90deg);
+                                margin-top: 3px;
+                            }
+                        }
+
+                        &.dropdown-hover {
+                            .dropdown-menu {
+                                left: 100%;
+                                top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bg-overlay.navbar-overlay {
+    position: fixed;
+    z-index: 9;
+}
+
+.navbar-collapse:not(.show)+.navbar-overlay {
+    display: none;
+}
+
+@media (max-width:991.98px) {
+    .ecommerce-navbar {
+        .navbar-collapse {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 100vh !important;
+            background-color: var(--#{$prefix}secondary-bg);
+            width: 250px;
+            z-index: 999;
+            overflow-y: auto;
+            transform: translateX(0);
+            transition: all 0.4s;
+
+            &:not(.show) {
+                transform: translateX(-250px);
+            }
+        }
+
+        .navbar-nav {
+            .nav-item {
+                .nav-link {
+                    justify-content: flex-start;
+                    height: 40px;
+                    width: 100%;
+
+                    &.dropdown-toggle:after {}
+                }
+            }
+
+            .dropdown-menu {
+                box-shadow: none;
+                position: relative;
+                left: auto !important;
+                right: auto !important;
+                width: 100%;
+
+                &.submenu {
+                    padding-left: 12px;
+                }
+            }
+        }
+
+        .dropdown-menu-list {
+            .nav-item {
+                .nav-link {
+                    height: auto;
+                    padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+                    display: flex;
+                }
+            }
+
+            .menu-title {
+                padding: 0 $dropdown-item-padding-x;
+            }
+        }
+    }
+}
+
+.dropdown-mega-full {
+    position: static !important;
+
+    .dropdown-menu {
+        padding: 20px;
+        left: 20px !important;
+        right: 20px !important;
+    }
+}

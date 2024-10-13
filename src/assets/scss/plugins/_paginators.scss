@@ -1,0 +1,93 @@
+
+
+.p-paginator{
+    justify-content: end !important;
+}
+.p-paginator {
+    background: $pagination-bg;
+    color: $pagination-color;
+    border: solid var(--#{$prefix}border-color);
+    border-width: 0;
+    padding: 0.5rem 1rem;
+    border-radius: $pagination-border-radius;
+    .p-paginator-first,
+    .p-paginator-prev,
+    .p-paginator-next,
+    .p-paginator-last {
+        background-color: transparent;
+        border: 0 none;
+        color: $pagination-color;
+        min-width: 2.357rem;
+        height: 2.357rem;
+        margin: 0.143rem;
+        transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: $pagination-border-radius;
+        &:not(.p-disabled):not(.p-highlight):hover {
+            background: $pagination-disabled-bg;
+            border-color: transparent;
+            color: $pagination-disabled-color;
+        }
+    }
+
+    .p-paginator-first {
+        border-top-left-radius: $pagination-border-radius;
+        border-bottom-left-radius: $pagination-border-radius;
+    }
+
+    .p-paginator-last {
+        border-top-right-radius: $pagination-border-radius;
+        border-bottom-right-radius: $pagination-border-radius;
+    }
+
+    .p-dropdown {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        height: 2.357rem;
+        .p-dropdown-label {
+            padding-right: 0;
+        }
+    }
+
+    .p-paginator-page-input {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        .p-inputtext {
+            max-width: 2.357rem;
+        }
+    }
+
+    .p-paginator-current {
+        background-color: transparent;
+        border: 0 none;
+        color: $pagination-color;
+        min-width: 2.357rem;
+        height: 2.357rem;
+        margin: 0.143rem;
+        padding: 0 0.5rem;
+    }
+
+    .p-paginator-pages{
+        .p-paginator-page {
+            background-color: transparent;
+            border: 0 none;
+            color: $pagination-color;
+            min-width: 2.357rem;
+            height: 2.357rem;
+            margin: 0.143rem;
+            transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+            border-radius: 0.25rem;
+
+            &.p-highlight {
+                background: $pagination-active-bg;
+                border-color: $pagination-active-bg;
+                color: $pagination-active-color;
+            }
+
+            &:not(.p-highlight):hover {
+                background: $pagination-disabled-bg;
+                border-color: transparent;
+                color: $pagination-color;
+            }
+        }
+    }
+}

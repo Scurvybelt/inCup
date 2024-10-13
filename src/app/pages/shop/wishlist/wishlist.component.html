@@ -1,0 +1,178 @@
+<!-- Header -->
+<app-header></app-header>
+
+<!-- Start Breadcrumbs -->
+<app-breadcrumbs title="Wishlist" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+<!-- End Breadcrumbs -->
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    <table class="table fs-15 table-nowrap align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Stock Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for(data of wishlists; track $index){
+                            <tr>
+                                <td>
+                                    <div class="d-flex gap-3">
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <div class="avatar-title bg-{{data.bgcolor}}-subtle rounded">
+                                                <img src="{{data.img}}" alt="" class="avatar-xs" />
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <a routerLink="/catelog/product-details">
+                                                <h6 class="fs-16">{{data.title}}</h6>
+                                            </a>
+                                            <p class="mb-0 text-muted fs-13">{{data.type}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>${{data.price}}</td>
+                                <td><span class="badge" [ngClass]="{'bg-success-subtle text-success':data.status === 'In Stock','bg-danger-subtle text-danger':data.status === 'Out Of Stock'}">{{data.status}}</span>
+                                </td>
+                                <td>
+                                    <ul class="list-unstyled d-flex gap-3 mb-0">
+                                        <li>
+                                            <a routerLink="/shop/shop-cart" class="btn btn-soft-info btn-icon btn-sm"><i class="ri-shopping-cart-2-line fs-13"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="btn btn-soft-danger btn-icon btn-sm" (click)="removewishlist($index)"><i class="ri-close-line fs-13"></i></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="hstack gap-2 justify-content-end mt-2">
+                    <a routerLink="/catelog/product-list" class="btn btn-hover btn-secondary">Continue Shopping <i class="ri-arrow-right-line align-bottom"></i></a>
+                    <a routerLink="/shop/checkout" class="btn btn-hover btn-primary">Check Out <i class="ri-arrow-right-line align-bottom"></i></a>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+
+<section class="section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-1">
+                    <h3 class="flex-grow-1 mb-0">Today's Hot Deal</h3>
+                    <div class="flex-shrink-0">
+                        <a href="javascript:void(0);" class="link-effect link-success fw-medium">View All Products <i class="ri-arrow-right-line ms-1 align-bottom"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row">
+            <div class="col-xxl-4 col-lg-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0 border-0">
+                        <div class="gallery-product bg-danger-subtle card-body">
+                            <img src="assets/images/products/img-6.png" alt="" class="avatar-xl" />
+                        </div>
+                    </div>
+                    <div class="content mx-4 pt-5">
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Striped High Neck Casual Men
+                                    Orange Sweater</h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.7)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="flex-grow-1 mb-0">
+                                    $62.40 <span class="text-muted fs-12"><del>$120.00</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-xxl-4 col-lg-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0 border-0">
+                        <div class="gallery-product bg-success-subtle card-body">
+                            <img src="assets/images/products/img-4.png" alt="" class="avatar-xl" />
+                        </div>
+                    </div>
+                    <div class="content mx-4 pt-5">
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Girls Mint Green & Off-White
+                                    Solid Open Toe Flats</h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.5)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="flex-grow-1 mb-0">
+                                    $80.00 <span class="text-muted fs-12"><del>$180.00</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-xxl-4 col-lg-4 col-md-6">
+                <div class="ecommerce-deals-widgets">
+                    <div class="card overflow-hidden mb-0 border-0">
+                        <div class="gallery-product bg-dark-subtle card-body">
+                            <img src="assets/images/products/img-19.png" alt="" class="avatar-xl" />
+                        </div>
+                    </div>
+                    <div class="content mx-4 pt-5">
+                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Ethex Women Ribbed Sweater</h6>
+                            </a>
+                            <p class="text-muted">
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
+                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> (5.0)
+                            </p>
+                            <div class="mt-3 d-flex align-items-center">
+                                <h5 class="flex-grow-1 mb-0">
+                                    $24.07 <span class="text-muted fs-12"><del>$96.26</del></span>
+                                </h5>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+
+<app-discount-footer [discount]="35"></app-discount-footer>
+
+<app-features></app-features>
+
+<!-- Footer -->
+<app-footer></app-footer>

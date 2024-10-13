@@ -1,0 +1,31 @@
+// 
+// _dashboard.scss
+// 
+
+.jvectormap-legend-cnt-h .jvectormap-legend-tick-sample {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dash-avatar {
+    height: 40px;
+    width: 40px;
+}
+
+.widget-responsive-fullscreen {
+    @media (min-width: 1200px) and (max-width: 1440px) {
+        .col-xxl-9 {
+            width: 100%;
+        }
+        .col-xxl-3 {
+            width: 33.33%;
+            &:first-child {
+                -webkit-box-ordinal-group: 7!important;
+                -ms-flex-order: 6!important;
+                order: 6!important;
+            }
+        }
+    }
+}

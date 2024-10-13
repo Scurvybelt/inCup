@@ -1,0 +1,651 @@
+<!-- <div (window:scroll)="windowScroll()" class="top-tagbar">
+    <div class="w-100">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-4 col-9">
+                <div class="fs-14 fw-medium"><i class="bi bi-geo-alt align-middle me-2"></i> Phoenix, USA</div>
+            </div>
+            <div class="col-md-4 col-6 d-none d-xxl-block">
+                <div class="d-flex align-items-center justify-content-center gap-3 fs-14 fw-medium">
+                    <div><i class="bi bi-envelope align-middle me-2"></i>support&#64;themesbrand.com</div>
+                </div>
+            </div>
+            <div class="col-md-4 col-3">
+                <div class="d-flex align-items-center justify-content-end gap-3 fs-14">
+                    <div class="text-reset fw-normal d-none d-lg-block"><i class="bi bi-telephone-outbound align-middle me-2"></i> +(235) 01234 5678</div>
+                    <hr class="vr d-none d-lg-block" />
+                    <p-dropdown [options]="country" [(ngModel)]="selectedCountry" optionLabel="label" optionValue="code" id="select" styleClass="dropdown topbar-head-dropdown topbar-tag-dropdown justify-content-end" (onChange)="setLanguage($event.value)">
+                        <ng-template let-data pTemplate="selectedItem" class="btn btn-icon btn-topbar text-reset rounded-circle fs-14 fw-medium">
+                            @if(selectedCountry){
+                            <img id="header-lang-img" src="{{selectedCountry.value}}" height="16" class="rounded-circle me-2" />
+                            <span id="lang-name">{{selectedCountry.label}}</span>
+                            }
+                        </ng-template>
+                        <ng-template let-country pTemplate="item">
+                            <img src="{{country.value}}" alt="user-image" class="me-2 rounded-circle" height="18" />
+                            <span class="align-middle">{{country.label}}</span>
+                        </ng-template>
+                    </p-dropdown>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<nav class="navbar navbar-expand-lg ecommerce-navbar" id="navbar">
+    <div class="container" id="navbarcontainer">
+        <a class="navbar-brand d-none d-lg-block" routerLink="/">
+            <div class="logo-dark">
+                <img src="assets/images/logo-dark.png" alt="" height="25" class="card-logo-dark mx-auto" />
+            </div>
+            <div class="logo-light">
+                <img src="assets/images/logo-light.png" alt="" height="25" class="card-logo-dark mx-auto" />
+            </div>
+        </a>
+        <p-button class="btn btn-soft-primary btn-icon d-lg-none" type="button" data-bs-toggle="collapse" (click)="openMobileMenu()" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-20"></i>
+        </p-button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0" id="navigation-menu">
+                <li class="nav-item d-block d-lg-none">
+                    <a class="d-block p-3 h-auto text-center" href="index.html">
+                        <img src="assets/images/logo-dark.png" alt="" height="25" class="card-logo-dark mx-auto">
+                        <img src="assets/images/logo-light.png" alt="" height="25" class="card-logo-light mx-auto">
+                    </a>
+                </li>
+                @for(item of menuItems; track $index){
+                <ng-container>
+                    @if(item.isTitle){
+                    <li class="nav-item">
+                        @if(!hasItems(item)){
+                        <a class="nav-link" routerLink="{{item.link}}" (click)="toggleItem($event)">{{item.label | translate}}</a>
+                        }
+                    </li>
+                    }
+                    @if(item.subItems && item.type == 'horizontal'){
+                    <li class="nav-item dropdown dropdown-hover {{item.liclass}}">
+                        <a class="nav-link dropdown-toggle" data-key="t-catalog" href="javascript:void(0);" (click)="toggleSubItem($event)">
+                            {{item.label | translate}}
+                        </a>
+                        <div class="dropdown-menu {{item.menuclass}} p-0">
+                            <div class="row g-0 g-lg-4">
+                                @if(item.showImage == 'catalog'){
+                                <div class="col-lg-2 d-none d-lg-block">
+                                    <div class="card rounded-start rounded-0 border-0 h-100 mb-0 overflow-hidden" style="background-image: url('assets/images/ecommerce/img-1.jpg'); background-size: cover;">
+                                        <div class="bg-overlay bg-light bg-opacity-25"></div>
+                                        <div class="card-body d-flex align-items-center justify-content-center">
+                                            <div class="text-center">
+                                                <a href="javascript:void(0);" class="btn btn-secondary btn-hover"><i class="ph-storefront align-middle me-1"></i> <span data-key="t-shop-now">Shop Now</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                }@if(item.showImage == 'shop'){
+                                <div class="col-lg-5 d-none d-lg-block">
+                                    <div class="card rounded-start rounded-0 border-0 h-100 mb-0 overflow-hidden" style="background-image: url('assets/images/ecommerce/img-2.jpg'); background-size: cover;">
+                                        <div class="bg-overlay bg-primary" style="opacity: 0.9;"></div>
+                                        <div class="card-body d-flex align-items-center justify-content-center position-relative">
+                                            <div class="text-center">
+                                                <h6 class="card-title text-white">Welcome to Toner</h6>
+                                                <p class="text-white-75">See all the products at once.</p>
+                                                <a href="javascript:void(0);" class="btn btn-light btn-sm btn-hover">Shop Now <i class="ph-arrow-right align-middle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                                @for(subitem of item.subItems; track $index){
+                                <div class="col-lg-2">
+                                    <ul class="dropdown-menu-list list-unstyled mb-0 py-3">
+                                        <li>
+                                            <p class="mb-2 text-uppercase fs-11 fw-medium text-muted menu-title" data-key="t-men">{{subitem.label | translate}}</p>
+                                        </li>
+
+                                        @if(subitem.isImage){
+                                        <div class="row g-2">
+                                            @for(subchild of subitem.subChild; track $index){
+                                            <div class="col-lg-4">
+                                                <a href="javascript:void(0);" class="d-block p-2 border border-dashed text-center rounded-3">
+                                                    <img src="{{subchild.url}}" alt="" class="avatar-sm" />
+                                                </a>
+                                            </div>}
+                                        </div>}
+                                        @else{
+                                        <div>
+                                            @for(subchild of subitem.subChild; track $index){
+                                            <li class="nav-item">
+                                                <a routerLink="{{subchild.link | translate}}" class="nav-link" (click)="updateActive($event)" data-key="t-clothing">{{subchild.label | translate}}</a>
+                                            </li>}
+                                        </div>
+                                        }
+                                    </ul>
+                                </div>}
+                            </div>
+                        </div>
+                    </li>
+                    }@else if(item.subItems && item.type == 'vertical'){
+                    <li class="nav-item dropdown dropdown-hover">
+                        <a class="nav-link dropdown-toggle" data-key="t-pages" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="toggleParentItem($event)">
+                            {{item.label | translate}}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-md dropdown-menu-center dropdown-menu-list submenu">
+                            @for(subitem of item.subItems; track $index){
+                            <li class="nav-item dropdown dropdown-hover">
+                                <a routerLink="{{subitem.link}}" class="nav-link" (click)="toggleSubItem($event)" [ngClass]="subitem.subChild?'dropdown-toggle':''" data-bs-toggle="dropdown" data-key="t-products">
+                                    {{subitem.label | translate}}
+                                </a>
+                                @if(subitem.subChild){
+                                <ul class="dropdown-menu submenu">
+                                    @for(subchild of subitem.subChild; track $index){
+                                    <li class="dropdown dropdown-hover">
+                                        <a routerLink="{{subchild.link}}" class="nav-link" [ngClass]="subchild.subItems?'dropdown-toggle':''" data-bs-toggle="dropdown" aria-expanded="false" data-key="t-grid-view" (click)="toggleExtraSubItem($event)">
+                                            {{subchild.label | translate}}
+                                        </a>
+                                        @if(subchild.subItems){
+                                        <ul class="dropdown-menu submenu">
+                                            @for(submenu of subchild.subItems; track $index){
+                                            <li>
+                                                <a class="nav-link" (click)="updateActive($event)" routerLink="{{submenu.link}}" data-key="t-default">{{submenu.label |
+                                                    translate}}</a>
+                                            </li>}
+                                        </ul>}
+                                    </li>
+                                    }
+                                </ul>}
+                            </li>
+                            }
+                        </ul>
+                    </li>
+                    }
+                </ng-container>
+                }
+            </ul>
+        </div>
+        <div class="bg-overlay navbar-overlay" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent.show" (click)="hidesidebar()">
+        </div>
+
+        <div class="d-flex align-items-center">
+            <!-- <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted" (click)="showDialog()">
+                <i class="bx bx-search fs-22"></i>
+            </button> -->
+            <!-- <div class="topbar-head-dropdown ms-1 header-item">
+                <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted" data-bs-toggle="offcanvas" data-bs-target="#ecommerceCart" aria-controls="ecommerceCart" (click)="sidebarVisible = true">
+                    <i class="ph-shopping-cart fs-18"></i>
+                    <span class="position-absolute topbar-badge cartitem-badge fs-10 translate-middle badge rounded-pill bg-danger">{{carts.length}}</span>
+                </button>
+            </div> -->
+
+            <div class="dropdown topbar-head-dropdown ms-2 topbar-head-dropdown">
+                <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted" (click)="toggleChange()">
+                    <i class="bi bi-sun align-middle fs-20"></i>
+                </button>
+                <div class="dropdown-menu p-2 dropdown-menu-end" [ngClass]="{'show':changesMode }">
+                    <a (click)="setMode('light')" href="javascript:void(0);" class="dropdown-item" data-mode="light"><i class="bi bi-sun align-middle me-2"></i> Default (light mode)</a>
+                    <a (click)="setMode('dark')" href="javascript:void(0);" class="dropdown-item" data-mode="dark"><i class="bi bi-moon align-middle me-2"></i> Dark</a>
+                    <a (click)="setMode('light')" href="javascript:void(0);" class="dropdown-item" data-mode="auto"><i class="bi bi-moon-stars align-middle me-2"></i> Auto (system default)</a>
+                </div>
+            </div>
+            <div class="dropdown topbar-head-dropdown ms-2   topbar-head-dropdown">
+                <button type="button" class="btn" id="page-header-user-dropdown" (click)="toggleDropdown()">
+                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar" />
+                </button>
+
+                <div class="dropdown-menu dropdown-menu-end" [ngClass]="{ 'show': isDropdownOpen }">
+                    <!-- item-->
+                    <h6 class="dropdown-header p-3">Welcome Diana!</h6>
+                    <a class="dropdown-item" routerLink="/shop/order-history"><i class="bi bi-cart4 text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Order
+                            History</span></a>
+                    <a class="dropdown-item" routerLink="/shop/track-order"><i class="bi bi-truck text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Track
+                            Orders</span></a>
+                    <a class="dropdown-item" routerLink="/"><i class="bi bi-speedometer2 text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Dashboard</span></a>
+                    <a class="dropdown-item" routerLink="/extrapages/ecommerce-faq"><i class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Help</span></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" routerLink="/users/account">
+                        <i class="bi bi-coin text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Balance
+                            : <b>$8451.36</b></span>
+                    </a>
+                    <a class="dropdown-item" routerLink="/users/account">
+                        <span class="badge bg-success-subtle text-success mt-1 float-end">New</span><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span>
+                    </a>
+                    <a class="dropdown-item" routerLink="/auth/logout-basic"><i class="bi bi-box-arrow-right text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Modal -->
+
+<p-dialog [modal]="true" [(visible)]="searchmodal" position="top" [dismissableMask]="true" [style]="{width: '50vw'}" [showHeader]="false">
+    <div class="modal-content rounded">
+        <div class="modal-header p-3">
+            <div class="position-relative w-100">
+                <input type="text" class="form-control form-control-lg border-2" placeholder="Search for Toner..." autocomplete="off" id="search-options" value="" />
+                <a href="javascript:void(0);" class="search-widget-icon fs-14 link-secondary text-decoration-underline search-widget-icon-close d-none" id="search-close-options">Clear</a>
+            </div>
+        </div>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0 overflow-hidden" id="search-dropdown">
+            <div class="dropdown-head rounded-top">
+                <div class="p-3">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h6 class="m-0 fs-14 text-muted fw-semibold">RECENT SEARCHES</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-item bg-transparent text-wrap">
+                    <a routerLink="/" class="btn btn-soft-secondary btn-sm btn-rounded">how to setup <i class="mdi mdi-magnify ms-1 align-middle"></i></a>
+                    <a routerLink="/" class="btn btn-soft-secondary btn-sm btn-rounded">buttons <i class="mdi mdi-magnify ms-1 align-middle"></i></a>
+                </div>
+            </div>
+
+            <div data-simplebar style="max-height: 300px;" class="pe-2 ps-3 my-3">
+                <div class="list-group list-group-flush border-dashed">
+                    <div class="notification-group-list">
+                        <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">Apps
+                            Pages</h5>
+                        <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i class="bi bi-speedometer2 me-2"></i> <span>Analytics Dashboard</span></a>
+                        <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i class="bi bi-filetype-psd me-2"></i> <span>Toner.psd</span></a>
+                        <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i class="bi bi-ticket-detailed me-2"></i> <span>Support Tickets</span></a>
+                        <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i class="bi bi-file-earmark-zip me-2"></i> <span>Toner.zip</span></a>
+                    </div>
+
+                    <div class="notification-group-list">
+                        <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">Links
+                        </h5>
+                        <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i class="bi bi-link-45deg me-2 align-middle"></i> <span>www.themesbrand.com</span></a>
+                    </div>
+
+                    <div class="notification-group-list">
+                        <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">
+                            People
+                        </h5>
+                        <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
+                            <div class="d-flex align-items-center">
+                                <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle flex-shrink-0 me-2" />
+                                <div>
+                                    <h6 class="mb-0">Ayaan Bowen</h6>
+                                    <span class="fs-12 text-muted">React Developer</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
+                            <div class="d-flex align-items-center">
+                                <img src="assets/images/users/avatar-7.jpg" alt="" class="avatar-xs rounded-circle flex-shrink-0 me-2" />
+                                <div>
+                                    <h6 class="mb-0">Alexander Kristi</h6>
+                                    <span class="fs-12 text-muted">React Developer</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
+                            <div class="d-flex align-items-center">
+                                <img src="assets/images/users/avatar-5.jpg" alt="" class="avatar-xs rounded-circle flex-shrink-0 me-2" />
+                                <div>
+                                    <h6 class="mb-0">Alan Carla</h6>
+                                    <span class="fs-12 text-muted">React Developer</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</p-dialog>
+
+<ng-template #content let-modal>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded">
+            <div class="modal-header p-3">
+                <div class="position-relative w-100">
+                    <input type="text" class="form-control form-control-lg border-2" placeholder="Search for Toner..." autocomplete="off" id="search-options" value="" />
+                    <span class="bi bi-search search-widget-icon fs-17"></span>
+                    <a href="javascript:void(0);" class="search-widget-icon fs-14 link-secondary text-decoration-underline search-widget-icon-close d-none" id="search-close-options">Clear</a>
+                </div>
+            </div>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0 overflow-hidden" id="search-dropdown">
+                <div class="dropdown-head rounded-top">
+                    <div class="p-3">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="m-0 fs-14 text-muted fw-semibold">RECENT SEARCHES</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-item bg-transparent text-wrap">
+                        <a routerLink="/" class="btn btn-soft-secondary btn-sm btn-rounded">how to setup <i class="mdi mdi-magnify ms-1 align-middle"></i></a>
+                        <a routerLink="/" class="btn btn-soft-secondary btn-sm btn-rounded">buttons <i class="mdi mdi-magnify ms-1 align-middle"></i></a>
+                    </div>
+                </div>
+
+                <div data-simplebar style="max-height: 300px;" class="pe-2 ps-3 my-3">
+                    <div class="list-group list-group-flush border-dashed">
+                        <div class="notification-group-list">
+                            <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">Apps
+                                Pages</h5>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i class="bi bi-speedometer2 me-2"></i> <span>Analytics Dashboard</span></a>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i class="bi bi-filetype-psd me-2"></i> <span>Toner.psd</span></a>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i class="bi bi-ticket-detailed me-2"></i> <span>Support Tickets</span></a>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i class="bi bi-file-earmark-zip me-2"></i> <span>Toner.zip</span></a>
+                        </div>
+
+                        <div class="notification-group-list">
+                            <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">Links
+                            </h5>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item"><i class="bi bi-link-45deg me-2 align-middle"></i> <span>www.themesbrand.com</span></a>
+                        </div>
+
+                        <div class="notification-group-list">
+                            <h5 class="text-overflow text-muted fs-13 mb-2 mt-3 text-uppercase notification-title">
+                                People
+                            </h5>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle flex-shrink-0 me-2" />
+                                    <div>
+                                        <h6 class="mb-0">Ayaan Bowen</h6>
+                                        <span class="fs-12 text-muted">React Developer</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="assets/images/users/avatar-7.jpg" alt="" class="avatar-xs rounded-circle flex-shrink-0 me-2" />
+                                    <div>
+                                        <h6 class="mb-0">Alexander Kristi</h6>
+                                        <span class="fs-12 text-muted">React Developer</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="assets/images/users/avatar-5.jpg" alt="" class="avatar-xs rounded-circle flex-shrink-0 me-2" />
+                                    <div>
+                                        <h6 class="mb-0">Alan Carla</h6>
+                                        <span class="fs-12 text-muted">React Developer</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<!--cart -->
+<p-sidebar [(visible)]="sidebarVisible" position="right" [style]="{width:'399px'}" (onHide)="sidebarVisible = false">
+    <ng-template pTemplate="header" class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="ecommerceCartLabel">My Cart <span class="badge bg-danger align-middle ms-1 cartitem-badge">{{carts.length}}</span></h5>
+    </ng-template>
+    <div class="offcanvas-body px-0">
+        <div data-simplebar class="h-100">
+            <ul class="list-group list-group-flush cartlist">
+
+                @for(data of carts; track $index){
+                <li class="list-group-item product">
+                    <div class="d-flex gap-3">
+                        <div class="flex-shrink-0">
+                            <div class="avatar-md" style="height: 100%;">
+                                <div class="avatar-title bg-{{data.bgcolor}}-subtle rounded-3">
+                                    <img src="{{data.img}}" alt="" class="avatar-sm" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <a href="javascript:void(0);">
+                                <h5 class="fs-15">{{data.title}}</h5>
+                            </a>
+                            <div class="d-flex mb-3 gap-2">
+                                <div class="text-muted fw-medium mb-0">$<span class="product-price">{{data.price}}</span></div>
+                                <div class="vr"></div>
+                                <span class="text-success fw-medium">{{data.stock}}</span>
+                            </div>
+                            <div class="input-step">
+                                <button type="button" class="minus" (click)="increment(data.price,$index,'0')">–</button>
+                                <input type="number" class="product-quantity" [(ngModel)]="data.qty" min="0" max="100" readonly />
+                                <button type="button" class="plus" (click)="increment(data.price,$index,'1')">+</button>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 d-flex flex-column justify-content-between align-items-end">
+                            <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn" (click)="showremoveDialog($index)"><i class="ri-close-fill fs-16"></i></button>
+                            <div class="fw-medium mb-0 fs-16">$<span class="product-line-price">{{data.total}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>}
+            </ul>
+
+            <div class="table-responsive mx-2 border-top border-top-dashed">
+                <table class="table table-borderless mb-0 fs-14 fw-semibold">
+                    <tbody>
+                        <tr>
+                            <td>Sub Total :</td>
+                            <td class="text-end cart-subtotal">${{subtotal}}</td>
+                        </tr>
+                        <tr>
+                            <td>Discount <span class="text-muted">(Toner15)</span>:</td>
+                            <td class="text-end cart-discount">- ${{discountRate}}</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping Charge :</td>
+                            <td class="text-end cart-shipping">${{shippingRate}}</td>
+                        </tr>
+                        <tr>
+                            <td>Estimated Tax (12.5%) :</td>
+                            <td class="text-end cart-tax">${{taxRate}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-footer border-top p-3 text-center">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="m-0 fs-16 text-muted">Total:</h6>
+            <div class="px-2">
+                <h6 class="m-0 fs-16 cart-total">${{totalsum}}</h6>
+            </div>
+        </div>
+        <div class="row g-2">
+            <div class="col-6">
+                <button type="button" routerLink="/shop/shop-cart" class="btn btn-light w-100" id="reset-layout">View
+                    Cart</button>
+            </div>
+            <div class="col-6">
+                <a routerLink="/shop/checkout" class="btn btn-info w-100">Continue to Checkout</a>
+            </div>
+        </div>
+    </div>
+</p-sidebar>
+
+<!-- <a href="https://themes.themesbrand.com/toner/angular/backend/" class="btn btn-warning position-fixed bottom-0 start-0 m-5 z-3 btn-hover d-none d-lg-block"><i class="bi bi-database align-middle me-1"></i> Backend</a> -->
+
+<!--start back-to-top-->
+<button (click)="topFunction()" class="btn btn-info btn-icon" style="bottom: 50px;" id="back-to-top">
+    <i class="ri-arrow-up-line"></i>
+</button>
+<!--end back-to-top-->
+
+<!-- <a class="btn btn-danger shadow-lg chat-button rounded-bottom-0 d-none d-lg-block" (click)="toggleChat()" href="javascript:void(0)" aria-controls="chatBot">Online Chat</a>
+<div class="card chat-box shadow-lg border-0 rounded-bottom-0 mb-0" id="chatBot" [ngStyle]="{'display': chatVisible ? 'block' : 'none'}">
+    <div class="card-header bg-success d-flex align-items-center border-0">
+        <h5 class="text-white fs-16 fw-medium flex-grow-1 mb-0">Hi, Raquel Murillo 👋</h5>
+        <button type="button" class="btn-close btn-close-white flex-shrink-0" data-bs-dismiss="collapse" aria-label="Close" (click)="toggleChat()"></button>
+    </div>
+    <div class="card-body p-0">
+        <div id="users-chat-widget">
+            <ngx-simplebar class="chat-conversation p-3" id="chat-conversation" style="height: 280px;">
+                <ul class="list-unstyled chat-conversation-list chat-sm" id="users-conversation">
+                    <li class="chat-list left">
+                        <div class="conversation-list">
+                            <div class="chat-avatar">
+                                <img src="assets/images/logo-sm.png" alt="" />
+                            </div>
+                            <div class="user-chat-content">
+                                <div class="ctext-wrap">
+                                    <div class="ctext-wrap-content">
+                                        <p class="mb-0 ctext-content">Welcome to Themesbrand. We are here to help
+                                            you. You can also directly email us at Support&#64;themesbrand.com to
+                                            schedule a meeting with our Technology Consultant.</p>
+                                    </div>
+                                    <div class="dropdown align-self-start message-box-drop">
+                                        <a class="dropdown-toggle" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="ri-more-2-fill"></i>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="javascript:void(0);"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>
+                                            <a class="dropdown-item" href="javascript:void(0);"><i class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>
+                                            <a class="dropdown-item delete-item" href="javascript:void(0);"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="conversation-name">
+                                    <small class="text-muted time">09:07 am</small> <span class="text-success check-message-icon"><i class="ri-check-double-line align-bottom"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+
+                    <li class="chat-list right">
+                        <div class="conversation-list">
+                            <div class="user-chat-content">
+                                <div class="ctext-wrap">
+                                    <div class="ctext-wrap-content">
+                                        <p class="mb-0 ctext-content">Good morning, How are you? What about our next
+                                            meeting?</p>
+                                    </div>
+                                    <div class="dropdown align-self-start message-box-drop">
+                                        <a class="dropdown-toggle" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="ri-more-2-fill"></i>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="javascript:void(0);"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>
+                                            <a class="dropdown-item" href="javascript:void(0);"><i class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>
+                                            <a class="dropdown-item delete-item" href="javascript:void(0);"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="conversation-name">
+                                    <small class="text-muted time">09:08 am</small> <span class="text-success check-message-icon"><i class="ri-check-double-line align-bottom"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                  
+
+                    <li class="chat-list left">
+                        <div class="conversation-list">
+                            <div class="chat-avatar">
+                                <img src="assets/images/logo-sm.png" alt="" />
+                            </div>
+                            <div class="user-chat-content">
+                                <div class="ctext-wrap">
+                                    <div class="ctext-wrap-content">
+                                        <p class="mb-0 ctext-content">Yeah everything is fine. Our next meeting
+                                            tomorrow at 10.00 AM</p>
+                                    </div>
+                                    <div class="dropdown align-self-start message-box-drop">
+                                        <a class="dropdown-toggle" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="ri-more-2-fill"></i>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="javascript:void(0);"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>
+                                            <a class="dropdown-item" href="javascript:void(0);"><i class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>
+                                            <a class="dropdown-item delete-item" href="javascript:void(0);"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="conversation-name">
+                                    <small class="text-muted time">09:10 am</small> <span class="text-success check-message-icon"><i class="ri-check-double-line align-bottom"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                   
+                </ul>
+            </ngx-simplebar>
+        </div>
+        <div class="border-top border-top-dashed">
+            <div class="row g-2 mt-2 mx-3 mb-3">
+                <div class="col">
+                    <div class="position-relative">
+                        <input type="text" class="form-control border-light bg-light" placeholder="Enter Message..." />
+                    </div>
+                </div>
+               
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-info"><i class="mdi mdi-send"></i></button>
+                </div>
+               
+            </div>
+           
+        </div>
+    </div>
+   
+</div> -->
+
+<!-- <p-dialog [(visible)]="display" [dismissableMask]="true" [showHeader]="false" [modal]="true" id="subscribeModal">
+    
+    <div id="subscribeModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0">
+                <div class="modal-body p-0 bg-info-subtle rounded">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-lg-6">
+                            <div class="p-4 h-100">
+                                <span class="badge badge-soft-info fs-13">GET 10% SALE OFF</span>
+                                <h2 class="display-6 mt-2 mb-3">Subscribe & Get <b>50% Special</b> Discount On Email
+                                </h2>
+                                <p class="mb-4 pb-lg-2 fs-16">Join our newsletter to receive the latest updates and
+                                    promotion</p>
+                                <form action="#!">
+                                    <div class="position-relative ecommerce-subscript">
+                                        <input type="email" class="form-control rounded-pill border-0" placeholder="Enter your email" />
+                                        <button type="submit" class="btn btn-info btn-hover rounded-pill">Subscript</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="p-4 pb-0">
+                                <img src="assets/images/subscribe.png" alt="" class="img-fluid" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</p-dialog> -->
+<!-- end modal -->
+
+<!-- removeItemModal -->
+<p-dialog id="removeItemModal" [(visible)]="removedisplay" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="mt-2 text-center">
+                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width: 100px; height: 100px;"></lord-icon>
+                    <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                        <h4>Are you sure ?</h4>
+                        <p class="text-muted mx-4 mb-0">Are you sure you want to remove this product ?</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                    <button type="button" class="btn w-sm btn-light" (click)="display=false">Close</button>
+                    <button type="button" class="btn w-sm btn-danger" id="remove-product" (click)="deleteCart()">Yes,
+                        Delete It!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</p-dialog>
+<!-- /.modal -->

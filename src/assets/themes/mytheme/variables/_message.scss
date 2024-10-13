@@ -1,0 +1,143 @@
+/// Margin of a message
+/// @group message
+$messageMargin: 1rem 0;
+
+/// Padding of a message
+/// @group message
+$messagePadding: 0.8rem 1rem;
+
+/// Border width of a message
+/// @group message
+$messageBorderWidth: 0 0 0 4px;
+
+/// Font size of a message icon
+/// @group message
+$messageIconFontSize: $font-size-base;
+
+/// Font size of a message text
+/// @group messageyarn add polished
+$messageTextFontSize: $font-size-base;  
+
+/// Font weight of a message text
+/// @group message
+$messageTextFontWeight: 500;
+
+/// Padding of an inline message
+/// @group message
+$inlineMessagePadding: 0.8rem 1rem;
+
+/// Margin of an inline message
+/// @group message
+$inlineMessageMargin: 0 0 1rem 0;
+
+/// Font size of an inline message icon
+/// @group message
+$inlineMessageIconFontSize: $font-size-base;
+
+/// Padding of an inline message text
+/// @group message
+$inlineMessageTextFontSize: $font-size-base;
+
+/// Border width of an inline message text
+/// @group message
+$inlineMessageBorderWidth: 1px;
+
+/// Font size of a toast message icon
+/// @group message
+$toastIconFontSize: 2rem;
+
+/// Margin of a toast message text
+/// @group message
+$toastMessageTextMargin: 0 0 0 1rem;
+
+/// Margin of a toast message
+/// @group message
+$toastMargin: 0 0 1rem 0;
+
+/// Padding of a toast message
+/// @group message
+$toastPadding: 0.8rem 1rem;
+
+/// Border width of a toast message
+/// @group message
+$toastBorderWidth: 0 0 0 4px;
+
+/// Box shadow of a toast message
+/// @group message
+$toastShadow: 0 3px 14px 0 rgba(0, 0, 0, 0.3);
+
+/// Opacity of a toast message
+/// @group message
+$toastOpacity: .9;
+
+/// Font weight of a toast message title text
+/// @group message
+$toastTitleFontWeight: 700;
+
+/// Margin of a toast message detail text
+/// @group message
+$toastDetailMargin: $inlineSpacing 0 0 0;
+
+/// Background of an info message
+/// @group message
+$infoMessageBg: rgba($info, 0.15);
+
+/// Border of an info message
+/// @group message
+$infoMessageBorder: solid lighten($info, 35%);
+
+/// Text color of an info message
+/// @group message
+$infoMessageTextColor: $info;
+
+/// Icon color of an info message
+/// @group message
+$infoMessageIconColor: $info;
+
+/// Background of a success message
+/// @group message
+$successMessageBg: rgba($success,  0.15);
+
+/// Border of a success message
+/// @group message
+$successMessageBorder: solid lighten($success, 35%);
+
+/// Text color of a success message
+/// @group message
+$successMessageTextColor: $success;
+
+/// Icon color of a success message
+/// @group message
+$successMessageIconColor: $success;
+
+/// Background of a warning message
+/// @group message
+$warningMessageBg: rgba($warning, 0.15);
+
+/// Border of a warning message
+/// @group message
+$warningMessageBorder: solid lighten($warning, 25%);
+
+/// Text color of a warning message
+/// @group message
+$warningMessageTextColor: $warning;
+
+/// Icon color of a warning message
+/// @group message
+$warningMessageIconColor: $warning;
+
+/// Background of an error message
+/// @group message
+$errorMessageBg: rgba($danger, 0.15);
+
+/// Border of an error message
+/// @group message
+$errorMessageBorder: solid lighten($danger, 25%);
+
+/// Text color of an error message
+/// @group message
+$errorMessageTextColor: $danger;
+
+/// Icon color of an error message
+/// @group message
+$errorMessageIconColor: $danger;

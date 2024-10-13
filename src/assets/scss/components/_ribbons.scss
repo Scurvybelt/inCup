@@ -1,0 +1,274 @@
+// 
+// ribbons.scss
+//
+
+.ribbon-box {
+    position: relative;
+
+    .ribbon {
+        padding: 5px 12px;
+        box-shadow: 2px 5px 10px rgba($dark, 0.15);
+        color: $white;
+        font-size: $font-size-base;
+        font-weight: $font-weight-semibold;
+        position: absolute;
+        left: -1px;
+        top: 10px;
+        z-index: 1;
+
+        &.round-shape {
+            border-radius: 0 30px 30px 0;
+        }
+
+        &.ribbon-shape {
+            display: inline-block;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                border-radius: 5px 0 0 5px;
+            }
+
+            &::before {
+                width: 7px;
+                height: 124%;
+                top: 0;
+                left: -6.5px;
+                padding: 0 0 7px;
+            }
+
+            &::after {
+                width: 5px;
+                height: 5px;
+                bottom: -5px;
+                left: -4.5px;
+            }
+        }
+
+        &.vertical-shape{
+            position: absolute;
+            color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 36px;
+            width: 70px;
+            top: -2px;
+            transform: rotate(-90deg) translateX(-27%);
+            font-weight: $font-weight-medium;
+            &:after{
+                content: "";
+                border-top: 18px solid $primary;
+                border-bottom: 18px solid $primary;
+                border-right: 11px solid transparent;
+                border-left: 11px solid transparent;
+                position: absolute;
+                left: -11px;
+                top: 0;
+            }
+           
+        }
+
+    }
+
+    // ribbon circle
+    &.ribbon-circle {
+        .ribbon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 20px;
+            top: 20px;
+        }
+    }
+
+    // ribbon fill
+
+    &.ribbon-fill {
+        overflow: hidden;
+
+        .ribbon {
+            transform: rotate(-45deg);
+            width: 93px;
+            height: 52px;
+            left: -36px;
+            top: -16px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        &.ribbon-sm {
+            .ribbon {
+                padding: 2px 12px;
+                width: 78px;
+                height: 42px;
+                font-size: 12px;
+                box-shadow: none;
+            }
+        }
+    }
+
+    // right
+    &.right {
+        .ribbon {
+            position: absolute;
+            left: auto;
+            right: 0;
+
+            &.round-shape {
+                border-radius: 30px 0 0 30px;
+            }
+
+            &.ribbon-shape {
+                text-align: right;
+
+                &::before {
+                    right: -6.5px;
+                    left: auto;
+                    border-radius: 0 5px 5px 0;
+                }
+
+                &::after {
+                    right: -4.5px;
+                    left: auto;
+                    border-radius: 0 5px 5px 0;
+                }
+            }
+        }
+
+        &.ribbon-circle {
+            .ribbon {
+                left: auto;
+                right: 20px;
+            }
+        }
+
+        .icon-ribbon {
+            right: 24px;
+            left: auto;
+        }
+
+        &.ribbon-fill {
+            .ribbon {
+                transform: rotate(45deg);
+                right: -38px;
+                left: auto;
+            }
+        }
+
+        &.ribbon-box {
+            .ribbon-two {
+                left: auto;
+                right: -5px;
+
+                span {
+                    left: auto;
+                    right: -21px;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+    }
+
+    .ribbon-content {
+        clear: both;
+    }
+
+    @each $color,
+    $value in $theme-colors {
+        .ribbon-#{$color} {
+            background: ($value);
+
+            &.vertical-shape{
+                &:after{
+                    border-top: 18px solid $value;
+                    border-bottom: 18px solid $value;
+                }
+            }
+
+            &:before {
+                border-color: darken(($value), 10%) transparent transparent;
+            }
+
+            &.ribbon-shape {
+                &::before {
+                    background-color: $value;
+                }
+
+                &::after {
+                    background-color: lighten(($value), 20%);
+                }
+            }
+        }
+
+        &.right {
+            .ribbon-#{$color} {
+                background: ($value);
+
+                &.ribbon-shape {
+                    &::before {
+                        border-right-color: ($value);
+                        border-top-color: ($value);
+                    }
+
+                    &::after {
+                        border-right-color: ($value);
+                        border-bottom-color: ($value);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Ribbon Hover
+.ribbon-box {
+    .trending-ribbon {
+        transform: translateX(-50px);
+        transition: all 0.5s ease;
+
+        .trending-ribbon-text {
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+    }
+
+    &:hover {
+        .trending-ribbon {
+            transform: translateX(0);
+
+            .trending-ribbon-text {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.right {
+        .trending-ribbon {
+            transform: translateX(50px);
+            transition: all 0.5s ease;
+
+            .trending-ribbon-text {
+                transition: all 0.5s ease;
+                opacity: 0;
+            }
+        }
+
+        &:hover {
+            .trending-ribbon {
+                transform: translateX(0);
+
+                .trending-ribbon-text {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

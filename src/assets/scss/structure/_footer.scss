@@ -1,0 +1,183 @@
+// 
+// _footer.scss
+// 
+
+.footer {
+    bottom: 0;
+    padding: 20px calc(#{$grid-gutter-width} * 0.5);
+    position: absolute;
+    right: 0;
+    color: $footer-color;
+    left: $vertical-menu-width;
+    height: $footer-height;
+    background-color: $footer-bg;
+    border-top: 1px solid var(--#{$prefix}border-color-translucent);
+
+    @media (max-width: 991.98px) {
+        left: 0;
+    }
+}
+
+[data-layout="vertical"] {
+
+    &:is([data-sidebar-size="sm"], [data-sidebar-size="sm-hover"]) {
+        .footer {
+            left: $vertical-menu-width-sm;
+
+            @media (max-width: 767.98px) {
+                left: 0;
+            }
+        }
+    }
+
+    &[data-sidebar-size="md"] {
+        .footer {
+            left: $vertical-menu-width-md;
+
+            @media (max-width: 991.98px) {
+                left: 0;
+            }
+        }
+    }
+
+}
+
+[data-layout="horizontal"] {
+    .footer {
+        left: 0 !important;
+    }
+}
+
+[data-layout="vertical"][data-layout-style="detached"] {
+
+    @media (min-width: 1024.1px) {
+        .footer {
+            left: 0 !important;
+            background-color: transparent;
+        }
+    }
+}
+
+[data-layout="twocolumn"] {
+    .footer {
+        @media (min-width: 768.1px) {
+            left: calc(#{$twocolumn-menu-iconview-width} + #{$twocolumn-menu-width});
+        }
+    }
+}
+
+// Foooter Landing
+.footer-landing {
+    border-top: 1px solid var(--#{$prefix}border-color-translucent);
+
+    .footer-desc {
+        color: rgba(var(--#{$prefix}secondary-color-rgb), 0.8);
+    }
+
+    .logo-light {
+        display: var(--#{$prefix}card-logo-light);
+    }
+
+    .logo-dark {
+        display: var(--#{$prefix}card-logo-dark);
+    }
+
+    .footer-title {
+        color: var(--#{$prefix}body-color);
+    }
+
+    .footer-link {
+        a {
+            color: rgba(var(--#{$prefix}secondary-color-rgb), 0.8);
+            line-height: 38px;
+            font-size: 14px;
+            transition: all 0.5s;
+
+            &:hover {
+                color: rgba(var(--#{$prefix}secondary-color-rgb), 1);
+                text-decoration: underline !important;
+            }
+        }
+    }
+
+    .footer-social {
+        i {
+            width: 34px;
+            height: 34px;
+            display: inline-block;
+            line-height: 34px;
+            background-color: rgba(var(--#{$prefix}secondary-color-rgb), 0.1);
+
+            color: rgba(var(--#{$prefix}secondary-color-rgb), 0.6);
+            font-size: 14px;
+            border-radius: 50%;
+            text-align: center;
+            transition: all 0.5s ease;
+            &:hover {
+                color: $white;
+                background-color: $primary;
+            }
+        }
+    }
+
+    .footer-border-alt {
+        padding: 30px 0px;
+        border-top: 1px solid rgba(var(--#{$prefix}secondary-color-rgb), 0.1);
+        color: rgba(var(--#{$prefix}secondary-color-rgb), 0.8);
+    }
+}
+
+//footer dark
+[data-footer="dark"] {
+    .footer-landing {
+        background-color: $gray-900;
+        border-top-color: $gray-700;
+
+        .logo-light {
+            display: block;
+        }
+
+        .logo-dark {
+            display: none;
+        }
+
+        .footer-link {
+            a {
+                color: #758195;
+                transition: all 0.5s;
+
+                &:hover {
+                    color: rgba($white, 0.8);
+                    transition: all 0.5s;
+                    text-decoration: underline !important;
+                }
+            }
+        }
+
+        .footer-social {
+            i {
+                background-color: rgba($white, 0.08);
+                color: $white;
+                transition: all 0.5s;
+
+                &:hover {
+                    color: $white;
+                    background-color: $secondary;
+                }
+            }
+        }
+
+        .footer-title {
+            color: $gray-400;
+        }
+
+        .footer-desc {
+            color: #758195;
+        }
+
+        .footer-border-alt {
+            border-top: 1px solid rgba($white, 0.15);
+            color: #758195;
+        }
+    }
+}

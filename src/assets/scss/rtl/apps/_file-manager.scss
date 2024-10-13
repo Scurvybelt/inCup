@@ -1,0 +1,23 @@
+//
+// _file-manager.scss
+//
+
+.file-manager-wrapper {
+    @media (max-width: 991.98px) {
+        right: 0;
+        left: auto;
+        transform: translateX(100%);
+    }
+}
+
+@media (max-width: 1399.98px) {
+    .file-manager-right-wrapper {
+        right: auto;
+        left: 0;
+        transform: translateX(-100%);
+    }
+}
+
+.file-manager-widgets {
+    background-position: left;
+}

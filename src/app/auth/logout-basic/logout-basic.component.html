@@ -1,0 +1,47 @@
+<section
+    class="auth-page-wrapper position-relative bg-light min-vh-100 d-flex align-items-center justify-content-between">
+    <!-- Header -->
+    <app-login-header></app-login-header>
+
+    <div class="w-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="auth-card mx-lg-3">
+                        <div class="card border-0 mb-0">
+                            <div class="card-header bg-primary border-0">
+                                <div class="row">
+                                    <div class="col-lg-4 col-3">
+                                        <img src="assets/images/auth/img-1.png" alt="" class="img-fluid" />
+                                    </div>
+                                    <div class="col-lg-8 col-9">
+                                        <h1 class="text-white lh-base fw-lighter">You are Logged Out</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="mb-4">
+                                    <img src="assets/images/users/avatar-1.jpg" alt=""
+                                        class="avatar-md rounded-circle" />
+                                </div>
+
+                                <p class="text-muted fs-15">Thank you for using <span class="fw-semibold">Toner</span>
+                                    admin template</p>
+
+                                <div>
+                                    <a routerLink="/auth/signin-basic" class="btn btn-primary w-100">Sign In</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+        <!-- Footer -->
+        <app-login-footer></app-login-footer>
+    </div>
+</section>

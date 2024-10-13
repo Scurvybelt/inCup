@@ -1,0 +1,46 @@
+<section class="auth-page-wrapper position-relative bg-light min-vh-100 d-flex align-items-center justify-content-between">
+    <!-- Header -->
+    <app-login-header></app-login-header>
+
+    <div class="w-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="auth-card mx-lg-3">
+                        <div class="card border-0 mb-0">
+                            <div class="card-header bg-primary border-0">
+                                <div class="row">
+                                    <div class="col-lg-4 col-3">
+                                        <img src="assets/images/auth/img-1.png" alt="" class="img-fluid" />
+                                    </div>
+                                    <div class="col-lg-8 col-9">
+                                        <h1 class="text-white lh-base fw-lighter">Well done !</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="avatar-sm mx-auto mb-4">
+                                    <div class="avatar-title bg-success-subtle text-success fs-20 rounded">
+                                        <i class="bi bi-check2-circle"></i>
+                                    </div>
+                                </div>
+
+                                <p class="text-muted fs-15">Aww yeah, you successfully read this important message.</p>
+
+                                <div>
+                                    <a routerLink="/auth/signin-basic" class="btn btn-success w-100">Back to Dashboard</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+        <!-- Footer -->
+        <app-login-footer></app-login-footer>
+    </div>
+</section>

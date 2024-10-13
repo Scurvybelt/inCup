@@ -1,0 +1,451 @@
+//
+// _form-check.scss
+//
+
+.form-check {
+    position: relative;
+    text-align: left;
+
+    .form-check-input {
+        cursor: pointer;
+        margin-right: 7px !important;
+    }
+}
+
+
+.p-checkbox {
+    width: 16px;
+    height: 16px;
+
+    .p-checkbox-box {
+        border: $form-check-input-border;
+        background: $form-check-input-bg;
+        width: 16px;
+        height: 16px;
+        color: var(--#{$prefix}body-color);
+        border-radius: 0.25rem;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+        .p-checkbox-icon {
+            transition-duration: 0.2s;
+            color: $white;
+            font-size: 10px;
+        }
+
+        .p-icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        &.p-highlight {
+            border-color: $primary;
+            background: $primary;
+        }
+    }
+
+    &:not(.p-checkbox-disabled) {
+        .p-checkbox-box {
+            &:hover {
+                border-color: $primary;
+            }
+
+            &.p-focus {
+                outline: 0 none;
+                outline-offset: 0;
+                border-color: $primary;
+            }
+
+            &.p-highlight:hover {
+                border-color: $primary;
+                background: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+
+
+p-checkbox.ng-dirty.ng-invalid {
+    >.p-checkbox>.p-checkbox-box {
+        border-color: $border-color $border-color $border-color $danger;
+    }
+}
+
+.p-input-filled {
+    .p-checkbox {
+        .p-checkbox-box {
+            background-color: $form-check-input-bg;
+
+            &.p-highlight {
+                background: $primary;
+            }
+        }
+
+        &:not(.p-checkbox-disabled) {
+            .p-checkbox-box:hover {
+                background-color: $form-check-input-bg;
+            }
+
+            .p-checkbox-box.p-highlight:hover {
+                background: $primary;
+            }
+        }
+    }
+}
+
+.p-checkbox-label {
+    margin-left: 0.5rem;
+}
+
+.p-highlight {
+    .p-checkbox {
+        .p-checkbox-box {
+            border-color: $form-check-input-bg;
+        }
+    }
+}
+
+
+// checkbox color
+
+@each $color,
+$value in $theme-colors {
+    .form-check-#{$color} {
+        .p-checkbox .p-checkbox-box {
+            &.p-highlight {
+                background-color: $value;
+                border-color: $value;
+            }
+        }
+
+        &.form-check-outline {
+            .p-checkbox-box .p-checkbox-icon {
+                color: $value;
+            }
+        }
+    }
+
+    .form-radio-#{$color} {
+        .form-check-input {
+            &:checked {
+                border-color: $value;
+                background-color: $value;
+
+                &:after {
+                    background-color: $value;
+                }
+            }
+        }
+    }
+}
+
+.form-check {
+    &.form-check-outline {
+        .p-checkbox .p-checkbox-box {
+            background: $form-check-input-bg;
+        }
+    }
+
+    &.form-check-inline {
+        .form-check-label {
+            margin-left: 0.5rem;
+        }
+    }
+}
+
+.form-check-label {
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.input-group-text {
+    margin-bottom: 0px;
+}
+
+
+@each $color,
+$value in $theme-colors {
+    .form-switch-#{$color} {
+        .form-check-input {
+
+            &:checked {
+                background-color: $value;
+                border-color: $value;
+            }
+        }
+    }
+}
+
+// card radio
+.card-radio {
+    padding: 0;
+
+    .form-check-label {
+        background-color: var(--#{$prefix}secondary-bg);
+        border: $form-check-input-border;
+        border-radius: $border-radius;
+        padding: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        position: relative;
+        padding-right: 32px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .form-check-input {
+        display: none;
+
+        &:checked+.form-check-label {
+            border-color: $primary !important;
+
+            &:before {
+                content: '\eb80';
+                font-family: "remixicon";
+                position: absolute;
+                top: 2px;
+                right: 6px;
+                font-size: 16px;
+                color: $primary;
+            }
+        }
+    }
+
+    &.dark {
+        .form-check-input {
+            &:checked+.form-check-label {
+                &:before {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.customize-widget {
+    .customize-penal-main {
+        background-color: #3b5376;
+        height: 15px;
+        line-height: 15px;
+
+        .badge {
+            height: 6px;
+            width: 6px;
+        }
+    }
+
+    // .form-check-label {
+    //     background-color: var(--#{$prefix}secondary-bg);
+    //     border: 1px solid transparent;
+    // }
+}
+
+[data-layout-mode="dark"] {
+    .form-switch {
+
+        .form-check-input,
+        .form-check-input:focus {
+            background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$gray-400}'/></svg>"));
+        }
+    }
+}
+
+
+// radio
+.p-radiobutton {
+    width: 16px;
+    height: 16px;
+
+    .p-radiobutton-box {
+        border: $form-check-input-border;
+        background: $form-check-input-bg;
+        width: 16px;
+        height: 16px;
+        color: var(--#{$prefix}body-color);
+        border-radius: 50%;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+        &:not(.p-disabled) {
+            &:not(.p-highlight):hover {
+                border-color: $primary;
+            }
+
+            &.p-focus {
+                outline: 0 none;
+                outline-offset: 0;
+                border-color: $primary;
+            }
+        }
+
+        .p-radiobutton-icon {
+            width: 8px;
+            height: 8px;
+            transition-duration: 0.2s;
+            background-color: $form-check-input-bg;
+        }
+
+        &.p-highlight {
+            border-color: $primary;
+            background: $primary;
+
+            &:not(.p-disabled):hover {
+                border-color: $primary;
+                background: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+
+p-radiobutton.ng-dirty.ng-invalid {
+    >.p-radiobutton>.p-radiobutton-box {
+        border-color: $border-color $border-color $border-color $danger;
+    }
+}
+
+
+.p-input-filled {
+    .p-radiobutton {
+        .p-radiobutton-box {
+            background-color: $form-check-input-bg;
+
+            &.p-highlight {
+                background: $primary;
+            }
+
+            &:not(.p-disabled):hover {
+                background-color: $form-check-input-bg;
+            }
+
+            &.p-highlight:not(.p-disabled):hover {
+                background: $primary;
+            }
+        }
+    }
+}
+
+
+.p-radiobutton-label {
+    margin-left: 0.5rem;
+}
+
+.p-highlight {
+    .p-radiobutton {
+        .p-radiobutton-box {
+            border-color: $form-check-input-bg;
+        }
+    }
+}
+
+
+@each $color,
+$value in $theme-colors {
+    .form-radio-#{$color} {
+        .p-radiobutton .p-radiobutton-box {
+            &.p-highlight {
+                background-color: $value;
+                border-color: $value;
+            }
+        }
+
+        &.form-radio-outline {
+            .p-radiobutton-box .p-radiobutton-icon {
+                background-color: $value;
+            }
+        }
+    }
+}
+
+.form-radio-outline {
+    .p-radiobutton {
+        .p-radiobutton-box {
+            background-color: $form-check-input-bg !important;
+        }
+    }
+}
+
+
+// .form-switch
+
+.form-switch {
+    padding-left: 0;
+
+    .form-check-label {
+        margin-left: 0.5rem;
+    }
+}
+
+.p-inputswitch {
+    width: $form-switch-width;
+    height: $form-check-input-width;
+    top: 2px;
+
+    .p-inputswitch-slider {
+        background: var(--#{$prefix}light);
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 30px;
+        border: 1px solid var(--#{$prefix}border-color);
+
+        &:before {
+            background: $form-check-input-bg;
+            width: .85em;
+            height: .85em;
+            left: 0.1rem;
+            margin-top: -0.4rem;
+            border-radius: 50%;
+            transition-duration: 0.2s;
+        }
+    }
+
+    &.p-inputswitch-checked {
+        .p-inputswitch-slider {
+            background-color: $primary;
+
+            &:before {
+                background: $form-check-input-bg;
+                transform: translateX(0.74em);
+            }
+
+            &:not(.p-disabled):hover .p-inputswitch-slider {
+                background: $primary;
+            }
+        }
+    }
+
+    &.p-focus {
+        .p-inputswitch-slider {
+            outline: 0 none;
+            outline-offset: 0;
+        }
+    }
+
+    &:not(.p-disabled):hover {
+        .p-inputswitch-slider {
+            background: $form-check-input-bg;
+        }
+    }
+}
+
+
+p-inputswitch.ng-dirty.ng-invalid {
+    >.p-inputswitch {
+        border-color: $border-color $border-color $border-color $danger;
+    }
+}
+
+
+@each $color,
+$value in $theme-colors {
+    .form-switch-#{$color} {
+        .p-inputswitch.p-inputswitch-checked {
+            .p-inputswitch-slider {
+                background-color: $value;
+                border-color: $value;
+            }
+        }
+    }
+}

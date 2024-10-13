@@ -1,0 +1,237 @@
+//
+// p-tree.scss
+//
+
+.p-tree {
+    border: 1px solid $dropdown-border-color;
+    background: $dropdown-bg;
+    color: $dropdown-color;
+    padding: 4px 0;
+    border-radius: $dropdown-border-radius;
+    .p-tree-container{
+        .p-treenode{
+            padding: 0.143rem;
+
+            .p-treenode-content {
+                border-radius: $border-radius;
+                transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+                padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+                .p-tree-toggler {
+                    margin-right: 0.5rem;
+                    width: 2rem;
+                    height: 2rem;
+                    color: $dropdown-color;
+                    border: 0 none;
+                    background: transparent;
+                    border-radius: 50%;
+                    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+
+                    &:enabled:hover {
+                        color: $dropdown-color;
+                        border-color: transparent;
+                        background: $dropdown-bg;
+                    }
+
+                    &:focus {
+                        outline: 0 none;
+                        outline-offset: 0;
+                    }
+                }
+
+                .p-treenode-icon {
+                    margin-right: 0.5rem;
+                    color: $dropdown-color;
+                }
+
+                .p-checkbox {
+                    margin-right: 0.5rem;
+                    .p-indeterminate .p-checkbox-icon {
+                        color: $dropdown-color;
+                    }
+                }
+
+                &:focus {
+                    outline: 0 none;
+                    outline-offset: 0;
+                }
+
+                &.p-highlight {
+                    background: $primary;
+                    color: $white;
+
+                    .p-tree-toggler,
+                    .p-treenode-icon {
+                        color: $white;
+                        &:hover{
+                            color: $white;
+                        }
+                    }
+                }
+
+                &.p-treenode-selectable:not(.p-highlight):hover, &.p-treenode-dragover {
+                    background: $dropdown-link-hover-bg;
+                    color: $dropdown-link-hover-color;
+                }
+            }
+        }
+    }
+}
+
+
+.p-treeselect {
+    display: flex !important;
+    background: $input-bg;
+    border: 1px solid $input-border-color;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-radius: $input-border-radius;
+
+    &:not(.p-disabled){
+        &:hover {
+            border-color: $primary;
+        }
+
+        &.p-focus {
+            outline: 0 none;
+            outline-offset: 0;
+            border-color: $primary;
+        }
+    }
+
+    .p-treeselect-label {
+        padding: $input-padding-y $input-padding-x;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        &.p-placeholder {
+            color: $input-placeholder-color;
+        }
+    }
+
+    &.p-treeselect-chip {
+        .p-treeselect-token{
+            padding: 0.25rem 0.5rem;
+            margin-right: 0.5rem;
+            background: $dropdown-link-hover-bg;
+            color: $dropdown-link-hover-color;
+            border-radius: 16px;
+        }
+    }
+
+    .p-treeselect-trigger {
+        background: transparent;
+        color: var(--#{$prefix}body-color);
+        width: 2.357rem;
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+    }
+}
+
+  
+p-treeselect.ng-invalid.ng-dirty > .p-treeselect {
+    border-color: $border-color $border-color $border-color $danger;
+}
+  
+.p-inputwrapper-filled {
+    .p-treeselect.p-treeselect-chip{
+        .p-treeselect-label {
+            padding: 0.25rem 0.5rem;
+        }
+    }
+}
+
+.p-treenode-leaf>.p-treenode-content .p-tree-toggler{
+    display: none;
+}
+  
+.p-treeselect-panel {
+    background: $dropdown-bg;
+    color: $dropdown-color;
+    border: 0 none;
+    border-radius: $dropdown-border-radius;
+    box-shadow: $dropdown-box-shadow;
+
+    .p-treeselect-header {
+        padding: 0.5rem 1rem;
+        border-bottom: 0 none;
+        color: $dropdown-color;
+        background: $dropdown-bg;
+        margin: 0;
+        border-top-right-radius: $dropdown-border-radius;
+        border-top-left-radius: $dropdown-border-radius;
+
+        .p-treeselect-filter-container {
+            margin-right: 0.5rem;
+
+            .p-treeselect-filter {
+                padding-right: 1.5rem;
+            }
+
+            .p-treeselect-filter-icon {
+                right: 0.5rem;
+                color: $dropdown-color;
+            }
+
+
+            &.p-treeselect-clearable-filter{
+                .p-treeselect-filter {
+                    padding-right: 3rem;
+                }
+                .p-treeselect-filter-clear-icon {
+                    right: 2rem;
+                }
+            }
+        }
+
+        .p-treeselect-close {
+            width: 2rem;
+            height: 2rem;
+            color: var(--#{$prefix}text-muted);
+            border: 0 none;
+            background: transparent;
+            border-radius: 50%;
+            transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+            &:enabled:hover {
+                color: $dropdown-link-hover-color;
+                border-color: transparent;
+                background: $dropdown-link-hover-bg;
+            }
+            &:focus {
+                outline: 0 none;
+                outline-offset: 0;
+            }
+        }
+    }
+
+    .p-treeselect-items-wrapper{
+        .p-tree {
+            border: 0 none;
+        }
+
+        .p-treeselect-empty-message {
+            padding: 0.5rem 1rem;
+            color: $dropdown-color;
+            background: transparent;
+        }
+    }
+}
+
+  
+.p-input-filled {
+    .p-treeselect {
+        background: $dropdown-link-active-bg;
+        &:not(.p-disabled){
+            &:hover, &.p-focus{
+                background-color: $dropdown-link-active-bg;
+            }
+        }
+    }
+}
+
+  
+p-treeselect.p-treeselect-clearable {
+    .p-treeselect-label-container {
+        padding-right: 1.5rem;
+    }
+    .p-treeselect-clear-icon {
+        color: $dropdown-color;
+        right: 2.357rem;
+    }
+}

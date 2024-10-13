@@ -1,0 +1,9 @@
+// 
+// backgrounds.scss
+//
+
+
+.bg-primary {
+    --tb-bg-opacity: 1;
+    background-color: rgba(var(--#{$prefix}primary-rgb), var(--#{$prefix}bg-opacity)) !important;
+}

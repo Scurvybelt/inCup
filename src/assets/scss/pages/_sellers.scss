@@ -1,0 +1,99 @@
+//
+// _sellers.scss
+//
+
+.seller-search-box {
+    .form-control {
+        height: 50px;
+        padding-left: 40px;
+        padding-right: 110px;
+        font-size: 16px;
+    }
+
+    button {
+        right: 6px;
+        top: 6px;
+    }
+
+    i {
+        left: 12px;
+        bottom: 0;
+        top: 0;
+        height: 50px;
+    }
+}
+
+
+.order-tracking {
+    .is-complete {
+        display: block;
+        position: relative;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        outline: 6px solid var(--#{$prefix}body-bg);
+        background-color: var(--#{$prefix}light);
+        margin: 0 auto;
+        transition: background 0.25s linear;
+        -webkit-transition: background 0.25s linear;
+        z-index: 2;
+
+        &::after {
+            display: block;
+            position: absolute;
+            content: '';
+            height: 14px;
+            width: 7px;
+            top: -2px;
+            bottom: 0;
+            left: 11px;
+            margin: auto 0;
+            border: 0px solid var(--#{$prefix}secondary-color);
+            border-width: 0px 2px 2px 0;
+            transform: rotate(45deg);
+            opacity: 0.6;
+        }
+    }
+
+    &.completed {
+        .is-complete {
+            border-color: $success;
+            background-color: $success;
+
+            &::after {
+                border-color: $white;
+                border-width: 0px 2px 2px 0;
+                width: 7px;
+                left: 11px;
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            background-color: $success;
+        }
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 115%;
+        background-color: var(--#{$prefix}border-color);
+        top: 15px;
+        position: absolute;
+        right: -70%;
+        z-index: 0;
+    }
+
+    &:last-child:before {
+        display: none;
+    }
+}
+
+.track-orders {
+    .order-tracking::before {
+        width: 150%;
+        right: -104%;
+    }
+}

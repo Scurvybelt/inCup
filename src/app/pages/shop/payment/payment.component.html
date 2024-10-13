@@ -1,0 +1,352 @@
+<!-- Header -->
+<app-header></app-header>
+
+<!-- Start Breadcrumbs -->
+<app-breadcrumbs title="Payment" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+<!-- End Breadcrumbs -->
+
+<section class="section pb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-danger text-center text-capitalize mb-4 fs-14">save up to <b>30%</b> to
+                    <b>40%</b> off omg! just look at the <b>great deals</b>!
+                </div>
+            </div>
+        </div>
+        <div class="row product-list">
+            <div class="col-xl-8">
+                <h5 class="mb-3 flex-grow-1">Payment Selection</h5>
+                <p-tabView>
+                    <p-tabPanel header="Paypal">
+                        <ng-template pTemplate="header">
+                            <i class="ri-paypal-fill align-bottom pe-2"></i>
+                            <span>Paypal</span>
+                        </ng-template>
+                        <div class="nav-item">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row gy-3">
+                                        <div class="col-md-12">
+                                            <label for="buyers-name" class="form-label">Buyers First Name</label>
+                                            <input type="text" class="form-control" id="buyers-name" placeholder="Enter Name" />
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="buyers-last" class="form-label">Buyers Last Name</label>
+                                            <input type="text" class="form-control" id="buyers-last" placeholder="Enter Last Name" />
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="buyers-address" class="form-label">Email Address</label>
+                                            <input type="text" class="form-control" id="buyers-address" placeholder="Enter Email Address" />
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="form-label">Select your paypal account type</label>
+                                            <div class="d-flex gap-4 mt-1">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="formRadios" id="formRadios1" checked />
+                                                    <label class="form-check-label" for="formRadios1">
+                                                        Domestic
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="formRadios" id="formRadios2" />
+                                                    <label class="form-check-label" for="formRadios2">
+                                                        International
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hstack gap-2 justify-content-end pt-4">
+                                        <button type="button" class="btn btn-hover btn-primary"><i class="ri-paypal-fill align-bottom align-bottom pe-2"></i> Log into my
+                                            Paypal</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p-tabPanel>
+                    <p-tabPanel>
+                        <ng-template pTemplate="header">
+                            <i class="ri-bank-card-fill align-bottom pe-2"></i>
+                            <span> Credit / Debit Card</span>
+                        </ng-template>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row gy-3">
+                                    <div class="col-md-12">
+                                        <label for="cc-name" class="form-label">Name on card</label>
+                                        <input type="text" class="form-control" id="cc-name" placeholder="Enter name" />
+                                        <small class="text-muted">Full name as displayed on card</small>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="cc-number" class="form-label">Credit card number</label>
+                                        <input type="text" class="form-control" id="cc-number" placeholder="xxxx xxxx xxxx xxxx" />
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="cc-expiration" class="form-label">Expiration</label>
+                                        <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" />
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="cc-cvv" class="form-label">CVV</label>
+                                        <input type="text" class="form-control" id="cc-cvv" placeholder="xxx" />
+                                    </div>
+                                </div>
+
+                                <div class="hstack gap-2 justify-content-end pt-4">
+                                    <button type="button" class="btn btn-hover w-md btn-primary">Pay<i class="ri-logout-box-r-line align-bottom ms-2"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </p-tabPanel>
+                    <p-tabPanel>
+                        <ng-template pTemplate="header">
+                            <i class="ri-money-dollar-box-fill align-bottom pe-2"></i>
+                            <span> Cash on Delivery</span>
+                        </ng-template>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center py-3">
+                                    <div class="avatar-md mx-auto mb-4">
+                                        <div class="avatar-title bg-primary-subtle text-primary rounded-circle display-6">
+                                            <i class="bi bi-cash"></i>
+                                        </div>
+                                    </div>
+                                    <h5 class="fs-16 mb-3">Cash on Delivery</h5>
+                                    <p class="text-muted mt-3 mb-0 w-75 mx-auto">Integer vulputate metus eget purus
+                                        maximus porttitor. Maecenas ut porta justo. Donec finibus nec nibh ut urna
+                                        viverra semper.</p>
+                                </div>
+                                <div class="hstack gap-2 justify-content-end pt-3">
+                                    <button type="button" class="btn btn-hover w-md btn-primary">Continue<i class="ri-logout-box-r-line align-bottom ms-2"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        ss
+                    </p-tabPanel>
+                </p-tabView>
+            </div>
+            <!--end col-->
+            <div class="col-xl-4">
+                <div class="sticky-side-div">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <h6 class="mb-3 fs-15">Have a <span class="fw-semibold">promo</span> code ?</h6>
+                            </div>
+                            <div class="hstack gap-3 px-3 mx-n3">
+                                <input class="form-control me-auto" type="text" placeholder="Enter coupon code" value="Toner15" aria-label="Add Promo Code here..." />
+                                <button type="button" class="btn btn-primary w-xs">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card overflow-hidden">
+                        <div class="card-header border-bottom-dashed">
+                            <h5 class="card-title mb-0 fs-15">Order Summary</h5>
+                        </div>
+                        <div class="card-body pt-4">
+                            <div class="table-responsive table-card">
+                                <table class="table table-borderless mb-0 fs-15">
+                                    <tbody>
+                                        <tr>
+                                            <td>Sub Total :</td>
+                                            <td class="text-end cart-subtotal">$1361.97</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Discount <span class="text-muted">(Toner15)</span>:</td>
+                                            <td class="text-end cart-discount">-$204.30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shipping Charge :</td>
+                                            <td class="text-end cart-shipping">$65.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Estimated Tax (12.5%) :</td>
+                                            <td class="text-end cart-tax">$170.25</td>
+                                        </tr>
+                                        <tr class="table-active">
+                                            <th>Total (USD) :</th>
+                                            <td class="text-end">
+                                                <span class="fw-semibold cart-total">$1392.92</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- end table-responsive -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end sticky  -->
+            </div>
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-1">
+                    <h4 class="flex-grow-1 mb-0">Recently Viewed</h4>
+                    <div class="flex-shrink-0">
+                        <a href="javascript:void(0);" class="link-effect link-primary">All Products <i class="ri-arrow-right-line ms-1 align-bottom"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row">
+            <div class="col-xxl-3 col-lg-4 col-md-6">
+                <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
+                    <div class="bg-light bg-opacity-50 rounded py-4 position-relative">
+                        <img src="assets/images/products/img-12.png" alt="" style="max-height: 200px; max-width: 100%;" class="mx-auto d-block rounded-2" />
+                        <div class="action vstack gap-2">
+                            <button class="btn btn-danger avatar-xs p-0 btn-soft-warning custom-toggle product-action" data-bs-toggle="button">
+                                <span class="icon-on"><i class="ri-heart-line"></i></span><span class="icon-off"><i class="ri-heart-fill"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <ul class="clothe-colors list-unstyled hstack gap-1 mb-3 flex-wrap">
+                            <li>
+                                <input type="radio" name="sizes10" id="product-color-102" /><label class="avatar-xxs btn btn-secondary p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-102"></label>
+                            </li>
+                            <li><input type="radio" name="sizes10" id="product-color-103" /><label class="avatar-xxs btn btn-dark p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-103"></label></li>
+                            <li><input type="radio" name="sizes10" id="product-color-104" /><label class="avatar-xxs btn btn-danger p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-104"></label></li>
+                            <li><input type="radio" name="sizes10" id="product-color-105" /><label class="avatar-xxs btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-105"></label></li>
+                        </ul>
+                        <a href="javascript:void(0);">
+                            <h6 class="text-capitalize fs-15 lh-base text-truncate mb-0">Carven Lounge Chair Red</h6>
+                        </a>
+                        <div class="mt-2">
+                            <span class="float-end">4.1 <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                            <h5 class="mb-0">$209.99</h5>
+                        </div>
+                        <div class="mt-3">
+                            <a href="javascript:void(0);" class="btn btn-primary w-100 add-btn"><i class="mdi mdi-cart me-1"></i> Add To
+                                Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-xxl-3 col-lg-4 col-md-6">
+                <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
+                    <div class="bg-light bg-opacity-50 rounded py-4 position-relative">
+                        <img src="assets/images/products/img-7.png" alt="" style="max-height: 200px; max-width: 100%;" class="mx-auto d-block rounded-2" />
+                        <div class="action vstack gap-2">
+                            <button class="btn btn-danger avatar-xs p-0 btn-soft-warning custom-toggle product-action" data-bs-toggle="button">
+                                <span class="icon-on"><i class="ri-heart-line"></i></span><span class="icon-off"><i class="ri-heart-fill"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <div>
+                            <div class="avatar-xxs mb-4">
+                                <div class="avatar-title bg-light text-muted rounded cursor-pointer"><i class="ri-error-warning-line"></i></div>
+                            </div>
+                            <a href="javascript:void(0);">
+                                <h6 class="text-capitalize fs-15 lh-base text-truncate mb-0">Innovative education book
+                                </h6>
+                            </a>
+                            <div class="mt-2">
+                                <span class="float-end">4.7 <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                <h5 class="mb-0">$96.26</h5>
+                            </div>
+                            <div class="mt-3">
+                                <a href="javascript:void(0);" class="btn btn-primary w-100 add-btn"><i class="mdi mdi-cart me-1"></i> Add
+                                    To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-xxl-3 col-lg-4 col-md-6">
+                <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
+                    <div class="bg-light bg-opacity-50 rounded py-4 position-relative">
+                        <img src="assets/images/products/img-3.png" alt="" style="max-height: 200px; max-width: 100%;" class="mx-auto d-block rounded-2" />
+                        <div class="action vstack gap-2">
+                            <button class="btn btn-danger avatar-xs p-0 btn-soft-warning custom-toggle product-action" data-bs-toggle="button">
+                                <span class="icon-on"><i class="ri-heart-line"></i></span><span class="icon-off"><i class="ri-heart-fill"></i></span>
+                            </button>
+                        </div>
+                        <div class="avatar-xs label">
+                            <div class="avatar-title bg-danger rounded-circle fs-11">20%</div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <ul class="clothe-colors list-unstyled hstack gap-1 mb-3 flex-wrap">
+                            <li>
+                                <input type="radio" name="sizes11" id="product-color-112" /><label class="avatar-xxs btn btn-secondary p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-112"></label>
+                            </li>
+                            <li><input type="radio" name="sizes11" id="product-color-113" /><label class="avatar-xxs btn btn-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-113"></label></li>
+                        </ul>
+                        <a href="javascript:void(0);">
+                            <h6 class="text-capitalize fs-15 lh-base text-truncate mb-0">Ninja Pro Max Smartwatch</h6>
+                        </a>
+                        <div class="mt-2">
+                            <span class="float-end">3.5 <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                            <h5 class="mb-0">
+                                $247.27 <span class="text-muted fs-12"><del>$309.09</del></span>
+                            </h5>
+                        </div>
+                        <div class="mt-3">
+                            <a href="javascript:void(0);" class="btn btn-primary w-100 add-btn"><i class="mdi mdi-cart me-1"></i> Add To
+                                Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-xxl-3 col-lg-4 col-md-6">
+                <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
+                    <div class="bg-light bg-opacity-50 rounded py-4 position-relative">
+                        <img src="assets/images/products/img-2.png" alt="" style="max-height: 200px; max-width: 100%;" class="mx-auto d-block rounded-2" />
+                        <div class="action vstack gap-2">
+                            <button class="btn btn-danger avatar-xs p-0 btn-soft-warning custom-toggle product-action" data-bs-toggle="button">
+                                <span class="icon-on"><i class="ri-heart-line"></i></span><span class="icon-off"><i class="ri-heart-fill"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <ul class="clothe-colors list-unstyled hstack gap-1 mb-3 flex-wrap">
+                            <li><input type="radio" name="sizes12" id="product-color-122" /><label class="avatar-xxs btn btn-success p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-122"></label></li>
+                        </ul>
+                        <a href="javascript:void(0);">
+                            <h6 class="text-capitalize fs-15 lh-base text-truncate mb-0">Opinion Striped Round Neck
+                                Green T-shirt</h6>
+                        </a>
+                        <div class="mt-2">
+                            <span class="float-end">4.1 <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                            <h5 class="mb-0">$126.99</h5>
+                        </div>
+                        <div class="mt-3">
+                            <a href="javascript:void(0);" class="btn btn-primary btn-hover w-100 add-btn"><i class="mdi mdi-cart me-1"></i> Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+
+<app-discount-footer [discount]="25"></app-discount-footer>
+
+<app-features></app-features>
+
+<!-- Footer -->
+<app-footer></app-footer>

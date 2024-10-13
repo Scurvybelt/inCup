@@ -1,0 +1,124 @@
+// Theme Specific Variables
+
+// Font Family
+$font-family-primary: 'Switzer';
+$font-family-secondary: 'Lobster Two', cursive;
+
+$font-size-base:              0.875rem; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * .875;
+$font-size-lg:                $font-size-base * 1.25;
+
+$white:    #fff;
+$gray-100: #f3f6f9;
+$gray-200: #eff2f7;
+$gray-300: #e9ebec;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #878a99;
+$gray-700: #132846;
+$gray-800: #0c192c;
+$gray-900: #0B1729;
+$black:    #000;
+
+$blue: #4b93ff;
+$indigo: #405189;
+$purple: #7c6bff;
+$pink: #f7649f;
+$red: #ef476f;
+$orange: #f1963b;
+$yellow: #f1be46;
+$green: #06d6a0;
+$teal: #4ab0c1;
+$cyan: #1ea6d3;
+
+$primaryColor: $blue;
+$primaryDarkColor: #1E88E5;
+$primaryDarkerColor: #1976D2;
+$primaryTextColor: #ffffff;
+// $colors: (
+//     "blue": $blue,   
+//     "green": $green,
+//     "yellow": #14120c,
+//     "cyan": #00BCD4,
+//     "pink": #E91E63,
+//     "indigo": #3F51B5,
+//     "teal": #009688,
+//     "orange": #24190f,
+//     "bluegray": #607D8B,
+//     "purple": #9C27B0,
+//     "red": #FF4032,
+//     "primary": $primaryColor,
+// );
+
+$primary:       $blue;
+$help:     $purple;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$secondary:          $gray-900;
+
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+);
+
+// Mandatory Designer Variables
+@import './variables/general';
+@import './variables/form';
+@import './variables/button';
+@import './variables/panel';
+@import './variables/_data';
+@import './variables/_overlay';
+@import './variables/_message';
+@import './variables/_menu';
+@import './variables/_media';
+@import './variables/_misc';
+
+:root {
+    --surface-a:#ffffff;
+    --surface-b:#f8f9fa;
+    --surface-c:#e9ecef;
+    --surface-d:#dee2e6;
+    --surface-e:#ffffff;
+    --surface-f:#ffffff;
+    --text-color:#495057;
+    --text-color-secondary:#6c757d;
+    --primary-color:#2196F3;
+    --primary-color-text:#ffffff;
+    --font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --surface-0: #ffffff;
+    --surface-50: #FAFAFA;
+    --surface-100: #F5F5F5;
+    --surface-200: #EEEEEE;
+    --surface-300: #E0E0E0;
+    --surface-400: #BDBDBD;
+    --surface-500: #9E9E9E;
+    --surface-600: #757575;
+    --surface-700: #616161;
+    --surface-800: #424242;
+    --surface-900: #212121;
+    --content-padding:#{$panelContentPadding};
+    --inline-spacing:#{$inlineSpacing};
+    --border-radius:#{$borderRadius};
+    --surface-ground:#f8f9fa;
+    --surface-section:#ffffff;
+    --surface-card:#ffffff;
+    --surface-overlay:#ffffff;
+    --surface-border:#dee2e6;
+    --surface-hover:#e9ecef;
+    --maskbg: #{$maskBg};
+    --highlight-bg: #{$highlightBg};
+    --highlight-text-color: #{$highlightTextColor};
+    --focus-ring: #{$focusShadow};
+    color-scheme: light;
+}

@@ -1,0 +1,135 @@
+{
+  "MENUITEMS": {
+    "MENU": {
+      "TEXT": "Home"
+    },
+    "HOME": {
+      "TEXT": "Demos"
+    },
+    "CATELOG": {
+      "TEXT": "Catalog",
+      "LIST": {
+        "MEN": "Men",
+        "CLOTHING": "Clothing",
+        "WATCHES": "Watches",
+        "BAGS": "Bags & Luggage",
+        "FOOTWEAR": "Footwear",
+        "INNERWEAR": "Innerwear",
+        "OTHERACCESSORIES": "Other Accessories",
+        "WOMEN": "Women",
+        "WESTERNWEAR": "Western Wear",
+        "HANDBAGS": "Handbags & Clutches",
+        "LINGERIE": "Lingerie & Nightwear",
+        "FASHION": "Fashion & Silver Jewellery",
+        "ACCESSORIES": "Accessories & Others",
+        "KITCHEN": "Home, Kitchen, Pets",
+        "BEAUTY": "Beauty, Health, Grocery",
+        "SPORTS": "Sports, Fitness, Bags, Luggage",
+        "CAR": "Car, Motorbike, Industrial",
+        "BOOKS": "Books",
+        "OTHERS": "Others",
+        "SIGNUP": "Sign Up",
+        "SIGNIN": "Sign In",
+        "RESETPASSWORD": "Reset Password",
+        "ERROR404": "Error 404",
+        "TOPBRANDS": "TOP BRANDS"
+      }
+    },
+    "SHOP": {
+      "TEXT": "Shop",
+      "LIST": {
+        "CHECKOUTPAGES": "Checkout Pages",
+        "ADDRESS": "Address",
+        "TRACKORDER": "Track Order",
+        "PAYMENT": "Payment",
+        "REVIEW": "Review",
+        "CONFIRMATION": "Confirmation",
+        "MYORDER": "My Orders / Order History",
+        "SUPPORT": "Support",
+        "SHOPPINGCART": "Shopping Cart",
+        "CHECKOUT": "Checkout",
+        "WISHLIST": "Wishlist"
+      }
+    },
+    "PAGES": {
+      "TEXT": "Pages",
+      "LIST": {
+        "PRODUCTS": "Products",
+        "GRIDVIEW": "Grid View",
+        "DEFAULT": "Defualt",
+        "SIDEBAR": "Sidebar with Banner",
+        "RIGHTSIDEBAR": "Right Sidebar",
+        "NOSIDEBAR": "No Sidebar",
+        "LISTVIEW": "List View",
+        "PRODUCTDETAILS": "Product Details",
+        "USERS": "Users",
+        "MYACCOUNT": "My Account",
+        "SIGNIN": "Sign In",
+        "SIGNUP": "Sign Up",
+        "PASSWORDRESET": "Password Reset",
+        "PASSWORDCREATE": "Password Create",
+        "SUCCESSMESSAGE": "Success Message",
+        "TWOSTEPVERIFY": "Two Step Verify",
+        "LOGOUT": "Logout",
+        "ERROR404": "Error 404",
+        "ERROR500": "Error 500",
+        "COMINGSOON": "Coming Soon"
+      }
+    },
+    "CATEGORIES": {
+      "TEXT": "Categories"
+    },
+    "ABOUT": {
+      "TEXT": "About"
+    },
+    "PURCHASEGUIDE": {
+      "TEXT": "Purchase Guide"
+    },
+    "TERMSOFSERVICE": {
+      "TEXT": "Terms of Service"
+    },
+    "PRIVACYPOLICY": {
+      "TEXT": "Privacy Policy"
+    },
+    "STORELOCATOR": {
+      "TEXT": "Store Locator"
+    },
+    "FAQ": {
+      "TEXT": "FAQ"
+    },
+    "INVOICE": {
+      "TEXT": "Invoice"
+    },
+    "EMAILTEMPLATE": {
+      "TEXT": "Email Template",
+      "LIST": {
+        "BLACKFRIDAY": "Black Friday",
+        "FLASHSALE": "Flash Sale",
+        "ORDERSUCCESS": "Order Success",
+        "ORDERSUCCESS2": "Order Success 2"
+      }
+    },
+    "MULTILEVEL": {
+      "TEXT": "Multi Level",
+      "LIST": {
+        "Level1": {
+          "1": "Level 1.1",
+          "2": "Level 1.2"
+        },
+        "Level2": {
+          "TEXT": "Level 1.3",
+          "1": "Level 2.1",
+          "2": "Level 2.2"
+        },
+        "Level3": {
+          "TEXT": "Level 2.3",
+          "1": "Level 3.1",
+          "2": "Level 3.2"
+        }
+      }
+    },
+    "CONTACT": {
+      "TEXT": "Contact"
+    }
+  }
+}

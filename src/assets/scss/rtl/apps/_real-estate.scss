@@ -1,0 +1,33 @@
+//
+// _real-estate.scss
+//
+
+#propertyFilters {
+
+    // `xl` applies to large devices (desktops, less than 1200px)
+    @media (max-width: 1399.98px) {
+        left: 0;
+        right: auto;
+    }
+}
+
+.real-estate-grid-widgets {
+
+    .dropdown-real-estate {
+        right: auto;
+        left: 20px;
+    }
+
+    .custom-toggle {
+        left: auto;
+        right: 20px;
+    }
+}
+
+.slick-prev:before {
+    content: "\ea6e" !important;
+}
+
+.slick-next:before {
+    content: "\ea64" !important;
+}

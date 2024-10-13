@@ -1,0 +1,130 @@
+{
+  "MENUITEMS": {
+    "MENU": {
+      "TEXT": "الصفحة الرئيسية"
+    },
+    "HOME": {
+      "TEXT": "الصفحة الرئيسية"
+    },
+    "CATELOG": {
+      "TEXT": "الكتالوج",
+      "LIST": {
+        "MEN": "الرجال",
+        "CLOTHING": "الملابس",
+        "WATCHES": "الساعات",
+        "BAGS": "الحقائب والأمتعة",
+        "FOOTWEAR": "الأحذية",
+        "INNERWEAR": "الملابس الداخلية",
+        "OTHERACCESSORIES": "إكسسوارات أخرى",
+        "WOMEN": "النساء",
+        "WESTERNWEAR": "الملابس الغربية",
+        "HANDBAGS": "الحقائب والشنط",
+        "LINGERIE": "الملابس الداخلية وملابس النوم",
+        "FASHION": "الأزياء والمجوهرات الفضية",
+        "ACCESSORIES": "الإكسسوارات والأشياء الأخرى",
+        "KITCHEN": "المنزل والمطبخ والحيوانات الأليفة",
+        "BEAUTY": "الجمال والصحة والبقالة",
+        "SPORTS": "الرياضة واللياقة والحقائب والأمتعة",
+        "CAR": "السيارة والدراجة النارية والصناعية",
+        "BOOKS": "الكتب",
+        "OTHERS": "أخرى",
+        "SIGNUP": "التسجيل",
+        "SIGNIN": "تسجيل الدخول",
+        "RESETPASSWORD": "إعادة تعيين كلمة المرور",
+        "ERROR404": "خطأ 404",
+        "TOPBRANDS": "أفضل العلامات التجارية"
+      }
+    },
+    "SHOP": {
+      "TEXT": "المتجر",
+      "LIST": {
+        "CHECKOUTPAGES": "صفحات الدفع",
+        "ADDRESS": "العنوان",
+        "TRACKORDER": "تتبع الطلب",
+        "PAYMENT": "الدفع",
+        "REVIEW": "المراجعة",
+        "CONFIRMATION": "التأكيد",
+        "MYORDER": "طلباتي / تاريخ الطلب",
+        "SUPPORT": "الدعم",
+        "SHOPPINGCART": "سلة التسوق",
+        "CHECKOUT": "الدفع",
+        "WISHLIST": "قائمة الرغبات"
+      }
+    },
+    "PAGES": {
+      "TEXT": "الصفحات",
+      "LIST": {
+        "PRODUCTS": "المنتجات",
+        "GRIDVIEW": "عرض الشبكة",
+        "DEFAULT": "افتراضي",
+        "SIDEBAR": "شريط جانبي مع بانر",
+        "RIGHTSIDEBAR": "شريط جانبي أيمن",
+        "NOSIDEBAR": "بدون شريط جانبي",
+        "LISTVIEW": "عرض القائمة",
+        "PRODUCTDETAILS": "تفاصيل المنتج",
+        "USERS": "المستخدمين",
+        "MYACCOUNT": "حسابي",
+        "SIGNIN": "تسجيل الدخول",
+        "SIGNUP": "التسجيل",
+        "PASSWORDRESET": "إعادة تعيين كلمة المرور",
+        "PASSWORDCREATE": "إنشاء كلمة المرور",
+        "SUCCESSMESSAGE": "رسالة نجاح",
+        "TWOSTEPVERIFY": "التحقق من خطوتين",
+        "LOGOUT": "تسجيل الخروج",
+        "ERROR404": "خطأ 404",
+        "ERROR500": "خطأ 500",
+        "COMINGSOON": "قريبًا"
+      }
+    },
+    "CATEGORIES": {
+      "TEXT": "الفئات"
+    },
+    "ABOUT": {
+      "TEXT": "حول"
+    },
+    "PURCHASEGUIDE": {
+      "TEXT": "دليل الشراء"
+    },
+    "TERMSOFSERVICE": {
+      "TEXT": "شروط الخدمة"
+    },
+    "PRIVACYPOLICY": {
+      "TEXT": "سياسة الخصوصية"
+    },
+    "STORELOCATOR": {
+      "TEXT": "محدد المتجر"
+    },
+    "FAQ": {
+      "TEXT": "الأسئلة الشائعة"
+    },
+    "INVOICE": {
+      "TEXT": "الفاتورة"
+    },
+    "EMAILTEMPLATE": {
+      "TEXT": "نموذج البريد الإلكتروني",
+      "LIST": {
+        "BLACKFRIDAY": "جمعة سوداء",
+        "FLASHSALE": "بيع سريع",
+        "ORDERSUCCESS": "تم الطلب بنجاح",
+        "ORDERSUCCESS2": "تم الطلب بنجاح 2"
+      }
+    },
+    "MULTILEVEL": {
+      "TEXT": "مستوى متعدد",
+      "LIST": {
+        "Level1": {
+          "1": "المستوى 1.1",
+          "2": "المستوى 1.2"
+        },
+        "Level2": {
+          "TEXT": "المستوى 1.3",
+          "1": "المستوى 2.1",
+          "2": "المستوى 2.2"
+        },
+        "Level3": {
+          "TEXT": "المستوى"
+        }
+      }
+    }
+  }
+}

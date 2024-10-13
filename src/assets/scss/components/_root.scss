@@ -1,0 +1,204 @@
+// 
+// root.scss
+//
+
+@mixin color-mode($mode: light, $root: false) {
+    @if $color-mode-type =="media-query" {
+        @if $root ==true {
+            @media (prefers-color-scheme: $mode) {
+                :root {
+                    @content;
+                }
+            }
+        }
+
+        @else {
+            @media (prefers-color-scheme: $mode) {
+                @content;
+            }
+        }
+    }
+
+    @else {
+        [data-bs-theme="#{$mode}"] {
+            @content;
+        }
+    }
+}
+
+//theme-light
+:root {
+    --#{$prefix}header-bg:                  #{$header-bg};
+    --#{$prefix}header-item-color:          #{$header-item-color};
+    --#{$prefix}top-tagbar-bg:              #{$top-tagbar-bg};
+    --#{$prefix}header-item-sub-color:      #{$text-muted};
+
+    // card
+    --#{$prefix}card-logo-dark:                           block;
+    --#{$prefix}card-logo-light:                          none;
+
+    // Topbar User
+    --#{$prefix}topbar-user-bg:                           #{$gray-100};
+
+    // Horizontal nav
+    --#{$prefix}topnav-bg:                                #{$white};
+    --#{$prefix}topnav-item-color:                        #{darken($gray-600, 10%)};
+    --#{$prefix}topnav-item-color-active:                 var(--#{$prefix}primary);
+
+    // twocolumn menu
+    --#{$prefix}twocolumn-menu-iconview-bg:               #{$white};
+    --#{$prefix}twocolumn-menu-bg:                        #{$white};
+
+    &[data-topbar="dark"] {
+        --#{$prefix}header-bg:                            #{$gray-800};
+        --#{$prefix}header-item-color:                    #{$gray-100};
+        --#{$prefix}header-item-sub-color:                #8795ab;
+        --#{$prefix}topbar-user-bg:                       #{rgba($gray-200, 0.1)};
+    }
+
+    &[data-topbar="brand"] {
+        --#{$prefix}header-bg:                              #{$blue-700};
+        --#{$prefix}header-item-color:                      #{$gray-100};
+        --#{$prefix}header-item-sub-color:                  #{lighten($blue-100, 2.5%)};
+        --#{$prefix}topbar-user-bg:                         #335fa1;
+    }
+
+    &[data-topbar="purple"] {
+        --#{$prefix}header-bg:              #{$purple-700};
+        --#{$prefix}header-item-color:      #{$gray-100};
+        --#{$prefix}header-item-sub-color:  #{lighten($purple-100, 1.5%)};
+    }
+
+     //vertical light
+    --#{$prefix}vertical-menu-bg:                         #{$white};
+    --#{$prefix}vertical-menu-border:                     #{$border-color};
+    --#{$prefix}vertical-menu-item-color:                 #{darken($gray-600, 10%)};
+    --#{$prefix}vertical-menu-item-hover-color:           var(--#{$prefix}primary);
+    --#{$prefix}vertical-menu-item-hover-bg:              var(--#{$prefix}primary);
+    --#{$prefix}vertical-menu-item-active-color:          var(--#{$prefix}primary);
+    --#{$prefix}vertical-menu-sub-item-color:             #{darken($gray-600, 4%)};
+    --#{$prefix}vertical-menu-sub-item-hover-color:       var(--#{$prefix}primary);
+    --#{$prefix}vertical-menu-sub-item-active-color:      var(--#{$prefix}primary);
+    --#{$prefix}vertical-menu-title-color:                #919da9;
+
+    &[data-sidebar="dark"] {
+        --#{$prefix}vertical-menu-bg:                         #0e203a;
+        --#{$prefix}vertical-menu-border:                     #0e203a;
+        --#{$prefix}vertical-menu-item-color:                 #9aa5b5;
+        --#{$prefix}vertical-menu-item-hover-color:           #{$white};
+        --#{$prefix}vertical-menu-item-hover-bg:              #1c2932;
+        --#{$prefix}vertical-menu-item-active-color:          #{$white};
+        --#{$prefix}vertical-menu-sub-item-color:             #9aa5b5;
+        --#{$prefix}vertical-menu-sub-item-hover-color:       #{$white};
+        --#{$prefix}vertical-menu-sub-item-active-color:      #{$white};
+        --#{$prefix}vertical-menu-title-color:                #9aa5b5;
+        --#{$prefix}twocolumn-menu-iconview-bg:               #112645;
+        --#{$prefix}twocolumn-menu-bg:                        #0e203a;
+    }
+
+    &[data-sidebar="brand"] {
+        --#{$prefix}vertical-menu-bg:                         #{$blue-700};
+        --#{$prefix}vertical-menu-border:                     #{$blue-700};
+        --#{$prefix}vertical-menu-item-color:                 #a5bad9;
+        --#{$prefix}vertical-menu-item-hover-color:           #{$white};
+        --#{$prefix}vertical-menu-item-hover-bg:              #1c2932;
+        --#{$prefix}vertical-menu-item-active-color:          #{$white};
+        --#{$prefix}vertical-menu-sub-item-color:             #a5bad9;
+        --#{$prefix}vertical-menu-sub-item-hover-color:       #{$white};
+        --#{$prefix}vertical-menu-sub-item-active-color:      #{$white};
+        --#{$prefix}vertical-menu-title-color:                #a5bad9;
+    }
+    
+
+    &:is([data-sidebar="gradient"], [data-sidebar="gradient-2"], [data-sidebar="gradient-3"], [data-sidebar="gradient-4"]) {
+        --#{$prefix}vertical-menu-item-color:                 #{rgba($white, .50)};
+        --#{$prefix}vertical-menu-item-hover-color:           #{$white};
+        --#{$prefix}vertical-menu-item-hover-bg:              #1c2932;
+        --#{$prefix}vertical-menu-item-active-color:          #{$white};
+        --#{$prefix}vertical-menu-sub-item-color:             #{rgba($white, .50)};
+        --#{$prefix}vertical-menu-sub-item-hover-color:       #{$white};
+        --#{$prefix}vertical-menu-sub-item-active-color:      #{$white};
+        --#{$prefix}vertical-menu-title-color:                #{rgba($white, .50)};
+    }
+
+    &[data-sidebar="gradient"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$blue-700}, #{$blue-800});
+        --#{$prefix}vertical-menu-border:                     #{$blue-700};
+        --#{$prefix}twocolumn-menu-iconview-bg:               linear-gradient(to left, #{$blue-700}, #{$blue-800});
+        --#{$prefix}twocolumn-menu-bg:                        linear-gradient(to left, #{$blue-700}, #{$blue-800});
+    }
+
+    &[data-sidebar="gradient-2"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$purple-700}, #{$purple-800});
+        --#{$prefix}vertical-menu-border:                     #{$purple-700};
+        --#{$prefix}twocolumn-menu-iconview-bg:               linear-gradient(to left, #{$purple-700}, #{$purple-800});
+        --#{$prefix}twocolumn-menu-bg:                        linear-gradient(to left, #{$purple-700}, #{$purple-800});
+    }
+
+    &[data-sidebar="gradient-3"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$green-700}, #{$green-800});
+        --#{$prefix}vertical-menu-border:                     #{$green-700};
+        --#{$prefix}twocolumn-menu-iconview-bg:               linear-gradient(to left, #{$green-700}, #{$green-800});
+        --#{$prefix}twocolumn-menu-bg:                        linear-gradient(to left, #{$green-700}, #{$green-800});
+    }
+
+    &[data-sidebar="gradient-4"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$cyan-700}, #{$cyan-800});
+        --#{$prefix}vertical-menu-border:                     #{$cyan-700};
+        --#{$prefix}twocolumn-menu-iconview-bg:               linear-gradient(to left, #{$cyan-700}, #{$cyan-800});
+        --#{$prefix}twocolumn-menu-bg:                        linear-gradient(to left, #{$cyan-700}, #{$cyan-800});
+    }
+
+    &[data-body-image="img-1"] {
+        --#{$prefix}body-bg-image:                            url("../../images/sidebar/body-light-1.png");
+    }
+
+    &[data-body-image="img-2"] {
+        --#{$prefix}body-bg-image:                            url("../../images/sidebar/body-light-2.png");
+    }
+
+    &[data-body-image="img-3"] {
+        --#{$prefix}body-bg-image:                            url("../../images/sidebar/body-light-3.png");
+    }
+}
+
+//theme dark
+@if $enable-dark-mode {
+    @include color-mode(dark, true) {
+        --#{$prefix}light:                      #{$light-dark};
+        --#{$prefix}light-rgb:                  #{to-rgb($light-dark)};
+        --#{$prefix}dark:                       #{$light-dark};
+        --#{$prefix}dark-rgb:                   #{to-rgb($light-dark)};
+
+        --#{$prefix}header-bg:                  #{$header-bg-dark};
+        --#{$prefix}header-item-color:          #{$header-item-color-dark};
+
+        --#{$prefix}top-tagbar-bg:              #{$top-tagbar-bg-dark};
+        --#{$prefix}header-item-sub-color:      #{$text-muted};
+
+        // card
+        --#{$prefix}card-logo-dark:                           none;
+        --#{$prefix}card-logo-light:                          block;
+
+
+        .btn-dark {
+            --#{$prefix}btn-bg:                             #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-border-color:                   #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-hover-bg:                       #{lighten($gray-700, 3.5%)};
+            --#{$prefix}btn-hover-border-color:             #{lighten($gray-700, 3.5%)};
+            --#{$prefix}btn-active-bg:                      #{lighten($gray-700, 3.5%)};
+            --#{$prefix}btn-active-border-color:            #{lighten($gray-700, 3.5%)};
+            --#{$prefix}btn-disabled-bg:                    #{lighten($gray-700, 3.5%)};
+            --#{$prefix}btn-disabled-border-color:          #{lighten($gray-700, 3.5%)};
+        }
+
+        .btn-outline-dark { 
+            --#{$prefix}btn-color:                          #{$white};
+            --#{$prefix}btn-border-color:                   #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-hover-bg:                       #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-hover-border-color:             #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-active-bg:                      #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-active-border-color:            #{lighten($gray-700, 1.5%)};
+        }
+    }
+}

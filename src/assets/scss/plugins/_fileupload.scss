@@ -1,0 +1,57 @@
+//
+// fileupload
+//
+
+.p-fileupload{
+  .p-fileupload-buttonbar {
+    background: var(--#{$prefix}light);
+    padding: 0.7rem 1rem;
+    border: 1px solid $input-border-color;
+    color: $body-color;
+    border-bottom: 0 none;
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+
+    .p-button {
+      margin-right: 0.5rem;
+      &.p-fileupload-choose.p-focus {
+        outline: 0 none;
+        outline-offset: 0;
+      }
+    }
+  }
+
+  .p-fileupload-content {
+    background: $input-bg;
+    padding: 2rem 1rem;
+    border: 1px solid $input-border-color;
+    color: $input-color;
+    border-bottom-right-radius: $border-radius;;
+    border-bottom-left-radius: $border-radius;;
+  }
+
+  .p-progressbar {
+    height: 0.25rem;
+  }
+
+  .p-fileupload-row{
+    > div {
+      padding: 1rem 1rem;
+    }
+  }
+
+  &.p-fileupload-advanced {
+    .p-message {
+      margin-top: 0;
+    }
+  }
+}
+
+
+.p-fileupload-choose:not(.p-disabled){
+  &:hover, &:active {
+    background: $primary;
+    color: $white;
+    border-color: $primary;
+  }
+}

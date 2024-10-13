@@ -1,0 +1,135 @@
+{
+  "MENUITEMS": {
+    "MENU": {
+      "TEXT": "Inicio"
+    },
+    "HOME": {
+      "TEXT": "Inicio"
+    },
+    "CATELOG": {
+      "TEXT": "Catálogo",
+      "LIST": {
+        "MEN": "Hombres",
+        "CLOTHING": "Ropa",
+        "WATCHES": "Relojes",
+        "BAGS": "Bolsos y Equipaje",
+        "FOOTWEAR": "Calzado",
+        "INNERWEAR": "Ropa Interior",
+        "OTHERACCESSORIES": "Otros Accesorios",
+        "WOMEN": "Mujeres",
+        "WESTERNWEAR": "Ropa Occidental",
+        "HANDBAGS": "Bolsos y Clutches",
+        "LINGERIE": "Ropa Interior y Ropa de Dormir",
+        "FASHION": "Moda y Joyería de Plata",
+        "ACCESSORIES": "Accesorios y Otros",
+        "KITCHEN": "Hogar, Cocina, Mascotas",
+        "BEAUTY": "Belleza, Salud, Comestibles",
+        "SPORTS": "Deportes, Fitness, Bolsas, Equipaje",
+        "CAR": "Coche, Motocicleta, Industrial",
+        "BOOKS": "Libros",
+        "OTHERS": "Otros",
+        "SIGNUP": "Registrarse",
+        "SIGNIN": "Iniciar Sesión",
+        "RESETPASSWORD": "Restablecer Contraseña",
+        "ERROR404": "Error 404",
+        "TOPBRANDS": "Mejores Marcas"
+      }
+    },
+    "SHOP": {
+      "TEXT": "Tienda",
+      "LIST": {
+        "CHECKOUTPAGES": "Páginas de Pago",
+        "ADDRESS": "Dirección",
+        "TRACKORDER": "Seguimiento de Pedido",
+        "PAYMENT": "Pago",
+        "REVIEW": "Revisión",
+        "CONFIRMATION": "Confirmación",
+        "MYORDER": "Mis Pedidos / Historial de Pedidos",
+        "SUPPORT": "Soporte",
+        "SHOPPINGCART": "Carrito de Compras",
+        "CHECKOUT": "Pago",
+        "WISHLIST": "Lista de Deseos"
+      }
+    },
+    "PAGES": {
+      "TEXT": "Páginas",
+      "LIST": {
+        "PRODUCTS": "Productos",
+        "GRIDVIEW": "Vista de Cuadrícula",
+        "DEFAULT": "Predeterminado",
+        "SIDEBAR": "Barra Lateral con Banner",
+        "RIGHTSIDEBAR": "Barra Lateral Derecha",
+        "NOSIDEBAR": "Sin Barra Lateral",
+        "LISTVIEW": "Vista de Lista",
+        "PRODUCTDETAILS": "Detalles del Producto",
+        "USERS": "Usuarios",
+        "MYACCOUNT": "Mi Cuenta",
+        "SIGNIN": "Iniciar Sesión",
+        "SIGNUP": "Registrarse",
+        "PASSWORDRESET": "Restablecer Contraseña",
+        "PASSWORDCREATE": "Crear Contraseña",
+        "SUCCESSMESSAGE": "Mensaje de Éxito",
+        "TWOSTEPVERIFY": "Verificación de Dos Pasos",
+        "LOGOUT": "Cerrar Sesión",
+        "ERROR404": "Error 404",
+        "ERROR500": "Error 500",
+        "COMINGSOON": "Próximamente"
+      }
+    },
+    "CATEGORIES": {
+      "TEXT": "Categorías"
+    },
+    "ABOUT": {
+      "TEXT": "Acerca de"
+    },
+    "PURCHASEGUIDE": {
+      "TEXT": "Guía de Compra"
+    },
+    "TERMSOFSERVICE": {
+      "TEXT": "Términos de Servicio"
+    },
+    "PRIVACYPOLICY": {
+      "TEXT": "Política de Privacidad"
+    },
+    "STORELOCATOR": {
+      "TEXT": "Localizador de Tiendas"
+    },
+    "FAQ": {
+      "TEXT": "Preguntas Frecuentes"
+    },
+    "INVOICE": {
+      "TEXT": "Factura"
+    },
+    "EMAILTEMPLATE": {
+      "TEXT": "Plantilla de Correo Electrónico",
+      "LIST": {
+        "BLACKFRIDAY": "Viernes Negro",
+        "FLASHSALE": "Venta Flash",
+        "ORDERSUCCESS": "Pedido Exitoso",
+        "ORDERSUCCESS2": "Pedido Exitoso 2"
+      }
+    },
+    "MULTILEVEL": {
+      "TEXT": "Multi Nivel",
+      "LIST": {
+        "Level1": {
+          "1": "Nivel 1.1",
+          "2": "Nivel 1.2"
+        },
+        "Level2": {
+          "TEXT": "Nivel 1.3",
+          "1": "Nivel 2.1",
+          "2": "Nivel 2.2"
+        },
+        "Level3": {
+          "TEXT": "Nivel 2.3",
+          "1": "Nivel 3.1",
+          "2": "Nivel 3.2"
+        }
+      }
+    },
+    "CONTACT": {
+      "TEXT": "Contacto"
+    }
+  }
+}

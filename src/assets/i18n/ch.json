@@ -1,0 +1,137 @@
+{
+  "MENUITEMS": {
+    "MENU": {
+      "TEXT": "家"
+    },
+    "HOME": {
+      "TEXT": "家"
+    },
+    "CATELOG": {
+      "TEXT": "目录",
+      "LIST": {
+        "MEN": "男士",
+        "CLOTHING": "衣服",
+        "WATCHES": "手表",
+        "BAGS": "箱包和行李箱",
+        "FOOTWEAR": "鞋类",
+        "INNERWEAR": "内衣",
+        "OTHERACCESSORIES": "其他配件",
+        "WOMEN": "女性",
+        "WESTERNWEAR": "西方服饰",
+        "LINGERIE": "内衣和睡衣",
+        "FASHION": "时装及银饰",
+        "ACCESSORIES": "配饰及其他",
+        "KITCHEN": "家庭、厨房、宠物",
+        "BEAUTY": "美容、健康、杂货",
+        "SPORTS": "运动、健身、箱包、行李箱",
+        "CAR": "汽车、摩托车、工业",
+        "BOOKS": "图书",
+        "OTHERS": "其他的",
+        "SIGNUP": "报名",
+        "SIGNIN": "登入",
+        "RESETPASSWORD": "重设密码",
+        "ERROR404": "错误 404",
+        "TOPBRANDS": "顶级品牌"
+      }
+    },
+    "SHOP": {
+      "TEXT": "店铺",
+      "LIST": {
+        "CHECKOUTPAGES": "结帐页面",
+        "ADDRESS":"地址",
+        "TRACKORDER": "跟踪订单",
+        "PAYMENT": "支付",
+        "REVIEW": "审查",
+        "CONFIRMATION": "确认",
+        "MYORDER": "我的订单/历史订单",
+        "SUPPORT":"支持",
+        "SHOPPINGCART":"购物车",
+        "CHECKOUT":"查看",
+        "WISHLIST":"心愿单"
+      }
+    },
+    "PAGES": {
+      "TEXT": "页数",
+      "LIST": {
+        "PRODUCTS": "产品",
+        "GRIDVIEW":"网格视图",
+        "DEFAULT": "默认",
+        "SIDEBAR": "带横幅的边栏",
+        "RIGHTSIDEBAR": "右侧边栏",
+        "NOSIDEBAR": "没有侧边栏",
+        "LISTVIEW": "列表显示",
+        "PRODUCTDETAILS": "产品详情",
+        "USERS": "用户",
+        "MYACCOUNT": "我的账户",
+        "SIGNIN": "登入",
+        "SIGNUP": "报名",
+        "PASSWORDRESET": "重设密码",
+        "PASSWORDCREATE": "密码创建",
+        "SUCCESSMESSAGE": "成功讯息",
+        "TWOSTEPVERIFY": "两步验证",
+        "LOGOUT": "登出",
+        "ERROR404": "错误 404",
+        "ERROR500": "错误 500",
+        "COMINGSOON": "即将推出"
+      }
+    },
+    "CATEGORIES":{
+      "TEXT": "类别"
+    },
+    "ABOUT":{
+      "TEXT": "关于"
+    },
+    "PURCHASEGUIDE":{
+      "TEXT": "购买指南"
+    },
+    "TERMSOFSERVICE":{
+      "TEXT": "服务条款"
+    },
+    "PRIVACYPOLICY":{
+      "TEXT": "隐私政策"
+    },
+    "STORELOCATOR":{
+      "TEXT": "商店定位器"
+    },
+    "FAQ":{
+      "TEXT": "常问问题"
+    },
+    "INVOICE":{
+      "TEXT": "发票"
+    },
+    "EMAILTEMPLATE": {
+      "TEXT": "电子邮件模板",
+      "LIST": {
+        "BLACKFRIDAY": "黑色星期五",
+        "FLASHSALE":"闪购",
+        "ORDERSUCCESS":"订单成功",
+        "ORDERSUCCESS2":"订单成功 2"
+      }
+    },
+    "COMPONENTS":{
+      "TEXT": "成分"
+    },    
+    "MULTILEVEL": {
+      "TEXT": "多层次",
+      "LIST": {
+        "Level1": {
+          "1": "1.1级",
+          "2": "1.2级"
+        },
+          "Level2": {
+            "TEXT": "1.3级",
+            "1": "2.1级",
+            "2": "2.2级"
+          },
+          "Level3": {
+            "TEXT": "2.3级",
+            "1": "3.1级",
+            "2": "3.2级"
+          }
+      }
+    },
+    "CONTACT":{
+      "TEXT": "接触"
+    }    
+  }
+}

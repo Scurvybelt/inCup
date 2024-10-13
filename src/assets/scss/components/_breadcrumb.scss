@@ -1,0 +1,66 @@
+// 
+// breadcrumb.scss
+//
+
+// Breadcrumb item arrow
+.breadcrumb-item {
+    >a {
+        color: var(--#{$prefix}breadcrumb-divider-color);
+    }
+
+    +.breadcrumb-item {
+        &::before {
+            font-family: "Material Design Icons";
+            font-size: 15px;
+            line-height: 20px;
+        }
+    }
+}
+
+.breadcrumb-light {
+    --#{$prefix}breadcrumb-divider-color:       rgba(255, 255, 255, 0.75);
+    --#{$prefix}breadcrumb-item-active-color:   #{$white};
+}
+
+
+.p-breadcrumb {
+    background: $breadcrumb-bg;
+    border: 1px solid var(--#{$prefix}border-color);
+    border-radius: $border-radius;
+    padding: 1rem;
+    ul {
+        li {
+            .p-menuitem-link {
+                transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+                border-radius: $border-radius;
+
+                &:focus {
+                    outline: 0 none;
+                    outline-offset: 0;
+                }
+
+                .p-menuitem-text {
+                    color: var(--#{$prefix}body-color);
+                }
+
+                .p-menuitem-icon {
+                    color: $text-muted;
+                }
+            }
+
+            &.p-breadcrumb-chevron {
+                margin: 0 0.5rem 0 0.5rem;
+                color: $breadcrumb-divider-color;
+            }
+
+            &:last-child {
+                .p-menuitem-text {
+                    color: $breadcrumb-active-color;
+                }
+                .p-menuitem-icon {
+                    color: $text-muted;
+                }
+            }
+        }
+    }
+}

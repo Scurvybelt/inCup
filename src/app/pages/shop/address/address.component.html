@@ -1,0 +1,194 @@
+<!-- Header -->
+<app-header></app-header>
+
+<!-- Start Breadcrumbs -->
+<app-breadcrumbs title="Shipping Address" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+<!-- End Breadcrumbs -->
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8">
+                <div>
+                    <h4 class="fs-18 mb-4">Select or add an address</h4>
+                    <div class="row g-4" id="address-list">
+                        @for(data of adresses; track $index){
+                        <div class="col-lg-6 mt-0Track Order">
+                            <div>
+                                <div class="form-check card-radio">
+                                    <input id="shippingAddress01" name="shippingAddress" type="radio" class="form-check-input" checked />
+                                    <label class="form-check-label" for="shippingAddress01">
+                                        <span class="mb-4 fw-semibold fs-12 d-block text-muted text-uppercase">{{data.type}}
+                                            Address</span>
+
+                                        <span class="fs-14 mb-2 fw-semibold d-block">{{data.name}}</span>
+                                        <span class="text-muted fw-normal text-wrap mb-1 d-block">{{data.address}}</span>
+                                        <span class="text-muted fw-normal d-block">Mo. {{data.phone}}</span>
+                                    </label>
+                                </div>
+                                <div class="d-flex flex-wrap p-2 py-1 bg-light rounded-bottom border mt-n1 fs-13">
+                                    <div>
+                                        <a href="javascript:void(0)" class="d-block text-body p-1 px-2" (click)="EditDialog($index)"><i class="ri-pencil-fill text-muted align-bottom me-1"></i> Edit</a>
+                                    </div>
+                                    <div>
+                                        <a href="javascript:void(0)" class="d-block text-body p-1 px-2" (click)="RemoveDialog($index)"><i class="ri-delete-bin-fill text-muted align-bottom me-1"></i> Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>}
+                    </div>
+                    <!-- end row -->
+                    <div class="row mt-4">
+                        <div class="col-lg-6">
+                            <div class="text-center p-4 rounded-3 border border-2 border-dashed">
+                                <div class="avatar-md mx-auto mb-4">
+                                    <div class="avatar-title bg-success-subtle text-success rounded-circle display-6">
+                                        <i class="bi bi-house-add"></i>
+                                    </div>
+                                </div>
+                                <h5 class="fs-16 mb-3">Add New Address</h5>
+                                <button type="button" class="btn btn-success btn-sm w-xs stretched-link addAddress-modal" (click)="showDialog()">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hstack gap-2 justify-content-start mt-3">
+                        <button type="button" class="btn btn-hover btn-danger">Continue Shopping</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="sticky-side-div mt-4 mt-xl-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <h6 class="mb-3 fs-15">Have a <span class="fw-semibold">promo</span> code ?</h6>
+                            </div>
+                            <div class="hstack gap-3 px-3 mx-n3">
+                                <input class="form-control me-auto" type="text" placeholder="Enter coupon code" value="Toner15" aria-label="Add Promo Code here..." />
+                                <button type="button" class="btn btn-primary w-xs">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card overflow-hidden">
+                        <div class="card-header border-bottom-dashed">
+                            <h5 class="card-title mb-0 fs-15">Order Summary</h5>
+                        </div>
+                        <div class="card-body pt-4">
+                            <div class="table-responsive table-card">
+                                <table class="table table-borderless mb-0 fs-15">
+                                    <tbody>
+                                        <tr>
+                                            <td>Sub total :</td>
+                                            <td class="text-end cart-subtotal">$0.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Discount <span class="text-muted">(Toner15)</span>:</td>
+                                            <td class="text-end cart-discount">-$0.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shipping charge :</td>
+                                            <td class="text-end cart-shipping">$0.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Estimated Tax (12.5%) :</td>
+                                            <td class="text-end cart-tax">$0.00</td>
+                                        </tr>
+                                        <tr class="table-active">
+                                            <th>Total (USD) :</th>
+                                            <td class="text-end">
+                                                <span class="fw-semibold cart-total">$0.00</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- end table-responsive -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end sticky  -->
+            </div>
+            <!-- end col -->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+
+<!-- Modal -->
+<p-dialog header="Header" [(visible)]="addressmodal" [modal]="true" [style]="{width: '42vw'}" class="modal-dialog modal-dialog-centered">
+    <ng-template pTemplate="header">
+        <h1 class="modal-title fs-5" id="addAddressModalLabel">Add New Address</h1>
+    </ng-template>
+    <ng-template pTemplate="content">
+        <form (ngSubmit)="saveAddress()" [formGroup]="addressForm" autocomplete="off" class="needs-validation createAddress-form" id="createAddress-form" novalidate style="padding: 1.25rem;">
+            <input type="hidden" id="addressid-input" class="form-control" value="" />
+            <div>
+                <div class="mb-3">
+                    <label for="addaddress-Name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="addaddress-Name" placeholder="Enter name" formControlName="name" required />
+                    <div class="invalid-feedback">Please enter a name.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="addaddress-textarea" class="form-label">Address</label>
+                    <textarea class="form-control" id="addaddress-textarea" placeholder="Enter address" rows="2" formControlName="address" required></textarea>
+                    <div class="invalid-feedback">Please enter address.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="addaddress-phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="addaddress-phone" placeholder="Enter phone no." formControlName="phone" required />
+                    <div class="invalid-feedback">Please enter a phone no.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="state" class="form-label">Address Type</label>
+                    <select class="form-select" id="state" formControlName="type" required>
+                        <option value="HOME">Home (7am to 10pm)</option>
+                        <option value="OFFICE">Office (11am to 7pm)</option>
+                    </select>
+                    <div class="invalid-feedback">Please select address type.</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                <button type="submit" id="addNewAddress" class="btn btn-primary">Add</button>
+            </div>
+        </form>
+    </ng-template>
+</p-dialog>
+
+<!-- remove address Modal -->
+<p-dialog [(visible)]="removemodal" [modal]="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="mt-2 text-center">
+                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width: 100px; height: 100px;"></lord-icon>
+                    <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                        <h4>Are you sure ?</h4>
+                        <p class="text-muted mx-4 mb-0">Are you sure You want to remove this address ?</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                    <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="remove-address" class="btn w-sm btn-danger" (click)="deleteaddress()">Yes,
+                        Delete It!</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</p-dialog>
+<!-- /.modal -->
+
+<app-discount-footer [discount]="25"></app-discount-footer>
+
+<app-features></app-features>
+
+<!-- Footer -->
+<app-footer></app-footer>

@@ -1,0 +1,597 @@
+<!-- Header -->
+<app-header></app-header>
+
+<!-- Content -->
+<section class="position-relative overflow-hidden">
+    <ngx-slick-carousel dir="ltr" class="" id="ecommerceHero" [config]="NavAndPagination" #slickModal>
+        <div class="swiper-slide" ngxSlickItem>
+            <div class="ecommerce-home bg-danger-subtle" style="background-image: url('assets/images/ecommerce/home/img-1.png');">
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-7">
+                            <div class="text-sm-end">
+                                <p class="fs-15 fw-semibold text-uppercase"><i class="ri-flashlight-fill text-primary align-bottom me-1"></i> In this
+                                    season, find the best</p>
+                                <h1 class="display-4 fw-bold lh-base text-capitalize mb-3">Exclusive collection for
+                                    everyone</h1>
+                                <p class="fs-20 mb-4">Biggest offers on this season</p>
+                                <button class="btn btn-danger btn-hover"><i class="ph-shopping-cart align-middle me-1"></i>
+                                    Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" ngxSlickItem>
+            <div class="ecommerce-home bg-primary-subtle" style="background-image: url('assets/images/ecommerce/home/img-2.png');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div>
+                                <p class="fs-15 fw-semibold text-uppercase"><i class="ri-flashlight-fill text-info align-bottom me-1"></i> Save up to <span class="text-danger">50%</span> off</p>
+                                <h1 class="display-4 fw-semibold text-capitalize lh-base">Pro Smart watches for
+                                    smart People</h1>
+                                <p class="fs-18 mb-4"><b>40% off</b> up to on all selected products</p>
+                                <button class="btn btn-primary btn-hover"><i class="ph-shopping-cart align-middle me-1"></i>
+                                    Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" ngxSlickItem>
+            <div class="ecommerce-home" style="background-image: url('assets/images/ecommerce/home/img-6.jpg'); background-size: cover;">
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-6">
+                            <div class="text-end">
+                                <p class="fs-15 fw-semibold text-uppercase text-body">Jewelry Design with Love</p>
+                                <h1 class="display-4 fw-semibold text-capitalize lh-base text-body">Discover world
+                                    best Jewelry</h1>
+                                <p class="text-body lead fs-19 mb-4">Jewelry are like a tribute to being a woman</p>
+                                <div class="hstack gap-2 justify-content-end">
+                                    <button class="btn btn-success btn-hover">Shop Now <i class="ph-arrow-up-right align-middle ms-1"></i></button>
+                                    <button class="btn btn-ghost-secondary btn-hover">Watch Now <i class="ph-play-circle align-middle ms-1 fs-16"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ngx-slick-carousel>
+    <!-- </swiper> -->
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row gy-4 gy-lg-0">
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/ecommerce/fast-delivery.png" alt="" class="avatar-sm" />
+                    </div>
+                    <div class="flex-grow-1">
+                        <h5 class="fs-15">Fast &amp; Secure Delivery</h5>
+                        <p class="text-muted mb-0">Tell about your service.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/ecommerce/returns.png" alt="" class="avatar-sm" />
+                    </div>
+                    <div class="flex-grow-1">
+                        <h5 class="fs-15">2 Days Return Policy</h5>
+                        <p class="text-muted mb-0">No question ask.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/ecommerce/guarantee-certificate.png" alt="" class="avatar-sm" />
+                    </div>
+                    <div class="flex-grow-1">
+                        <h5 class="fs-15">Money Back Guarantee</h5>
+                        <p class="text-muted mb-0">Within 5 business days</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/ecommerce/24-hours-support.png" alt="" class="avatar-sm" />
+                    </div>
+                    <div class="flex-grow-1">
+                        <h5 class="fs-15">24 X 7 Service</h5>
+                        <p class="text-muted mb-0">Online service for customer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <a href="javascript:void(0);" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
+                    <img src="assets/images/ecommerce/features/img-3.jpg" class="img-fluid rounded" alt="" />
+                    <div class="bg-overlay blue"></div>
+                    <div class="product-content p-4">
+                        <p class="text-uppercase text-white mb-2">Up to 50-70%</p>
+                        <h1 class="text-white lh-base fw-medium ff-secondary">Women's Sportwere Sales</h1>
+                        <div class="product-btn mt-4 text-white">Shop Now <i class="bi bi-arrow-right ms-2"></i></div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <a href="javascript:void(0);" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
+                    <img src="assets/images/ecommerce/features/img-1.jpg" class="img-fluid rounded" alt="" />
+                    <div class="product-content p-4">
+                        <p class="text-uppercase fw-medium text-secondary mb-2">Summer Sales</p>
+                        <h1 class="lh-base ff-secondary text-body">Trendy Fashion Clothes</h1>
+                        <div class="product-btn mt-4">Shop Now <i class="bi bi-arrow-right ms-2"></i></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- START PRODUCT -->
+<section class="section pt-0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="text-center">
+                    <h3 class="mb-3">Top Picks Products Of The Week</h3>
+                    <p class="text-muted fs-15 mb-0">This ranges from women and men's outfits to children's clothing,
+                        shoes, accessories, and more. People love their clothes, and fashion isn't going anywhere!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <div class="text-center">
+                    <ul class="list-inline categories-filter animation-nav" id="filter">
+                        <li class="list-inline-item"><a class="categories" (click)="dataFilter('all',$event)">All
+                                Arrival</a></li>
+                        <li class="list-inline-item"><a class="categories" (click)="dataFilter('best seller',$event)">Best Seller</a></li>
+                        <li class="list-inline-item"><a class="categories" (click)="dataFilter('hot collection',$event)">Hot Collection</a></li>
+                        <li class="list-inline-item"><a class="categories" (click)="dataFilter('trendy',$event)">Trendy</a></li>
+                        <li class="list-inline-item"><a class="categories" (click)="dataFilter('new',$event)">New
+                                Arrival</a></li>
+                    </ul>
+                </div>
+
+                <div class="row gallery-wrapper mt-4 pt-2">
+                    @for(data of productData; track $index){
+                    <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot arrival" data-category="hot arrival">
+                        <div class="card overflow-hidden">
+                            <div class="bg-{{data.color}}-subtle rounded-top py-4">
+                                <div class="gallery-product">
+                                    <img src="{{data.image}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" />
+                                </div>
+                                @if(data.tag){
+                                <p class="fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival
+                                </p>}
+                                <div class="gallery-product-actions">
+                                    <div class="mb-2">
+                                        <button type="button" class="btn btn-danger btn-sm custom-toggle" data-bs-toggle="button">
+                                            <span class="icon-on"><i class="mdi mdi-heart-outline align-bottom fs-15"></i></span>
+                                            <span class="icon-off"><i class="mdi mdi-heart align-bottom fs-15"></i></span>
+                                        </button>
+                                    </div>
+
+                                    <div>
+                                        <button type="button" class="btn btn-success btn-sm custom-toggle" data-bs-toggle="button">
+                                            <span class="icon-on"><i class="mdi mdi-eye-outline align-bottom fs-15"></i></span>
+                                            <span class="icon-off"><i class="mdi mdi-eye align-bottom fs-15"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-btn px-3">
+                                    <a routerLink="/shop/shop-cart" class="btn btn-primary btn-sm w-75 add-btn"><i class="mdi mdi-cart me-1"></i> Add to cart</a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <a routerLink="/catelog/product-details">
+                                        <h6 class="fs-15 lh-base text-truncate mb-0">{{data.name}}</h6>
+                                    </a>
+                                    <div class="mt-3">
+                                        <span class="float-end">{{data.rate}} <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                        <h5 class="mb-0">
+                                            ${{data.price}}
+                                            @if(data.mrp){ <span class="text-muted fs-12"><del>${{data.mrp}}</del></span>}
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    <!-- end col -->
+                </div>
+
+                <div class="mt-4 text-center">
+                    <a routerLink="/catelog/product-list-defualt" class="btn btn-soft-primary btn-hover">View All
+                        Products <i class="mdi mdi-arrow-right align-middle ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END PRODUCT -->
+
+<section class="position-relative bg-danger-subtle bg-cta">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="py-5">
+                    <p class="text-uppercase badge bg-danger-subtle text-danger fs-13" [ngStyle]="{Color:'var(--green-500)'}">Get
+                        <b>50%</b> off to your order
+                    </p>
+
+                    <h1 class="lh-base fw-semibold mb-3 text-capitalize">Deal off the week</h1>
+                    <p class="fs-16 mt-2">
+                        The hands-down winner of denim-friendly sandal styles has to be flat and simple thong sandals.
+                        They can be paired with virtually every style of women's jeans imaginable, and, as long as you
+                        can stand the toe strap,
+                        they tend to be really comfortable as well.
+                    </p>
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="ecommerce-land-countdown mt-3 mb-0">
+                                <div data-countdown="Jan 30, 2025" class="countdownlist">
+                                    <div class="countdownlist-item">
+                                        <div class="count-title">Days</div>
+                                        <div class="count-num">{{_days}}</div>
+                                    </div>
+                                    <div class="countdownlist-item">
+                                        <div class="count-title">Hours</div>
+                                        <div class="count-num">{{_hours}}</div>
+                                    </div>
+                                    <div class="countdownlist-item">
+                                        <div class="count-title">Minutes</div>
+                                        <div class="count-num">{{_minutes}}</div>
+                                    </div>
+                                    <div class="countdownlist-item">
+                                        <div class="count-title">Seconds</div>
+                                        <div class="count-num">{{_seconds}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-2 d-flex gap-2">
+                        <a href="javascript:void(0);" class="btn btn-primary w-md btn-hover">Shopping Now</a>
+                        <a href="javascript:void(0);" class="btn btn-danger w-md btn-hover">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mt-lg-n5">
+                    <img src="assets/images/ecommerce/home/cta.png" alt="" class="mt-lg-n4" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section pb-0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="text-center">
+                    <h3 class="mb-3">Latest Arrival</h3>
+                    <p class="text-muted fs-15">What you wear is how you present yourself to the world, especially
+                        today, when human contacts are so quick. Fashion is instant language.</p>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <ngx-slick-carousel dir="ltr" class="carousel swiper latest-slider mt-4" [config]="Navigation" #slickModal>
+                    @for(slide of latest_arrival; track $index){
+                    <div class="swiper-slide" style="margin-right: 30px;" ngxSlickItem>
+                        <div class="card overflow-hidden">
+                            <div class="bg-{{slide.bgcolor}}-subtle rounded-top py-4">
+                                <div class="gallery-product">
+                                    <img src="{{slide.img}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" />
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <a routerLink="/catalog/product-details">
+                                        <h6 class="fs-15 lh-base text-truncate mb-0">{{slide.title}}</h6>
+                                    </a>
+                                    <div class="mt-3">
+                                        <span class="float-end">{{slide.rating}} <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                        <h5 class="mb-0">
+                                            ${{slide.price}} <span class="text-muted fs-12"><del>${{slide.mrp}}</del></span>
+                                        </h5>
+                                    </div>
+                                    <div class="mt-3">
+                                        <a routerLink="/shop/shop-cart" class="btn btn-primary btn-sm"><i class="mdi mdi-cart me-1"></i> Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>}
+                </ngx-slick-carousel>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="text-center">
+                    <h3 class="mb-3">What Customers Say About Us</h3>
+                    <p class="text-muted fs-15">A customer is a person or business that buys goods or services from
+                        another business. Customers are crucial because they generate revenue.</p>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+
+        <div class="row" class="mt-5">
+            <div class="col-lg-12">
+                <ngx-slick-carousel dir="ltr" [config]="Customers">
+                    @for(item of customer; track $index){
+                    <div class="swiper-slide pe-4" ngxSlickItem>
+                        <div class=" client-box m-1">
+                            <div class="client-desc p-4 border rounded">
+                                <p class="mb-0 fs-16">{{item.content}}</p>
+                            </div>
+                            <div class="pt-4">
+                                <div class="d-flex align-items-center mt-4 pt-1">
+                                    <img src="{{item.img}}" alt="" class="avatar-sm rounded" />
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="mb-2 fs-16">{{item.name}}</h5>
+                                        <p class="text-muted mb-0">{{item.type}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>}
+                </ngx-slick-carousel>
+            </div>
+        </div>
+
+        <div class="row row-cols-lg-5 row-cols-md-3 row-cols-1 text-center justify-content-center align-items-center g-3 mt-5 pt-lg-5">
+            <div class="col">
+                <div class="client-images">
+                    <a href="javascript:void(0);">
+                        <img src="assets/images/clients/paypal.svg" alt="client-img" class="mx-auto img-fluid d-block" />
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="client-images">
+                    <a href="javascript:void(0);">
+                        <img src="assets/images/clients/walmart.svg" alt="client-img" class="mx-auto img-fluid d-block" />
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="client-images">
+                    <a href="javascript:void(0);">
+                        <img src="assets/images/clients/spotify.svg" alt="client-img" class="mx-auto img-fluid d-block" />
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="client-images">
+                    <a href="javascript:void(0);">
+                        <img src="assets/images/clients/shopify.svg" alt="client-img" class="mx-auto img-fluid d-block" />
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="client-images">
+                    <a href="javascript:void(0);">
+                        <img src="assets/images/clients/lenovo.svg" alt="client-img" class="mx-auto img-fluid d-block" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- START BLOG -->
+<section class="section bg-light bg-opacity-50">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="text-center">
+                    <h3 class="mb-3">Shop insights & feeds</h3>
+                    <p class="text-muted fs-15">Shopping Insights gives marketers a 360-degree view of a product's
+                        popularity. Harnessing search volume data for more than 7,000 popular products (and counting)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <div class="card overflow-hidden">
+                    <img src="assets/images/small/img-3.jpg" class="img-fluid" alt="" />
+                    <div class="card-body">
+                        <div class="entry-meta">
+                            <a href="javascript:void(0);" class="text-muted">12 <i class="mdi mdi-like"></i> Like</a>
+                            <span class="text-muted mx-1">|</span>
+                            <a href="javascript:void(0);" class="text-muted">10 Comments</a>
+                        </div>
+                        <div class="blog-date bg-body-secondary rounded">
+                            <h4 class="mb-0">15</h4>
+                            <p class="text-muted mt-1">April</p>
+                        </div>
+                        <div class="mt-3">
+                            <a href="javascript:void(0);">
+                                <h5 class="fs-17 lh-base">Society Pass Turns to Stripe to Simplify Checkout</h5>
+                            </a>
+                            <p class="text-muted fs-15 mt-2">Southeast Asian eCommerce ecosystem Society Pass (SoPa)
+                                says it has integrated Stripe’s financial infrastructure solutions onto its platform.
+                            </p>
+                            <a href="javascript:void(0);" class="link-effect link-info">Continue Reading <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card overflow-hidden">
+                    <img src="assets/images/small/img-8.jpg" class="img-fluid" alt="" />
+                    <div class="card-body">
+                        <div class="entry-meta">
+                            <a href="javascript:void(0);" class="text-muted">24 <i class="mdi mdi-like"></i> Like</a>
+                            <span class="text-muted mx-1">|</span>
+                            <a href="javascript:void(0);" class="text-muted">32 Comments</a>
+                        </div>
+                        <div class="blog-date bg-body-secondary rounded">
+                            <h4 class="mb-0">23</h4>
+                            <p class="text-muted mt-1">April</p>
+                        </div>
+                        <div class="mt-3">
+                            <a href="javascript:void(0);">
+                                <h5 class="fs-17 lh-base">Integrating Crypto Payment to Ecommerce</h5>
+                            </a>
+                            <p class="text-muted fs-15 mt-2">To start accepting Bitcoin on your eCommerce site, simply
+                                integrate a BTC payment processor into your store. Many major eCommerce providers.</p>
+                            <a href="javascript:void(0);" class="link-effect link-info">Continue Reading <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card overflow-hidden">
+                    <img src="assets/images/small/img-6.jpg" class="img-fluid" alt="" />
+                    <div class="card-body">
+                        <div class="entry-meta">
+                            <a href="javascript:void(0);" class="text-muted">48 <i class="mdi mdi-like"></i> Like</a>
+                            <span class="text-muted mx-1">|</span>
+                            <a href="javascript:void(0);" class="text-muted">15 Comments</a>
+                        </div>
+                        <div class="blog-date bg-body-secondary rounded">
+                            <h4 class="mb-0">31</h4>
+                            <p class="text-muted mt-1">April</p>
+                        </div>
+                        <div class="mt-3">
+                            <a href="javascript:void(0);">
+                                <h5 class="fs-17 lh-base">Etsy Is a High-Flier Among E-Commerce Stocks</h5>
+                            </a>
+                            <p class="text-muted fs-15 mt-2">E-commerce stocks soared to record-high valuations during
+                                the pandemic. However, now that economies have reopened during the pandemic.</p>
+                            <a href="javascript:void(0);" class="link-effect link-info">Continue Reading <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 text-center">
+            <a href="javascript:void(0);" class="btn btn-soft-primary btn-hover">View More Articles <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+    </div>
+</section>
+<!-- END BLOG -->
+
+<!-- START INSTAGRAM -->
+<section class="section pb-0">
+    <div class="container">
+        <div class="row justify-content-center g-0">
+            <div class="col-lg-7">
+                <div class="text-center">
+                    <h3 class="mb-3">Follow Us In Instagram</h3>
+                    <p class="text-muted fs-15">The most common approach that peoples use to say follow me on Instagram
+                        is by sending a direct message.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-relative">
+        <div class="row g-0 mt-5">
+            <div class="col" style="padding-bottom: 0px;">
+                <div class="insta-img">
+                    <a href="javascript:void(0);" class="stretched-link">
+                        <img src="assets/images/ecommerce/instagram/img-1.jpg" class="img-fluid" alt="" />
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col" style="padding-bottom: 0px;">
+                <div class="insta-img">
+                    <a href="javascript:void(0);" class="stretched-link">
+                        <img src="assets/images/ecommerce/instagram/img-2.jpg" class="img-fluid" alt="" />
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col d-none d-md-block" style="padding-bottom: 0px;">
+                <div class="insta-img">
+                    <a href="javascript:void(0);" class="stretched-link">
+                        <img src="assets/images/ecommerce/instagram/img-3.jpg" class="img-fluid" alt="" />
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col d-none d-md-block" style="padding-bottom: 0px;">
+                <div class="insta-img">
+                    <a href="javascript:void(0);" class="stretched-link">
+                        <img src="assets/images/ecommerce/instagram/img-4.jpg" class="img-fluid" alt="" />
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col d-none d-lg-block" style="padding-bottom: 0px;">
+                <div class="insta-img">
+                    <a href="javascript:void(0);" class="stretched-link">
+                        <img src="assets/images/ecommerce/instagram/img-5.jpg" class="img-fluid" alt="" />
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col d-none d-lg-block" style="padding-bottom: 0px;">
+                <div class="insta-img">
+                    <a href="javascript:void(0);" class="stretched-link">
+                        <img src="assets/images/ecommerce/instagram/img-6.jpg" class="img-fluid" alt="" />
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="insta-lable text-center">
+            <a href="javascript:void(0);" class="btn btn-primary btn-hover"> <i class="ph-instagram-logo align-middle me-1"></i> Follow
+                In Instagram </a>
+        </div>
+    </div>
+</section>
+<!-- END INSTAGRAM -->
+
+<!-- Footer -->
+<app-footer></app-footer>

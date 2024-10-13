@@ -1,0 +1,15 @@
+.categrory-widgets {
+    position: relative;
+
+    .category-img {
+        position: absolute;
+        right: -20px;
+        bottom: 0;
+        max-width: 120px;
+        opacity: 0.25;
+    }
+}
+
+#remove-actions {
+    display: none;
+}

@@ -1,0 +1,123 @@
+//
+// _email.scss
+//
+
+.email-panel {
+    &.show {
+        .panel-list {
+            a {
+                span {
+                    margin-left: 0;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+}
+
+// chat left sidebar
+.email-menu-sidebar {
+    @media (max-width: 991.98px) {
+        right: 0;
+        left: auto;
+        transform: translateX(100%);
+    }
+}
+
+.unreadConversations-alert {
+    right: 50%;
+    left: auto;
+    transform: translateX(50%);
+}
+
+.email-detail-content {
+    right: -2px;
+    left: auto;
+    transform: translateX(-200%);
+    border-right: 2px solid var(--#{$prefix}body-bg);
+    border-left: 0;
+}
+
+.email-detail-show {
+    .email-content {
+        margin-left: 0;
+    }
+}
+
+.message-list {
+    padding-right: 0;
+
+    li {
+        .col-mail {
+            float: right;
+        }
+
+        .col-mail-1 {
+
+            .star-toggle,
+            .checkbox-wrapper-mail,
+            .dot {
+                float: right;
+            }
+
+            .checkbox-wrapper-mail {
+                margin: 15px 20px 0 0;
+            }
+
+            .star-toggle {
+                margin-right: 5px;
+                margin-left: auto;
+            }
+
+            .title {
+                right: 95px;
+                left: auto;
+
+                @media (max-width: 575.98px) {
+                    right: 95px;
+                    left: auto;
+                }
+            }
+        }
+
+        .col-mail-2 {
+            right: 280px;
+            left: 0;
+
+            .subject {
+                right: 0;
+                left: 110px;
+            }
+
+            .date {
+                right: auto;
+                left: 0;
+                padding-left: 0;
+                padding-right: 20px;
+            }
+        }
+    }
+}
+
+#elmLoader {
+    right: 0;
+    left: auto;
+}
+
+.email-compose-input {
+    padding-right: 0;
+    padding-left: 80px;
+}
+
+@media (max-width: 1349.98px) {
+    .email-detail-content {
+        right: auto;
+        left: 0;
+        transform: translateX(-100%);
+    }
+}
+
+.email-chat-detail {
+    left: $footer-height;
+    right: auto;
+}

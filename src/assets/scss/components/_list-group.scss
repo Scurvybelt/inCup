@@ -1,0 +1,78 @@
+//
+// _list-group.scss
+//
+
+@each $color,
+$value in $theme-colors {
+    .list-group-fill-#{$color} {
+        &.list-group-item {
+            background-color: $value !important;
+            border-color: $value;
+            color: set-color-from-background($value);
+        }
+    }
+}
+
+.list-group-item {
+    margin-bottom: 0px;
+    font-size: 0.9063rem;
+
+    // background-color: var(--#{$prefix}secondary-bg) !important;
+    .list-text {
+        color: $text-muted;
+    }
+
+    &.active {
+        .list-title {
+            color: $white;
+        }
+
+        .list-text {
+            color: rgba($white, 0.50);
+        }
+    }
+}
+
+.ng-star-inserted {
+    .nestable-item-container {
+        margin-top: 5px;
+    }
+    &.dd-list {
+        background-color: transparent;
+    }
+    .dd-item {
+        background-color: rgba(var(--tb-primary-rgb), 0.05);
+        .mat-list-item  {
+            padding: 0;
+        }
+        .nested-list {
+            margin-top: 0px;
+            .list-group-item {
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
+    
+    .nested-sortable-handle{
+        .handle{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+        }
+        .list-group-item{
+            padding-left: 42px;
+        }
+    }
+    
+}
+
+ul li .nestable-item-container {
+    font-family: $font-family-base !important;
+}

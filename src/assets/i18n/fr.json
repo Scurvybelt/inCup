@@ -1,0 +1,138 @@
+{
+  "MENUITEMS": {
+    "MENU": {
+      "TEXT": "Maison"
+    },
+    "HOME": {
+      "TEXT": "Maison"
+    },
+    "CATELOG": {
+      "TEXT": "Catalogue",
+      "LIST": {
+        "MEN": "Hommes",
+        "CLOTHING": "Vêtements",
+        "WATCHES": "Montres",
+        "BAGS": "Sacs & Bagages",
+        "FOOTWEAR": "Chaussure",
+        "INNERWEAR": "Vêtements d'intérieur",
+        "OTHERACCESSORIES": "Autres accessoires",
+        "WOMEN": "Femmes",
+        "WESTERNWEAR": "Vêtements occidentaux",
+        "HANDBAGS": "Sacs à main et pochettes",
+        "LINGERIE": "Lingerie et vêtements de nuit",
+        "FASHION": "Bijoux fantaisie et argent",
+        "ACCESSORIES": "Accessoires et Autres",
+        "KITCHEN": "Maison, cuisine, animaux de compagnie",
+        "BEAUTY": "Beauté, Santé, Épicerie",
+        "SPORTS": "Sports, Fitness, Sacs, Bagages",
+        "CAR": "Voiture, moto, industriel",
+        "BOOKS": "Livres",
+        "OTHERS": "Autres",
+        "SIGNUP": "S'inscrire",
+        "SIGNIN": "S'identifier",
+        "RESETPASSWORD": "réinitialiser le mot de passe",
+        "ERROR404": "Erreur 404",
+        "TOPBRANDS": "LES MEILLEURES MARQUES"
+      }
+    },
+    "SHOP": {
+      "TEXT": "Boutique",
+      "LIST": {
+        "CHECKOUTPAGES": "Pages de paiement",
+        "ADDRESS":"Adresse",
+        "TRACKORDER": "Suivi de commande",
+        "PAYMENT": "Paiement",
+        "REVIEW": "Examen",
+        "CONFIRMATION": "Confirmation",
+        "MYORDER": "Mes commandes / Historique des commandes",
+        "SUPPORT":"Soutien",
+        "SHOPPINGCART":"Panier",
+        "CHECKOUT":"Vérifier",
+        "WISHLIST":"Liste de souhaits"
+      }
+    },
+    "PAGES": {
+      "TEXT": "pages",
+      "LIST": {
+        "PRODUCTS": "Des produits",
+        "GRIDVIEW":"Vue Grille",
+        "DEFAULT": "Défaut",
+        "SIDEBAR": "Barre latérale avec bannière",
+        "RIGHTSIDEBAR": "Barre latérale droite",
+        "NOSIDEBAR": "Pas de barre latérale",
+        "LISTVIEW": "Affichage de liste",
+        "PRODUCTDETAILS": "détails du produit",
+        "USERS": "Utilisatrices",
+        "MYACCOUNT": "Mon compte",
+        "SIGNIN": "S'identifier",
+        "SIGNUP": "S'inscrire",
+        "PASSWORDRESET": "Réinitialisation du mot de passe",
+        "PASSWORDCREATE": "Créer un mot de passe",
+        "SUCCESSMESSAGE": "Message de réussite",
+        "TWOSTEPVERIFY": "Vérification en deux étapes",
+        "LOGOUT": "Se déconnecter",
+        "ERROR404": "Erreur 404",
+        "ERROR500": "Erreur 500",
+        "COMINGSOON": "À venir"
+      }
+    },
+    "CATEGORIES":{
+      "TEXT": "Catégories"
+    },
+    "ABOUT":{
+      "TEXT": "À propos"
+    },
+    "PURCHASEGUIDE":{
+      "TEXT": "Guide d'achat"
+    },
+    "TERMSOFSERVICE":{
+      "TEXT": "Conditions d'utilisation"
+    },
+    "PRIVACYPOLICY":{
+      "TEXT": "politique de confidentialité"
+    },
+    "STORELOCATOR":{
+      "TEXT": "Localisateur de magasin"
+    },
+    "FAQ":{
+      "TEXT": "FAQ"
+    },
+    "INVOICE":{
+      "TEXT": "Facture"
+    },
+    "EMAILTEMPLATE": {
+      "TEXT": "Modèle d'e-mail",
+      "LIST": {
+        "BLACKFRIDAY": "Vendredi noir",
+        "FLASHSALE":"Vente flash",
+        "ORDERSUCCESS":"Réussite de la commande",
+        "ORDERSUCCESS2":"Commande réussie 2"
+      }
+    },
+    "COMPONENTS":{
+      "TEXT": "Composantes"
+    },    
+    "MULTILEVEL": {
+      "TEXT": "Multi-niveaux",
+      "LIST": {
+        "Level1": {
+          "1": "Niveau 1.1",
+          "2": "Niveau 1.2"
+        },
+          "Level2": {
+            "TEXT": "Niveau 1.3",
+            "1": "Niveau 2.1",
+            "2": "Niveau 2.2"
+          },
+          "Level3": {
+            "TEXT": "Niveau 2.3",
+            "1": "Niveau 3.1",
+            "2": "Niveau 3.2"
+          }
+      }
+    },
+    "CONTACT":{
+      "TEXT": "Contact"
+    }    
+  }
+}

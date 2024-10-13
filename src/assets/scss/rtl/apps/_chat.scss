@@ -1,0 +1,107 @@
+//
+// _chat.scss
+//
+
+.chat-list {
+    margin: 0;
+
+    >li {
+        .unread-message {
+            position: absolute;
+            display: inline-block;
+            right: auto;
+            left: 24px;
+        }
+    }
+}
+
+.chat-user-img {
+    position: relative;
+
+    .user-status {
+        left: 0;
+        right: auto;
+    }
+}
+
+.contact-list-title {
+    &:after {
+        right: 50px;
+        left: 0;
+    }
+}
+
+// user chat
+.user-chat {
+    @media (max-width: 991.98px) {
+        right: 0;
+        left: auto;
+        transform: translateX(-100%);
+    }
+}
+
+.chat-conversation {
+    .conversation-list {
+        align-items: flex-start;
+
+        .chat-time {
+            text-align: left;
+        }
+    }
+
+    .chat-avatar {
+        margin: 0  0 0 16px;
+    }
+
+    .right {
+        // justify-content: flex-start;
+
+        .chat-avatar {
+            margin-left: 0px;
+            margin-right: 16px;
+        }
+
+        .chat-time {
+            text-align: right;
+        }
+
+        // .conversation-list {
+        //     text-align: left;
+
+        //     .ctext-wrap {
+        //         justify-content: flex-start;
+
+        //         .ctext-wrap-content {
+        //             text-align: left;
+        //         }
+        //     }
+        // }
+    }
+}
+
+.chat-input-section {
+    .chat-input-feedback {
+        left: auto;
+        right: 4px;
+    }
+}
+
+//Copy Message Alert
+.copyclipboard-alert {
+    right: 50%;
+    left: auto;
+    transform: translateX(50%);
+}
+
+.replymessage-block {
+    text-align: right;
+}
+
+
+// Chat Small
+.chat-sm {
+    .message-img-link {
+        right: auto !important;
+        left: 5px !important;
+    }
+}

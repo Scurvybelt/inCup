@@ -1,0 +1,60 @@
+//
+// _choices.scss
+//
+
+.p-chips{
+    display: flex !important;
+    .p-chips-multiple-container {
+        padding: $input-padding-y $input-padding-x;
+        gap: 0.5rem;
+        &:not(.p-disabled):hover {
+            border-color: $primary;
+        }
+
+        &:not(.p-disabled).p-focus {
+            outline: 0 none;
+            outline-offset: 0;
+            box-shadow: 0 0 0 0.2rem #bfd1f6;
+            border-color: $primary;
+        }
+
+        .p-chips-token{
+            padding: 0.15rem 0.5rem;
+            background: $primary;
+            color: $white;
+            border-radius: 0.25rem;
+            font-size: 12px;
+            .p-chips-token-icon {
+                margin-left: 0.5rem;
+                font-size: 13px;
+            }
+        }
+
+        .p-chips-input-token {
+            padding: 0.15rem 0;
+            input {
+                font-size: $input-btn-font-size;
+                color: $input-color;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+  
+p-chips{
+    &.ng-dirty.ng-invalid > .p-chips > .p-inputtext {
+        border-color: #ced4da #ced4da #ced4da #e4677e;
+    }
+
+    &.p-chips-clearable .p-inputtext {
+        padding-right: 1.5rem;
+    }
+
+    &.p-chips-clearable .p-chips-clear-icon {
+        color: #495057;
+        right: 0.5rem;
+    }
+}
+
