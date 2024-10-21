@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
+import { ProductsService } from 'src/app/core/services/products.service';
 
 @Component({
   selector: 'app-product-details',
@@ -10,8 +12,20 @@ export class ProductDetailsComponent {
   slides: any
   qty: any = 1;
   @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
+  id: any;
+  productoDetalle: any;
+
+  constructor(private route: ActivatedRoute, private productoServicio: ProductsService){
+
+  }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id');
+
+    this.productoServicio.getProducById(this.id).subscribe(data => {
+      console.log(data);
+      this.productoDetalle = data;
+    });
     this.slides = [
       {
         previewImageSrc: 'assets/images/products/img-31.png'

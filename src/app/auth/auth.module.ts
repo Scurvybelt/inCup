@@ -17,11 +17,16 @@ import { LogoutBasicComponent } from "./logout-basic/logout-basic.component";
 import { Error404Component } from "./error404/error404.component";
 import { Error500Component } from "./error500/error500.component";
 import { ComingSoonComponent } from "./coming-soon/coming-soon.component";
+import { AltaBajaProductosComponent } from "./alta-baja-productos/alta-baja-productos.component";
+import { FormularioCreacionEdicionComponent } from "./formulario-creacion-edicion/formulario-creacion-edicion.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
     SigninBasicComponent,
     SignupBasicComponent,
+    AltaBajaProductosComponent,
+    FormularioCreacionEdicionComponent,
     PassResetBasicComponent,
     PassChangeBasicComponent,
     SuccessMsgBasicComponent,
@@ -32,6 +37,8 @@ import { ComingSoonComponent } from "./coming-soon/coming-soon.component";
     ComingSoonComponent,
 
   ],
-  imports: [CommonModule, AuthRoutingModule, SharedModule, NgOtpInputModule],
+  imports: [CommonModule, AuthRoutingModule, SharedModule, NgOtpInputModule,FormsModule,ReactiveFormsModule],
 })
 export class AuthModule { }
+
+

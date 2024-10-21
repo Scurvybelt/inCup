@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { productData, latest_arrival } from './data';
 import { interval, map } from 'rxjs';
+import { ProductsService } from 'src/app/core/services/products.service';
 
 interface Tutorial {
   title?: string;
@@ -93,12 +94,18 @@ export class IndexComponent {
 
   productData: any;
   tutorials: Tutorial[] = [];
+  productsData:any;
 
-  constructor(private primengConfig: PrimeNGConfig) {
+  constructor(private primengConfig: PrimeNGConfig, private servicioProducto: ProductsService) {
   }
 
 
   ngOnInit(): void {
+
+    this.servicioProducto.getProducts().subscribe(data => {
+      console.log(data);
+      this.productsData = data;
+    })
     this.productData = productData
     this.latest_arrival = latest_arrival
     this.tutorials = [

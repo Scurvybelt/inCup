@@ -171,52 +171,52 @@
                 </div>
 
                 <div class="row gallery-wrapper mt-4 pt-2">
-                    @for(data of productData; track $index){
-                    <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot arrival" data-category="hot arrival">
-                        <div class="card overflow-hidden">
-                            <div class="bg-{{data.color}}-subtle rounded-top py-4">
+                    <!-- @for(data of productsData; track $index){ -->
+                    <div *ngFor="let producto of productsData" class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot arrival" data-category="hot arrival">
+                        <div [routerLink]="['/catelog/product-details/',producto.id]" class="card overflow-hidden" style="cursor: pointer;">
+                            <div class="bg-info-subtle rounded-top py-4">
                                 <div class="gallery-product">
-                                    <img src="{{data.image}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" />
+                                    <img src="{{producto.img}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" />
                                 </div>
-                                @if(data.tag){
+                                <!-- @if(data.tag){
                                 <p class="fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival
-                                </p>}
+                                </p>} -->
                                 <div class="gallery-product-actions">
-                                    <div class="mb-2">
+                                    <!-- <div class="mb-2">
                                         <button type="button" class="btn btn-danger btn-sm custom-toggle" data-bs-toggle="button">
                                             <span class="icon-on"><i class="mdi mdi-heart-outline align-bottom fs-15"></i></span>
                                             <span class="icon-off"><i class="mdi mdi-heart align-bottom fs-15"></i></span>
                                         </button>
-                                    </div>
+                                    </div> -->
 
-                                    <div>
+                                    <!-- <div>
                                         <button type="button" class="btn btn-success btn-sm custom-toggle" data-bs-toggle="button">
                                             <span class="icon-on"><i class="mdi mdi-eye-outline align-bottom fs-15"></i></span>
                                             <span class="icon-off"><i class="mdi mdi-eye align-bottom fs-15"></i></span>
                                         </button>
-                                    </div>
+                                    </div> -->
                                 </div>
-                                <div class="product-btn px-3">
+                                <!-- <div class="product-btn px-3">
                                     <a routerLink="/shop/shop-cart" class="btn btn-primary btn-sm w-75 add-btn"><i class="mdi mdi-cart me-1"></i> Add to cart</a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="card-body">
                                 <div>
                                     <a routerLink="/catelog/product-details">
-                                        <h6 class="fs-15 lh-base text-truncate mb-0">{{data.name}}</h6>
+                                        <h6 class="fs-15 lh-base text-truncate mb-0">{{producto.name}}</h6>
                                     </a>
                                     <div class="mt-3">
-                                        <span class="float-end">{{data.rate}} <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                        <!-- <span class="float-end">{{data.rate}} <i class="ri-star-half-fill text-warning align-bottom"></i></span> -->
                                         <h5 class="mb-0">
-                                            ${{data.price}}
-                                            @if(data.mrp){ <span class="text-muted fs-12"><del>${{data.mrp}}</del></span>}
+                                            ${{producto.price}}
+                                            <!-- @if(data.mrp){ <span class="text-muted fs-12"><del>${{data.mrp}}</del></span>} -->
                                         </h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    }
+                    <!-- } -->
                     <!-- end col -->
                 </div>
 
@@ -343,9 +343,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="text-center">
-                    <h3 class="mb-3">What Customers Say About Us</h3>
-                    <p class="text-muted fs-15">A customer is a person or business that buys goods or services from
-                        another business. Customers are crucial because they generate revenue.</p>
+                    <h3 class="mb-3">¿Qué dicen nuestros clientes de nuestros productos?</h3>
+                    <p class="text-muted fs-15">En el corazón de nuestro negocio están ustedes, nuestros valiosos clientes. Cada vez que eligen nuestros productos o servicios, no solo están haciendo una compra; están formando parte de nuestra familia. Su apoyo es fundamental, ya que nos impulsa a innovar y mejorar constantemente. Gracias a ustedes, podemos seguir creciendo y ofreciendo lo mejor. ¡Su satisfacción es nuestra mayor recompensa!</p>
                 </div>
             </div>
             <!--end col-->
@@ -376,7 +375,7 @@
             </div>
         </div>
 
-        <div class="row row-cols-lg-5 row-cols-md-3 row-cols-1 text-center justify-content-center align-items-center g-3 mt-5 pt-lg-5">
+        <!-- <div class="row row-cols-lg-5 row-cols-md-3 row-cols-1 text-center justify-content-center align-items-center g-3 mt-5 pt-lg-5">
             <div class="col">
                 <div class="client-images">
                     <a href="javascript:void(0);">
@@ -412,7 +411,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </section>
 

@@ -17,6 +17,10 @@ export const environment = {
   }
 };
 
+export const environmentLocal = {
+  api: 'http://api-products.test/productsController.php',
+}
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

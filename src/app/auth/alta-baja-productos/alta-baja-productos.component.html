@@ -1,0 +1,63 @@
+
+
+<section
+    class="auth-page-wrapper position-relative bg-light min-vh-100 d-flex align-items-center justify-content-between">
+    <app-login-header></app-login-header>
+    <div class="w-100"> 
+        <div class="container">
+            <div>
+                <h1 class="text-center">Alta y Baja de productos</h1>
+                <div>
+                    <button class="btn btn-primary" [routerLink]="['/auth/formulario']">+ Crear Producto</button>
+                </div>
+            </div>
+            <table class="table table-hover text-center">
+                <thead>
+                    <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">Img</th>
+                    <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of productos ">
+                        <th scope="row">{{producto.id}}</th>
+                        <td>{{producto.name}}</td>
+                        <td>
+                            <img [src]="producto.img" alt="Imagen del producto" class="img-fluid" style="max-width: 100px;">
+                        </td>
+                        <td>
+                            <button class="btn btn-link ">Eliminar</button>
+                            <button class="btn btn-link " [routerLink]="['/auth/formulario/',producto.id]">Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+        </div>
+    </div>
+
+    <!-- <div>
+        <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div> -->
+   
+
+
+</section>
+
+<app-footer></app-footer>

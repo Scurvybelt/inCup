@@ -9,6 +9,8 @@ import { SigninBasicComponent } from "./signin-basic/signin-basic.component";
 import { SignupBasicComponent } from "./signup-basic/signup-basic.component";
 import { SuccessMsgBasicComponent } from "./success-msg-basic/success-msg-basic.component";
 import { TwostepBasicComponent } from "./twostep-basic/twostep-basic.component";
+import { AltaBajaProductosComponent } from "./alta-baja-productos/alta-baja-productos.component";
+import { FormularioCreacionEdicionComponent } from "./formulario-creacion-edicion/formulario-creacion-edicion.component";
 
 // component
 
@@ -19,7 +21,19 @@ const routes: Routes = [
   },
   {
     path: "signup-basic",
-    component: SignupBasicComponent,
+      component: SignupBasicComponent,
+  },
+  {
+    path: "administrador",
+    component: AltaBajaProductosComponent
+  },
+  {
+    path: "formulario",//A esto falta que le pase el id
+    component: FormularioCreacionEdicionComponent
+  },
+  {
+    path: "formulario/:id",//A esto falta que le pase el id
+    component: FormularioCreacionEdicionComponent
   },
   {
     path: "pass-reset-basic",
