@@ -28,12 +28,15 @@
                             <img [src]="producto.img" alt="Imagen del producto" class="img-fluid" style="max-width: 100px;">
                         </td>
                         <td>
-                            <button class="btn btn-link ">Eliminar</button>
+                            <button class="btn btn-link " (click)="eliminar(producto)">Eliminar</button>
                             <button class="btn btn-link " [routerLink]="['/auth/formulario/',producto.id]">Editar</button>
                         </td>
                     </tr>
                 </tbody>
-                </table>
+            </table>
+            <div>
+                <h1 class="text-center">{{noHayProductos}}</h1>
+            </div>
         </div>
     </div>
 

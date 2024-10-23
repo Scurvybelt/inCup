@@ -7,12 +7,12 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="text-center">
-                    <h1 class="text-white mb-0">Product Grid No Sidebar</h1>
+                    <h1 class="text-white mb-0">Catálogo de productos</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb breadcrumb-light justify-content-center mt-4">
-                            <li class="breadcrumb-item"><a href="javascript:void(0);">Product</a></li>
-                            <li class="breadcrumb-item"><a href="javascript:void(0);">Grid View</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">No Sidebar</li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Productos</a></li>
+                            <!-- <li class="breadcrumb-item"><a href="javascript:void(0);">Grid View</a></li> -->
+                            <li class="breadcrumb-item active" aria-current="page">Catálogo de Productos</li>
                         </ol>
                     </nav>
                 </div>
@@ -113,15 +113,15 @@
 
                 <ng-template let-products pTemplate="listItem">
                     <div class="row">
-                        @for(data of products; track $index){
-                        <div class="col-xxl-3 col-lg-4 col-md-6">
-                            <div class="card overflow-hidden element-item">
+                        <!-- @for(data of products; track $index){ -->
+                        <div *ngFor="let producto of productos" class="col-xxl-3 col-lg-4 col-md-6">
+                        <div [routerLink]="['/catelog/product-details/',producto.id]" class="card overflow-hidden element-item" style="cursor: pointer;">
                                 <div class="bg-light py-4">
-                                    <div class="gallery-product"><img src="{{data.img}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" /></div>
-                                    @if(data.tag){
+                                    <div class="gallery-product"><img src="{{producto.img}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" /></div>
+                                    <!-- @if(data.tag){
                                     <p class=" fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival
-                                    </p>}
-                                    <div class="gallery-product-actions">
+                                    </p>} -->
+                                    <!-- <div class="gallery-product-actions">
                                         <div class="mb-2">
                                             <button type="button" class="btn btn-danger btn-sm custom-toggle" data-bs-toggle="button">
                                                 <span class="icon-on"><i class="mdi mdi-heart-outline align-bottom fs-15"></i></span> <span class="icon-off"><i class="mdi mdi-heart align-bottom fs-15"></i></span>
@@ -132,10 +132,10 @@
                                                 <span class="icon-on"><i class="mdi mdi-eye-outline align-bottom fs-15"></i></span> <span class="icon-off"><i class="mdi mdi-eye align-bottom fs-15"></i></span>
                                             </button>
                                         </div>
-                                    </div>
-                                    <div class="product-btn px-3">
+                                    </div> -->
+                                    <!-- <div class="product-btn px-3">
                                         <a href="javascript:void(0);" class="btn btn-primary btn-sm w-75 add-btn"><i class="mdi mdi-cart me-1"></i> Add to Cart</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="card-body">
                                     <div>
@@ -158,21 +158,22 @@
                                             </li>
                                         </ul>
                                         <a href="javascript:void(0);">
-                                            <h6 class="fs-16 lh-base text-truncate mb-0">{{data.title}}</h6>
+                                            <h6 class="fs-16 lh-base text-truncate mb-0">{{producto.name}}</h6>
                                         </a>
                                         <div class="mt-3">
-                                            <span class="float-end">{{data.rating}} <i class="ri-star-half-fill text-warning align-bottom"></i></span>
+                                            <!-- <span class="float-end">{{data.rating}} <i class="ri-star-half-fill text-warning align-bottom"></i></span> -->
                                             <h5 class="mb-0">
-                                                ${{data.price}}
-                                                @if(data.mrp){
+                                                {{ producto.price | currency:'USD':'symbol':'1.2-2'}}
+                                                <!-- @if(data.mrp){
                                                 <span class="text-muted fs-12"><del>${{data.mrp}}</del></span>
-                                                }
+                                                } -->
                                             </h5>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>}
+                        </div>
+                    <!-- } -->
                     </div>
                 </ng-template>
                 <ng-template pTemplate="empty" class="row" id="search-result-elem">
@@ -197,118 +198,40 @@
     <!--end container-->
 </div>
 
-<section class="section pt-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="d-flex align-items-center justify-content-between mb-4 pb-1">
-                    <h2 class="flex-grow-1 mb-0">Deals Of The Day</h2>
-                    <div class="flex-shrink-0">
-                        <a href="javascript:void(0);" class="link-effect link-success">All Deals <i class="ri-arrow-right-line ms-1 align-bottom"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--end col-->
-        <div class="row">
-            <div class="col-xxl-4 col-lg-4 col-md-6">
-                <div class="ecommerce-deals-widgets">
-                    <div class="card overflow-hidden mb-0 border-0">
-                        <div class="gallery-product">
-                            <img src="assets/images/ecommerce/img-5.jpg" alt="" class="mx-auto d-block object-fit-cover" />
-                        </div>
-                    </div>
-                    <div class="content mx-4">
-                        <div class="countdown-deals mb-3">
-                            <div data-countdown="Oct 30, 2023" class="countdownlist"></div>
-                        </div>
-                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
-                            <a href="javascript:void(0);">
-                                <h6 class="text-capitalize fs-16 lh-base text-truncate">World's most expensive t-shirt
-                                </h6>
-                            </a>
-                            <p class="text-muted">
-                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
-                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.9)
-                            </p>
-                            <div class="mt-3 d-flex align-items-center">
-                                <h5 class="text-secondary flex-grow-1 mb-0">
-                                    $124.99 <span class="text-muted fs-12"><del>$354.99</del></span>
-                                </h5>
-                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--end col-->
-            <div class="col-xxl-4 col-lg-4 col-md-6">
-                <div class="ecommerce-deals-widgets">
-                    <div class="card overflow-hidden mb-0 border-0">
-                        <div class="gallery-product">
-                            <img src="assets/images/ecommerce/instagram/img-2.jpg" alt="" class="mx-auto d-block object-fit-cover" />
-                        </div>
-                    </div>
-                    <div class="content mx-4">
-                        <div class="countdown-deals mb-3">
-                            <div data-countdown="Oct 20, 2023" class="countdownlist"></div>
-                        </div>
-                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
-                            <a href="javascript:void(0);">
-                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Branded Perfumes For Men</h6>
-                            </a>
-                            <p class="text-muted">
-                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
-                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.8)
-                            </p>
-                            <div class="mt-3 d-flex align-items-center">
-                                <h5 class="text-secondary flex-grow-1 mb-0">
-                                    $56.00 <span class="text-muted fs-12"><del>$180.00</del></span>
-                                </h5>
-                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--end col-->
-            <div class="col-xxl-4 col-lg-4 col-md-6">
-                <div class="ecommerce-deals-widgets">
-                    <div class="card overflow-hidden mb-0 border-0">
-                        <div class="gallery-product">
-                            <img src="assets/images/ecommerce/img-3.jpg" alt="" class="mx-auto d-block object-fit-cover" />
-                        </div>
-                    </div>
-                    <div class="content mx-4">
-                        <div class="countdown-deals mb-3">
-                            <div data-countdown="Oct 15, 2023" class="countdownlist"></div>
-                        </div>
-                        <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
-                            <a href="javascript:void(0);">
-                                <h6 class="text-capitalize fs-16 lh-base text-truncate">Dressive Women Beige Heels</h6>
-                            </a>
-                            <p class="text-muted">
-                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i>
-                                <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.9)
-                            </p>
-                            <div class="mt-3 d-flex align-items-center">
-                                <h5 class="text-secondary flex-grow-1 mb-0">
-                                    $124.99 <span class="text-muted fs-12"><del>$354.99</del></span>
-                                </h5>
-                                <a href="javascript:void(0);" class="btn btn-primary btn-sm"><i class="ri-shopping-bag-line align-bottom me-1"></i> Add</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--end col-->
-        </div>
-        <!--end row-->
-    </div>
-    <!--end container-->
-</section>
 
-<app-discount-footer [discount]="25"></app-discount-footer>
+
+<!-- <app-discount-footer [discount]="25"></app-discount-footer> -->
+<section class="section">
+    <div class="container-fluid container-custom">
+        <div class="card border-0 overflow-hidden">
+            <div class="row g-0">
+                <div class="col-lg-5">
+                    <img src="assets/images/ecommerce/instagram/img-4.jpg" alt="" class="img-fluid h-100 object-fit-cover">
+                </div><!--end col-->
+                <div class="col-lg-7">
+                    <div class="card-body bg-dark h-100 p-xxl-5">
+                        <div class="p-4">
+                            <p class="text-white opacity-75 text-uppercase fs-15">Ofertas limitadas</p>
+                            <h1 class="lh-base text-capitalize text-white mb-3">Suscríbete a nuestras ofertas por correo y recibe ofertas antes que nadie.</h1>
+                            <!-- <p class="text-white-50 mb-4 fs-15 pb-2">A newsletter introduction should tell the reader
+                                what they'll get out of reading the rest of the email or linked article.</p> -->
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <form action="#!">
+                                        <div class="subscribe-input position-relative">
+                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingresa tu correo">
+                                            <button type="submit" class="btn btn-primary">Suscríbete</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end card-->
+    </div><!--end container-fluid-->
+</section>
 
 <app-features></app-features>
 

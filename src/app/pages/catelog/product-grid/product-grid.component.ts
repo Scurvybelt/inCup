@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 
 // Data Get
 import { productGrid } from "../product-grid-right/data";
+import { ProductsService } from "src/app/core/services/products.service";
 
 @Component({
     selector: "app-product-grid",
@@ -23,8 +24,9 @@ export class ProductGridComponent {
     sortOptions: any;
     sortOrder: any;
     sortField: any;
+    productos: any;
 
-    constructor() {
+    constructor(private servicioProductos: ProductsService) {
         this.rating = [
             { name: "4 & Above", value: "4" },
             { name: "3 & Above", value: "3" },
@@ -42,6 +44,12 @@ export class ProductGridComponent {
     }
 
     ngOnInit(): void {
+
+        this.servicioProductos.getProducts().subscribe((data: any) => {
+            this.productos = data;
+            console.log(this.productos);
+        });
+
         this.products = productGrid;
         this.range1 = "$ " + this.rangeValues[0];
         this.range2 = "$ " + this.rangeValues[1];

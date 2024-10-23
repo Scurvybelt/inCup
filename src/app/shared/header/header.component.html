@@ -35,7 +35,7 @@
     <div class="container" id="navbarcontainer">
         <a class="navbar-brand d-none d-lg-block" routerLink="/">
             <div class="logo-dark">
-                <img src="assets/images/logoInCup.jpeg" alt="" height="25" class="card-logo-dark mx-auto" style="height: 4rem;" />
+                <img src="assets/images/logoInCupSinFondo.png" alt="" height="25" class="card-logo-dark mx-auto" style="height: 4rem;" />
             </div>
             <div class="logo-light">
                 <img src="assets/images/logoInCup.jpeg" alt="" height="25" class="card-logo-dark mx-auto"  style="height: 4rem;"/>
@@ -49,8 +49,8 @@
             <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0" id="navigation-menu">
                 <li class="nav-item d-block d-lg-none">
                     <a class="d-block p-3 h-auto text-center" href="index.html">
-                        <img src="assets/images/logo-dark.png" alt="" height="25" class="card-logo-dark mx-auto">
-                        <img src="assets/images/logo-light.png" alt="" height="25" class="card-logo-light mx-auto">
+                        <img src="assets/images/logoInCup.jpeg" alt="" height="25" class="card-logo-dark mx-auto">
+                        <img src="assets/images/logoInCupSinFondo.png" alt="" height="25" class="card-logo-light mx-auto">
                     </a>
                 </li>
                 @for(item of menuItems; track $index){
@@ -187,7 +187,7 @@
             </div>
             <div class="dropdown topbar-head-dropdown ms-2   topbar-head-dropdown">
                 <button type="button" class="btn" id="page-header-user-dropdown" (click)="toggleDropdown()">
-                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar" />
+                    <img class="rounded-circle header-profile-user" src="assets/images/users/user-dummy-img.jpg" alt="Header Avatar" />
                 </button>
 
                 <div class="dropdown-menu dropdown-menu-end" [ngClass]="{ 'show': isDropdownOpen }">
@@ -207,7 +207,7 @@
                     <!-- <a class="dropdown-item" routerLink="/users/account">
                         <span class="badge bg-success-subtle text-success mt-1 float-end">New</span><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span>
                     </a> -->
-                    <a class="dropdown-item" routerLink="/auth/signup-basic"><i class="bi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Administrador</span></a>
+                    <a class="dropdown-item" routerLink="/auth/signin-basic"><i class="bi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Administrador</span></a>
                     <a class="dropdown-item" routerLink="/auth/logout-basic"><i class="bi bi-box-arrow-right text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
                 </div>
             </div>

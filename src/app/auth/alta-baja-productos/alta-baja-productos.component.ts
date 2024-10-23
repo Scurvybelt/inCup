@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginHeaderComponent } from 'src/app/shared/login-header/login-header.component';
 import { ProductsService } from '../../core/services/products.service'; // Adjust the path as necessary
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-alta-baja-productos',
@@ -8,15 +9,41 @@ import { ProductsService } from '../../core/services/products.service'; // Adjus
   styleUrl: './alta-baja-productos.component.scss'
 })
 export class AltaBajaProductosComponent {
-  productos: any;
+  productos: Array<any> = [];
+  noHayProductos: string = '';
 
-  constructor(private productService: ProductsService) {
+  constructor(private productService: ProductsService,private router: Router,) {
 
   }
   ngOnInit(){
     this.productService.getProducts().subscribe((data: any) => {
       console.log(data);
       this.productos = data;
+      
+      this.hayProductos();
+      
     })
+    
+  }
+
+  hayProductos(){
+    if( this.productos.length === 0){
+      this.noHayProductos = 'No hay productos';
+    }else{
+      this.noHayProductos = '';
+    }
+  }
+
+  eliminar(producto: any){
+    const confirmacion = confirm(`¿Está seguro de que quiere eliminar el producto con el nombre: ${producto.name}?`);
+    if(confirmacion){
+      this.productService.deleteProduct(producto.id).subscribe((data:any) => {
+        // console.log(data);
+        window.location.reload();
+      })
+
+
+    }else{
+    }
   }
 }

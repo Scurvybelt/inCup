@@ -22,10 +22,10 @@
                             <div class="card-body">
                                 <p class="text-muted fs-15">Inicia Sesión a InCup</p>
                                 <div class="p-2">
-                                    <form>
+                                    <form [formGroup]="formularioSesion" (ngSubmit)="enviarFormulario()">
                                         <div class="mb-3">
                                             <label for="username" class="form-label">Usuario</label>
-                                            <input type="text" class="form-control" id="username"
+                                            <input formControlName="usuario" type="text" class="form-control" id="username"
                                                 placeholder="Enter username" />
                                         </div>
 
@@ -38,7 +38,7 @@
                                             <div class="position-relative auth-pass-inputgroup mb-3">
                                                 <input type="password" [type]="fieldTextType ? 'text' : 'password'"
                                                     class="form-control bg-light border-light pe-5 password-input "
-                                                    placeholder="Enter password" id="password-input" required>
+                                                    placeholder="Enter password" id="password-input" required formControlName="password">
                                                 <button
                                                     
                                                     type="button" id="password-addon"><i class="align-middle" [ngClass]="{'ri-eye-off-fill': !fieldTextType, 'ri-eye-line': fieldTextType
@@ -54,7 +54,7 @@
                                         </div> -->
 
                                         <div class="mt-4">
-                                            <button class="btn btn-primary w-100" type="submit">Inicia Sesión</button>
+                                            <button [disabled]="formularioSesion.invalid" class="btn btn-primary w-100" type="submit">Inicia Sesión</button>
                                         </div>
 
                                         <!-- <div class="mt-4 pt-2 text-center">
@@ -74,11 +74,11 @@
                                         </div> -->
                                     </form>
 
-                                    <div class="text-center mt-5">
+                                    <!-- <div class="text-center mt-5">
                                         <p class="mb-0">No tienes una cuenta <a routerLink="/auth/signup-basic"
                                                 class="fw-semibold text-secondary text-decoration-underline">Crear Cuenta</a>
                                         </p>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
