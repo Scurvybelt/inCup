@@ -1,7 +1,7 @@
 <!-- Header -->
 <app-header></app-header>
 
-<section class="ecommerce-about" style="background-image: url('assets/images/profile-bg.jpg'); background-size: cover; background-position: center;">
+<section class="ecommerce-about" style="background-image: url('assets/images/ecommerce/vasosTransparentes.jpg'); background-size: cover; background-position: center;">
     <div class="bg-overlay bg-primary" style="opacity: 0.85;"></div>
     <div class="container">
         <div class="row justify-content-center">
@@ -32,7 +32,7 @@
                     <div class="card">
                         <div class="card-body p-4">
                             <div class="row gy-4">
-                                <div class="col-xl-3 col-md-6">
+                                <div class="col-xl-5 col-md-6">
                                     <div>
                                         <label class="form-label">Category</label>
                                         <select class="form-control" name="select-category" id="select-category" (change)="dv.filter($event.target.value)">
@@ -49,7 +49,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-3 col-md-6">
+                                <div class="col-xl-5 col-md-6">
                                     <div>
                                         <label class="form-label">Price</label>
                                         <div class="pb-3">
@@ -62,19 +62,19 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-3 col-md-6">
+                                <!-- <div class="col-xl-3 col-md-6">
                                     <div>
                                         <label class="form-label">Rating</label>
                                         <p-multiSelect styleClass="form-control d-flex" [options]="rating" optionLabel="name" defaultLabel="Select rating" [filter]="true" display="chip"></p-multiSelect>
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <div class="col-xl-3 col-md-6">
+                                <!-- <div class="col-xl-3 col-md-6">
                                     <div>
                                         <label class="form-label">Discount</label>
                                         <p-multiSelect styleClass="form-control d-flex" [options]="discount" defaultLabel="Select discount" [filter]="true" optionLabel="name" display="chip"></p-multiSelect>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -88,20 +88,20 @@
                             <div class="row align-items-center mb-4">
                                 <div class="col-md-auto">
                                     <div class="search-box">
-                                        <input type="text" pInputText class="form-control" id="searchProductList" autocomplete="off" placeholder="Search Products..." (input)="dv.filter($event.target.value)" />
+                                        <input type="text" pInputText class="form-control" id="searchProductList" autocomplete="off" placeholder="Buscar Producto..." (input)="dv.filter($event.target.value)" />
                                         <i class="ri-search-line search-icon"></i>
                                     </div>
                                 </div>
                                 <div class="col-md">
                                     <div class="d-flex gap-2 justify-content-md-end">
                                         <div class="flex-shrink-0">
-                                            <label for="sort-elem" class="col-form-label">Sort By:</label>
+                                            <label for="sort-elem" class="col-form-label">Filtar por:</label>
                                         </div>
                                         <div class="flex-shrink-0">
                                             <select class="form-select w-md" id="sort-elem" (change)="onSortChange($event)">
-                                                <option value="">All</option>
-                                                <option value="low_to_high">Low to High</option>
-                                                <option value="high_to_low">High to Low</option>
+                                                <option value="">Todos</option>
+                                                <option value="low_to_high">Menor a Mayor</option>
+                                                <option value="high_to_low">Mayor a Menor</option>
                                             </select>
                                         </div>
                                     </div>

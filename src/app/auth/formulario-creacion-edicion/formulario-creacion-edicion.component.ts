@@ -26,15 +26,19 @@ export class FormularioCreacionEdicionComponent {
       this.edicion = true;
       console.log('Editar producto');
       this.titulo = 'Editar producto';
-      this.servicioProducto.getProducById(this.id).subscribe((data: any) => {
-        console.log(data);
-        this.onPathValues(data);
-
-      })
+      this.loadProductDataById(this.id);
     }else{
       console.log('Crear producto');
       this.titulo = 'Crear producto';
     }
+  }
+
+  loadProductDataById(id: any){
+    this.servicioProducto.getProducById(this.id).subscribe((data: any) => {
+      console.log(data);
+      this.onPathValues(data);
+
+    })
   }
 
   onPathValues(data:any){
@@ -64,7 +68,7 @@ export class FormularioCreacionEdicionComponent {
       reader.onload = (e: any) => {
         const preview = document.getElementById('preview') as HTMLImageElement;
         preview.src = e.target.result;
-        this.productoForm.patchValue({ imagen: e.target.result });
+        this.productoForm.patchValue({ img: e.target.result });
       };
       reader.readAsDataURL(input.files[0]);
     }
@@ -75,7 +79,10 @@ export class FormularioCreacionEdicionComponent {
       //Editar
     }else{
       //Crear
-
+      console.log(this.productoForm.value);
+      this.servicioProducto.createProduct(this.productoForm.value).subscribe((data => {
+        console.log(data);
+      }))
     }
   }
 }

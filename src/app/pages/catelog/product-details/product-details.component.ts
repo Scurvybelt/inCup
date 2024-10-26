@@ -14,6 +14,7 @@ export class ProductDetailsComponent {
   @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
   id: any;
   productoDetalle: any;
+  whatsappLink: string = '';
 
   constructor(private route: ActivatedRoute, private productoServicio: ProductsService){
 
@@ -24,25 +25,29 @@ export class ProductDetailsComponent {
 
     this.productoServicio.getProducById(this.id).subscribe(data => {
       console.log(data);
-      this.productoDetalle = data;
-    });
-    this.slides = [
-      {
-        previewImageSrc: 'assets/images/products/img-31.png'
-      },
-      {
-        previewImageSrc: 'assets/images/products/img-32.png'
-      },
-      {
-        previewImageSrc: 'assets/images/products/img-33.png'
-      },
-      {
-        previewImageSrc: 'assets/images/products/img-34.png'
-      },
-      {
-        previewImageSrc: 'assets/images/products/img-32.png'
+      if(data){
+        this.productoDetalle = data;
       }
-    ]
+      this.slides = [
+        {
+          previewImageSrc: this.productoDetalle.img
+        },
+        {
+          previewImageSrc: 'assets/images/products/img-32.png'
+        },
+        {
+          previewImageSrc: 'assets/images/products/img-33.png'
+        },
+        {
+          previewImageSrc: 'assets/images/products/img-34.png'
+        },
+        {
+          previewImageSrc: 'assets/images/products/img-32.png'
+        }
+      ]
+    });
+    this.generateWhatsAppLink();
+    
   }
 
   slideConfig = {
@@ -82,6 +87,12 @@ export class ProductDetailsComponent {
     if (id == '1') {
       this.qty++;
     }
+  }
+
+  generateWhatsAppLink(): void {
+    const phoneNumber = '5215566968800'; // Número de teléfono en formato internacional
+    const message = `Hola, estoy interesado en el producto ${this.productoDetalle[0]?.name}.`;
+    this.whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   }
 
 }

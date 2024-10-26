@@ -6,8 +6,7 @@
         <div class="container">
             <h1 class="text-center">{{titulo}}</h1>
             <div class="card border-0 mb-0 " style="padding: 3rem;">
-
-                <form [formGroup]="productoForm" (ngSubmit)="onSubmit()" >
+                <form [formGroup]="productoForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
                     <div class="row justify-content-center">
                         <div class="col-lg-5 col-md-6 mb-3">
                             <label for="imagen" class="form-label">Imagen</label>
@@ -20,27 +19,38 @@
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="name" class="form-label" >Nombre</label>
+                            <label for="name" class="form-label">Nombre</label>
                             <input type="text" class="form-control" formControlName="name" id="name" aria-describedby="nombreHelp">
+                            <div *ngIf="productoForm.get('name')?.invalid && (productoForm.get('name')?.dirty || productoForm.get('name')?.touched)" class="text-danger">
+                                <div *ngIf="productoForm.get('name')?.errors?.['required']">El nombre es requerido.</div>
+                            </div>
                         </div>
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="description" class="form-label" >Descripción</label>
+                            <label for="description" class="form-label">Descripción</label>
                             <textarea class="form-control" id="description" formControlName="description" rows="3"></textarea>
+                            <div *ngIf="productoForm.get('description')?.invalid && (productoForm.get('description')?.dirty || productoForm.get('description')?.touched)" class="text-danger">
+                                <div *ngIf="productoForm.get('description')?.errors?.['required']">La descripción es requerida.</div>
+                            </div>
                         </div>
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="amount" class="form-label" >Cantidad</label>
+                            <label for="amount" class="form-label">Cantidad</label>
                             <input type="number" class="form-control" formControlName="amount" id="amount">
+                            <div *ngIf="productoForm.get('amount')?.invalid && (productoForm.get('amount')?.dirty || productoForm.get('amount')?.touched)" class="text-danger">
+                                <div *ngIf="productoForm.get('amount')?.errors?.['required']">La cantidad es requerida.</div>
+                            </div>
                         </div>
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="price" class="form-label" >precio</label>
+                            <label for="price" class="form-label">Precio</label>
                             <input type="number" class="form-control" formControlName="price" id="price">
+                            <div *ngIf="productoForm.get('price')?.invalid && (productoForm.get('price')?.dirty || productoForm.get('price')?.touched)" class="text-danger">
+                                <div *ngIf="productoForm.get('price')?.errors?.['required']">El precio es requerido.</div>
+                            </div>
                         </div>
-                        <div class="col-12 d-flex justify-content-between">
-                            <button *ngIf="!edicion" class="btn btn-primary">Crear</button>
-                            <button *ngIf="edicion" class="btn btn-primary">Editar</button>
+                        <div class="col-12 d-flex justify-content-center">
+                            <button [disabled]="this.productoForm.invalid" type="submit" class="btn btn-primary">{{ id ? 'Actualizar' : 'Crear' }}</button>
                         </div>
                     </div>
-                </form>
+                </form> 
             </div>
         </div>
     </div>

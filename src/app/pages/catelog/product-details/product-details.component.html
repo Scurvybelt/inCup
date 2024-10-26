@@ -1,7 +1,7 @@
 <!-- Header -->
 <app-header></app-header>
 
-<section class="ecommerce-about" style="background-image: url('assets/images/profile-bg.jpg'); background-size: cover; background-position: center;">
+<section class="ecommerce-about" style="background-image: url('assets/images/ecommerce/fondoVasos.jpg'); background-size: cover; background-position: center;">
     <div class="bg-overlay bg-primary" style="opacity: 0.85;"></div>
     <div class="container">
         <div class="row justify-content-center">
@@ -28,11 +28,11 @@
         <div class="row gx-2">
             <div class="col-lg-6">
                 <div class="row">
-                    <div class="col-md-2">
+                    <!-- <div class="col-md-2">
                         <ngx-slick-carousel [config]="config" class="carousel swiper productSwiper mb-3 mb-lg-0" dir="ltr">
                             <div class="swiper-slide swiper-slide-thumb-active swiperlist" ngxSlickItem (click)="slidePreview('1',$event)">
                                 <div class="product-thumb rounded cursor-pointer">
-                                    <img src="assets/images/products/img-31.png" alt="" class="img-fluid" />
+                                    <img src="assets/images/products/img-33.png" alt="" class="img-fluid" />
                                 </div>
                             </div>
                             <div class="swiper-slide swiperlist" (click)="slidePreview('2',$event)" ngxSlickItem>
@@ -56,28 +56,29 @@
                                 </div>
                             </div>
                         </ngx-slick-carousel>
-                    </div>
+                    </div> -->
                     <!--end col-->
-                    <div class="col-md-10">
+                    <div *ngIf="productoDetalle" class="col-md-10" >
                         <div class="bg-light rounded-2 position-relative ribbon-box overflow-hidden">
-                            <div class="ribbon ribbon-danger ribbon-shape trending-ribbon"><span class="trending-ribbon-text">Mejores Productos</span> <i class="ri-flashlight-fill text-white align-bottom float-end ms-1"></i></div>
+                            <div class="ribbon ribbon-danger ribbon-shape trending-ribbon"><span class="trending-ribbon-text">Top Productos</span> <i class="ri-flashlight-fill text-white align-bottom float-end ms-1"></i></div>
                             <ngx-slick-carousel class="carousel bg-light" dir="ltr" #slickModal="slick-carousel" [config]="slideConfig" (afterChange)="slickChange($event)">
-                                @for(slide of slides; track $index){
+                                @for(slide of productoDetalle; track $index){
                                 <div ngxSlickItem class="">
-                                    <img src="{{ slide.previewImageSrc }}" alt="" width="100%">
+                                    <img src="{{ slide.img }}" alt="" width="100%">
                                 </div>}
                             </ngx-slick-carousel>
+                            <!-- <img [src]="productoDetalle.img"> -->
                         </div>
                     </div>
                     <!--end col-->
                     <div class="col-lg-12">
                         <div class="mt-3">
                             <div class="hstack gap-2">
-                                <button type="button" class="btn btn-success btn-hover w-100"><i class="bi bi-basket2 me-2"></i> Add To Cart</button>
-                                <button type="button" class="btn btn-primary btn-hover w-100"><i class="bi bi-cart2 me-2"></i> Buy Now</button>
+                                <a [href]="'https://wa.me/5215566968800?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%20'+productoDetalle[0].name+'.'"  target="_blank" type="button" class="btn btn-success btn-hover w-100"><i class="mdi mdi-whatsapp"></i> Preguntar por WhatsApp</a>
+                                <!-- <button type="button" class="btn btn-primary btn-hover w-100"><i class="bi bi-cart2 me-2"></i> Buy Now</button>
                                 <button class="btn btn-soft-danger custom-toggle btn-hover" data-bs-toggle="button" aria-pressed="true">
                                     <span class="icon-on"><i class="ri-heart-line"></i></span> <span class="icon-off"><i class="ri-heart-fill"></i></span>
-                                </button>
+                                </button> -->
                             </div>
                         </div>
                     </div>
@@ -88,8 +89,8 @@
             <!--end col-->
             <div class="col-lg-5 ms-auto">
                 <div class="ecommerce-product-widgets mt-4 mt-lg-0">
-                    <div class="mb-4">
-                        <div class="d-flex gap-3 mb-2">
+                    <div *ngIf="productoDetalle" class="mb-4">
+                        <!-- <div class="d-flex gap-3 mb-2">
                             <div class="fs-15 text-warning">
                                 <i class="ri-star-fill align-bottom"></i>
                                 <i class="ri-star-fill align-bottom"></i>
@@ -97,26 +98,29 @@
                                 <i class="ri-star-fill align-bottom"></i>
                                 <i class="ri-star-half-fill align-bottom"></i>
                             </div>
-                            <span class="fw-medium"> (50 Review)</span>
-                        </div>
-                        <h4 class="lh-base mb-1">Opinion Striped Round Neck Green T-shirt</h4>
-                        <p class="text-muted mb-4">The best part about stripped t shirt denim & white sneakers or
-                            wear
-                            it with a cool chinos and blazer to dress up <a href="javascript:void(0);" class="link-info">Read More</a></p>
+                            
+                        </div> -->
+                        <h4 class="lh-base mb-2">{{productoDetalle[0].name}}</h4>
+                        <p class="text-muted mb-3">{{productoDetalle[0].description}}</p>
+
+                        <ul>
+                            <li>{{productoDetalle[0].category}}</li>
+                            <li>{{productoDetalle[0].tipo}}</li>
+                        </ul>
+                       
+                        <!-- <p class="text-muted mb-4">{{productoDetalle[0].category}}</p>
+                        <p class="text-muted mb-4">{{productoDetalle[0].tipo}}</p> -->
+
                         <h5 class="fs-24 mb-4">
-                            $185.79 <span class="text-muted fs-14"><del>$280.99</del></span> <span class="fs-14 ms-2 text-danger"> (50% off)</span>
+                            Precio: {{productoDetalle[0].price | currency: 'MXN'}}
                         </h5>
                         <ul class="list-unstyled vstack gap-2">
-                            <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>In stock
+                            <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>En stock
                             </li>
-                            <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>Free
-                                delivery
-                                available</li>
-                            <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>Sales 10%
-                                Off
-                                Use Code: <b>FASHION10</b></li>
+                            <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>Envío a toda la república Mexicana</li>
                         </ul>
-                        <h6 class="fs-14 text-muted mb-3">Available offers :</h6>
+
+                        <!-- <h6 class="fs-14 text-muted mb-3">Available offers :</h6>
                         <ul class="list-unstyled vstack gap-2 mb-0">
                             <li>
                                 <div class="d-flex gap-3">
@@ -142,17 +146,17 @@
                                     </div>
                                 </div>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
-                    <div class="d-flex align-items-center mb-4">
+                    <!-- <div class="d-flex align-items-center mb-4">
                         <h5 class="fs-15 mb-0">Quantity:</h5>
                         <div class="input-step ms-2">
                             <button type="button" class="minus" (click)="updateqty('0')">–</button>
                             <input type="number" class="product-quantity1" [(ngModel)]="qty" min="0" max="100" readonly="" />
                             <button type="button" class="plus" (click)="updateqty('1')">+</button>
                         </div>
-                    </div>
-                    <div class="row gy-3">
+                    </div> -->
+                    <!-- <div class="row gy-3">
                         <div class="col-md-6">
                             <div>
                                 <h6 class="fs-14 fw-medium text-muted">Sizes:</h6>
@@ -193,7 +197,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!--end col-->
@@ -203,7 +207,7 @@
     <!--end container-->
 </section>
 
-<section class="section pt-0">
+<section class="section pt-0 pb-0">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -211,74 +215,38 @@
                     <p-tabPanel>
                         <ng-template pTemplate="header">
                             <a class="nav-link" href="javascript:void(0);">
-                                Description
+                                Descripción
                             </a>
                         </ng-template>
                         <div class="tab-pane active" id="home1" role="tabpanel">
                             <table class="table table-sm table-borderless align-middle">
                                 <tr>
                                     <th>Type</th>
-                                    <td>Round Neck</td>
+                                    <td>{{productoDetalle?.[0]?.type}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Sleeve</th>
-                                    <td>Short Sleeve</td>
+                                    <th>Indice</th>
+                                    <td>{{productoDetalle?.[0]?.indice}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Fit</th>
-                                    <td>Regular</td>
-                                </tr>
-                                <tr>
-                                    <th>Sales Package</th>
-                                    <td>1 T shirt</td>
-                                </tr>
-                                <tr>
-                                    <th>Pack of</th>
+                                    <th>Paquete</th>
                                     <td>1</td>
                                 </tr>
                                 <tr>
-                                    <th>Style Code</th>
-                                    <td>HYP02</td>
-                                </tr>
-                                <tr>
-                                    <th>Neck Type</th>
-                                    <td>Round Neck</td>
-                                </tr>
-                                <tr>
                                     <th>Ideal For</th>
-                                    <td>Men</td>
+                                    <td>{{productoDetalle?.[0]?.category}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Size</th>
+                                    <th>Tamaño</th>
                                     <td>L</td>
                                 </tr>
                                 <tr>
-                                    <th>Pattern</th>
-                                    <td>Solid</td>
-                                </tr>
-                                <tr>
-                                    <th>Suitable For</th>
-                                    <td>Western Wear</td>
-                                </tr>
-                                <tr>
-                                    <th>Fabric Care</th>
-                                    <td>Do not bleach</td>
-                                </tr>
-                                <tr>
-                                    <th>Seller</th>
-                                    <td>Zibra Fashion</td>
-                                </tr>
-                                <tr>
-                                    <th>Color</th>
-                                    <td>
-                                        <div class="avatar-xs">
-                                            <div class="avatar-title rounded"></div>
-                                        </div>
-                                    </td>
+                                    <th>Vendedor</th>
+                                    <td>InCup</td>
                                 </tr>
                             </table>
 
-                            <p class="text-muted fs-15">
+                            <!-- <p class="text-muted fs-15">
                                 Clothing serves many purposes: it can serve as protection from the elements, rough
                                 surfaces, sharp stones, rash-causing plants, insect bites, by providing a barrier
                                 between the skin and the environment. It is
@@ -286,10 +254,10 @@
                                 than the clothes you wear. It's who you are on the inside and how you present yourself
                                 to the outside world. It's having
                                 appreciation and cultivating gratitude.
-                            </p>
+                            </p> -->
                         </div>
                     </p-tabPanel>
-                    <p-tabPanel>
+                    <!-- <p-tabPanel>
                         <ng-template pTemplate="header">
                             <a class="nav-link" href="javascript:void(0);">
                                 Ratings & Reviews
@@ -598,7 +566,7 @@
                                 </div>
                             </div>
                         </div>
-                    </p-tabPanel>
+                    </p-tabPanel> -->
                 </p-tabView>
             </div>
             <!--end col-->
@@ -607,15 +575,15 @@
     </div>
 </section>
 
-<div class="position-relative">
+<!-- <div class="position-relative">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h4 class="mb-4">You might be interested in</h4>
             </div>
-            <!--end col-->
+            
         </div>
-        <!--end row-->
+        
         <div class="row gy-3">
             <div class="col-lg-4">
                 <a routerLink="/catelog/product-grid-right" class="card mb-3 card-animate stretched-link">
@@ -636,7 +604,7 @@
                     </div>
                 </a>
             </div>
-            <!--end col-->
+            
             <div class="col-lg-4">
                 <a routerLink="/catelog/product-grid-right" class="card mb-3 card-animate stretched-link">
                     <div class="row g-0">
@@ -675,14 +643,14 @@
                     </div>
                 </a>
             </div>
-            <!--end col-->
+            
         </div>
-        <!--end row-->
+        
     </div>
-    <!--end container-->
-</div>
+    
+</div> -->
 
-<section class="section">
+<!-- <section class="section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -693,9 +661,8 @@
                     </div>
                 </div>
             </div>
-            <!--end col-->
+
         </div>
-        <!--end row-->
         <div class="row">
             <div class="col-xxl-3 col-lg-4 col-sm-6">
                 <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
@@ -729,7 +696,7 @@
                     </div>
                 </div>
             </div>
-            <!--end col-->
+
             <div class="col-xxl-3 col-lg-4 col-sm-6">
                 <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
                     <div class="bg-light bg-opacity-50 rounded py-4 position-relative">
@@ -760,7 +727,7 @@
                     </div>
                 </div>
             </div>
-            <!--end col-->
+
             <div class="col-xxl-3 col-lg-4 col-sm-6">
                 <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
                     <div class="bg-light bg-opacity-50 rounded py-4 position-relative">
@@ -796,7 +763,7 @@
                     </div>
                 </div>
             </div>
-            <!--end col-->
+
             <div class="col-xxl-3 col-lg-4 col-sm-6">
                 <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
                     <div class="bg-light bg-opacity-50 rounded py-4 position-relative">
@@ -825,16 +792,49 @@
                     </div>
                 </div>
             </div>
-            <!--end col-->
-        </div>
-        <!--end row-->
-    </div>
-    <!--end section-->
-</section>
 
-<app-discount-footer [discount]="25"></app-discount-footer>
+        </div>
+    </div>
+    
+</section> -->
+<!-- 
+<app-discount-footer [discount]="25"></app-discount-footer> -->
 
 <app-features></app-features>
+
+<section class="section">
+    <div class="container-fluid container-custom">
+        <div class="card border-0 overflow-hidden">
+            <div class="row g-0">
+                <div class="col-lg-5">
+                    <img src="assets/images/ecommerce/instagram/img-1.jpg" alt="" class="img-fluid h-100 object-fit-cover">
+                </div><!--end col-->
+                <div class="col-lg-7">
+                    <div class="card-body bg-dark h-100 p-xxl-5">
+                        <div class="p-4">
+                            <p class="text-white opacity-75 text-uppercase fs-15">Ofertas limitadas</p>
+                            <h1 class="lh-base text-capitalize text-white mb-3">Suscríbete a nuestras ofertas por correo y recibe ofertas antes que nadie.</h1>
+                            <!-- <p class="text-white-50 mb-4 fs-15 pb-2">A newsletter introduction should tell the reader
+                                what they'll get out of reading the rest of the email or linked article.</p> -->
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <form action="#!">
+                                        <div class="subscribe-input position-relative">
+                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingresa tu correo">
+                                            <button type="submit" class="btn btn-primary">Suscríbete</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end card-->
+    </div><!--end container-fluid-->
+</section>
+
+
 
 <!-- Footer -->
 <app-footer></app-footer>
