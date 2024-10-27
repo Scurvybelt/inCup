@@ -31,9 +31,9 @@ export class ProductsService {
     });
   }
 
-  createProduct(product: any): Observable<any>{
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post(`${BASE_URL}`,product, { headers});
+  createProduct(product: any){
+    // const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(`${BASE_URL}/crearProducto`, product);
       // body: {
       //   name: product.name,
       //   description: product.description,
@@ -41,8 +41,17 @@ export class ProductsService {
       //   amount: product.amount,
       //   img: product.img
       // }
-
   }
+
+  updateProduct(product: any){
+    return this.http.put(`${BASE_URL}`,product);
+  }
+
+  getCatalogo(catalog:any){
+    return this.http.get(`${BASE_URL}?catalogo=${catalog}`)
+  }
+
+
 
   
 }  

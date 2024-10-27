@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LoginHeaderComponent } from 'src/app/shared/login-header/login-header.component';
 import { ProductsService } from '../../core/services/products.service'; // Adjust the path as necessary
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-alta-baja-productos',
@@ -16,6 +17,11 @@ export class AltaBajaProductosComponent {
 
   }
   ngOnInit(){
+    this.getProductos();
+    
+  }
+
+  getProductos(){
     this.productService.getProducts().subscribe((data: any) => {
       console.log(data);
       this.productos = data;
@@ -23,7 +29,6 @@ export class AltaBajaProductosComponent {
       this.hayProductos();
       
     })
-    
   }
 
   hayProductos(){
@@ -39,7 +44,12 @@ export class AltaBajaProductosComponent {
     if(confirmacion){
       this.productService.deleteProduct(producto.id).subscribe((data:any) => {
         // console.log(data);
-        window.location.reload();
+        Swal.fire({
+          title: 'Producto Elimiando!',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        })
+        this.getProductos();
       })
 
 

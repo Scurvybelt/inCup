@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from 'src/app/core/services/products.service';
-
+import { Location } from '@angular/common'; // Importar Location
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-formulario-creacion-edicion',
@@ -12,16 +13,19 @@ import { ProductsService } from 'src/app/core/services/products.service';
 export class FormularioCreacionEdicionComponent {
   id: any;
   titulo: string = '';
-  
   productoForm: FormGroup;
   edicion: boolean = false;
+  tipos: any;
+  indices: any;
+  categories: any;
 
 
-  constructor(private fb: FormBuilder,private route: ActivatedRoute, private servicioProducto: ProductsService) {
+  constructor(private fb: FormBuilder,private route: ActivatedRoute, private servicioProducto: ProductsService,private location: Location,private router: Router) {
     this.productoForm = this.initForm();
   }
   ngOnInit(){
     this.id = this.route.snapshot.paramMap.get('id');
+    this.catalogos()
     if(this.id){
       this.edicion = true;
       console.log('Editar producto');
@@ -34,10 +38,25 @@ export class FormularioCreacionEdicionComponent {
   }
 
   loadProductDataById(id: any){
-    this.servicioProducto.getProducById(this.id).subscribe((data: any) => {
+    this.servicioProducto.getProducById(id).subscribe((data: any) => {
       console.log(data);
       this.onPathValues(data);
 
+
+    })
+  }
+  catalogos(){
+    this.servicioProducto.getCatalogo('category').subscribe(data => {
+      
+      this.categories = data;
+    })
+    this.servicioProducto.getCatalogo('tipo').subscribe(data => {
+      
+      this.tipos = data
+    })
+    this.servicioProducto.getCatalogo('indice').subscribe(data => {
+      
+      this.indices = data;
     })
   }
 
@@ -47,6 +66,9 @@ export class FormularioCreacionEdicionComponent {
       description: data[0].description,
       amount: data[0].amount,
       price: data[0].price,
+      category: data[0].category_id,
+      tipo: data[0].tipo_id,
+      indice: data[0].indice_id,
       img: data[0].img
     })
     console.log(this.productoForm.value)
@@ -58,7 +80,10 @@ export class FormularioCreacionEdicionComponent {
       description: ['', Validators.required],
       amount:  ['', Validators.required],
       price:  ['', Validators.required],
-      img: ['']
+      category: ['', Validators.required],
+      tipo: ['', Validators.required],
+      indice: ['',Validators.required],
+      img: ['',Validators.required]
     })
   }
   onFileSelected(event:any){
@@ -77,12 +102,59 @@ export class FormularioCreacionEdicionComponent {
   onSubmit(){
     if(this.id){
       //Editar
+      console.log(this.productoForm.value);
+
+      let form = this.productoForm.value;
+      form.id = this.id;
+
+      this.servicioProducto.updateProduct(form).subscribe((data => {
+        console.log(data);
+        let datos: any = data;
+        if(datos[0] === 'success'){
+          Swal.fire({
+            title: 'Producto Actualizado',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+          })
+          this.router.navigate(['/auth/administrador']);
+        }else{
+          Swal.fire({
+            title: 'Error',
+            text: datos[1],
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
+        }
+      }))
     }else{
       //Crear
-      console.log(this.productoForm.value);
+      // console.log(this.productoForm.value);
       this.servicioProducto.createProduct(this.productoForm.value).subscribe((data => {
-        console.log(data);
+        // console.log(data);
+        let datos: any = data;
+        if(datos[0] === 'error'){
+          Swal.fire({
+            title: 'Error',
+            text: datos[1],
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
+          
+          
+        }else{
+          Swal.fire({
+            title: 'Producto Creado',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+          })
+          this.router.navigate(['/auth/administrador']);
+        }
+       
       }))
     }
+  }
+  
+  goBack(){
+    this.location.back();
   }
 }
