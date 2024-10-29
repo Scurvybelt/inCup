@@ -23,7 +23,7 @@ export class AltaBajaProductosComponent {
 
   getProductos(){
     this.productService.getProducts().subscribe((data: any) => {
-      console.log(data);
+      // console.log(data);
       this.productos = data;
       
       this.hayProductos();

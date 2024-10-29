@@ -102,11 +102,11 @@ export class FormularioCreacionEdicionComponent {
   onSubmit(){
     if(this.id){
       //Editar
-      console.log(this.productoForm.value);
+      // console.log(this.productoForm.value);
 
       let form = this.productoForm.value;
       form.id = this.id;
-
+      // console.log(form);
       this.servicioProducto.updateProduct(form).subscribe((data => {
         console.log(data);
         let datos: any = data;

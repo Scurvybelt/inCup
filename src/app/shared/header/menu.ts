@@ -414,7 +414,7 @@ export const MENU: MenuItem[] = [
             },
             {
                 id: 4,
-                label: "Guia de Compra",
+                label: "Proceso de Compra",
                 link: "/extrapages/purchase-guide",
             },
             {
