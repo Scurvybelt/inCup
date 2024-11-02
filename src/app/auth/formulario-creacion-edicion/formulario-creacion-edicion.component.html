@@ -20,6 +20,9 @@
                             <div *ngIf="!edicion" class="mt-3">
                                 <img  id="preview" alt="Vista previa de la imagen" class="img-fluid" style="max-width: 200px;">
                             </div>
+                            <div *ngIf="productoForm.get('img')?.invalid && (productoForm.get('img')?.dirty || productoForm.get('img')?.touched)" class="text-danger">
+                                <div *ngIf="productoForm.get('img')?.errors?.['required']">La imagen es requerida</div>
+                            </div>
                         </div>
                         <div class="col-lg-5 col-md-6 mb-3">
                             <label for="name" class="form-label">Nombre</label>
@@ -81,7 +84,7 @@
                         </div>
                         
                         <div class="col-12 d-flex justify-content-center">
-                            <button [disabled]="this.productoForm.invalid" type="submit" class="btn btn-primary">{{ id ? 'Actualizar' : 'Crear' }}</button>
+                            <button type="submit" class="btn btn-primary" >{{ id ? 'Actualizar' : 'Crear' }}</button>
                         </div>
                     </div>
                 </form> 

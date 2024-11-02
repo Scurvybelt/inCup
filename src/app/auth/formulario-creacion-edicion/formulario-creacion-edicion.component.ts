@@ -100,6 +100,11 @@ export class FormularioCreacionEdicionComponent {
   }
 
   onSubmit(){
+
+    if(this.productoForm.invalid){
+      this.productoForm.markAllAsTouched();
+      return;
+    }
     if(this.id){
       //Editar
       // console.log(this.productoForm.value);
@@ -128,7 +133,6 @@ export class FormularioCreacionEdicionComponent {
       }))
     }else{
       //Crear
-      // console.log(this.productoForm.value);
       this.servicioProducto.createProduct(this.productoForm.value).subscribe((data => {
         // console.log(data);
         let datos: any = data;

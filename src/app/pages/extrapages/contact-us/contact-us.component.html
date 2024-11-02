@@ -85,7 +85,7 @@
 
             <div class="col-lg-8">
                 <div class="custom-form card p-4 p-lg-5">
-                    <form name="myForm" action="#!">
+                    <form [formGroup]="formCorreo" (ngSubmit)="mandarFormulario()">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="text-center mb-4">
@@ -94,31 +94,58 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group mt-3">
-                                    <label for="nameInput" class="form-label">Nombre<span class="text-danger">*</span></label>
-                                    <input name="nameInput" id="nameInput" type="text" class="form-control" placeholder="Escribe tu nombre" />
+                                    <label for="name" class="form-label">Nombre<span class="text-danger">*</span></label>
+                                    <input name="name" formControlName="name" id="name" type="text" class="form-control" placeholder="Escribe tu nombre" />
+                                    <div *ngIf="formCorreo.get('name')?.invalid && formCorreo.get('name')?.touched" class="text-danger">
+                                        Nombre es requerido.
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group mt-3">
-                                    <label for="emailInput" class="form-label">Email<span class="text-danger">*</span></label>
-                                    <input name="emailInput" id="emailInput" type="email" class="form-control" placeholder="Escribe tu correo" />
+                                    <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
+                                    <input name="email" formControlName="email" id="email" type="email" class="form-control" placeholder="Escribe tu correo" />
+                                    <div *ngIf="formCorreo.get('email')?.invalid && formCorreo.get('email')?.touched" class="text-danger">
+                                        Correo es requerido y debe ser un correo válido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3">
+                                    <label for="tel" class="form-label">tel<span class="text-danger">*</span></label>
+                                    <input name="tel" formControlName="tel" id="tel" type="text" class="form-control" placeholder="Escribe tu correo" />
+                                    <div *ngIf="formCorreo.get('tel')?.invalid && formCorreo.get('tel')?.touched" class="text-danger">
+                                        El teléfono es requerido
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3">
+                                    <label for="asunto" class="form-label">Tema<span class="text-danger">*</span></label>
+                                    <input formControlName="asunto" type="text" class="form-control" id="asunto" placeholder="Tema..." />
+                                    <div *ngIf="formCorreo.get('asunto')?.invalid && formCorreo.get('asunto')?.touched" class="text-danger">
+                                        Asunto es requerido.
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group mt-3">
-                                    <label for="subjectInput" class="form-label">Tema<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="subjectInput" placeholder="Tema..." />
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group mt-3">
-                                    <label for="messageInput" class="form-label">Mensaje<span class="text-danger">*</span></label>
-                                    <textarea name="messageInput" id="messageInput" rows="4" class="form-control" placeholder="Escribe tu mensaje..."></textarea>
+                                    <label for="message" class="form-label">Mensaje<span class="text-danger">*</span></label>
+                                    <textarea  formControlName="message"  rows="4" class="form-control" placeholder="Escribe tu mensaje..."></textarea>
+                                    <div *ngIf="formCorreo.get('message')?.invalid && formCorreo.get('message')?.touched" class="text-danger">
+                                        Mensaje es requerido.
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="text-end mt-4">
-                                    <button type="submit" id="submit" name="submit" class="btn btn-primary">Enviar Mensaje <i class="bi bi-arrow-right-short align-middle fs-16 ms-1"></i></button>
+                                    <button type="submit" id="submit" name="submit" class="btn btn-primary">
+                                        Enviar Mensaje 
+                                        <div *ngIf="EnviarCorreo" class="spinner-border spinner-border-sm ms-2" role="status">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                        <!-- <i class="bi bi-arrow-right-short align-middle fs-16 ms-1"></i> -->
+                                    </button>
                                 </div>
                             </div>
                         </div>

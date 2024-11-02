@@ -44,11 +44,14 @@ export class HeaderComponent {
 
   @ViewChild('template') template: any;
   deletecart_id: any;
+  usuarioLoged: boolean = false;
 
 
   constructor(public languageService: LanguageService, public translate: TranslateService, private elRef: ElementRef) {
 
   }
+
+ 
 
   isLabelTranslated(label: string): boolean {
     return this.translate.instant(label) == label;
@@ -60,7 +63,16 @@ export class HeaderComponent {
     return this.translate.instant(label) == label;
   }
 
+  cerrarSesion(){
+    localStorage.removeItem('usuario');
+    window.location.reload();
+  }
+
   ngOnInit(): void {
+    const usuario = localStorage.getItem('usuario');
+    if(usuario){
+      this.usuarioLoged = true;
+    }
     // Menu Items
     this.menuItems = MENU;
 

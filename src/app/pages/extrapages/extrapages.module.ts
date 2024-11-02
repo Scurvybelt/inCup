@@ -27,10 +27,11 @@ import { StoreLocatorComponent } from "./store-locator/store-locator.component";
 import { EcommerceFaqComponent } from "./ecommerce-faq/ecommerce-faq.component";
 import { InvoiceComponent } from "./invoice/invoice.component";
 import { ContactUsComponent } from "./contact-us/contact-us.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [ProductsCategoryComponent, AboutUsComponent, PurchaseGuideComponent, TermsConditionsComponent, PrivacyPolicyComponent, StoreLocatorComponent, EcommerceFaqComponent, InvoiceComponent, ContactUsComponent],
-  imports: [CommonModule, ExtraPagesRoutingModule, SharedModule, CarouselModule, SimplebarAngularModule, GoogleMapsModule, AccordionModule, LeafletModule],
+  imports: [CommonModule, ExtraPagesRoutingModule, SharedModule, CarouselModule, SimplebarAngularModule, GoogleMapsModule, AccordionModule, LeafletModule,ReactiveFormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ExtrapagesModule {

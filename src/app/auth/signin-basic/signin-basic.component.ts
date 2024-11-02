@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { UsuarioService } from "src/app/core/services/usuario.service";
@@ -9,7 +9,7 @@ import { UsuarioService } from "src/app/core/services/usuario.service";
     templateUrl: "./signin-basic.component.html",
     styleUrls: ["./signin-basic.component.scss"],
 })
-export class SigninBasicComponent {
+export class SigninBasicComponent implements OnInit {
     fieldTextType!: boolean;
 formularioSesion: FormGroup<any>;
     respuesta: any;
@@ -18,6 +18,13 @@ formularioSesion: FormGroup<any>;
             usuario: new FormControl("", [Validators.required]),
             password: new FormControl("", [Validators.required]),
         });
+    }
+
+    ngOnInit(){
+        const usuario = localStorage.getItem('usuario');
+        if (usuario) {
+            this.router.navigate(['/auth/administrador']);
+        }
     }
     /**
      * Password Hide/Show
@@ -36,21 +43,19 @@ formularioSesion: FormGroup<any>;
         this.usuarioService.findUser(form.usuario,form.password).subscribe((res: any) => {
             // console.log(res);
             if(res.length > 1){
+                //Error
                 this.respuesta = res[1];
                 // console.log(this.respuesta);
             }else{
-                // Notiflix.Notify.success('Inicio de sesión correcto');
-                // console.log('Inicio de sesion correcto');
+                localStorage.setItem('usuario', form.usuario);
                 this.router.navigate(['/auth/administrador']);
-                
+                // Notiflix.notify.success('Inicio de Sesión')
             }
             // if(this.respuesta)
         })        
         // 
     }
 
-
-
-
+    
 
 }
