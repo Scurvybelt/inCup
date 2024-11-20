@@ -25,6 +25,10 @@ export class ProductGridComponent {
     sortOrder: any;
     sortField: any;
     productos: any;
+    categories: any;
+    filtrosProductos: any;
+    notFound: boolean = false;
+    rows: number = 3;
 
     constructor(private servicioProductos: ProductsService) {
         this.rating = [
@@ -45,20 +49,62 @@ export class ProductGridComponent {
 
     ngOnInit(): void {
 
+        this.servicioProductos.getCatalogo('category').subscribe(data => {
+            console.log(data);
+            this.categories = data;
+        })
+
         this.servicioProductos.getProducts().subscribe((data: any) => {
             this.productos = data;
             console.log(this.productos);
+            this.filtrosProductos = data;
         });
 
-        this.products = productGrid;
+        // this.products = productGrid;
         this.range1 = "$ " + this.rangeValues[0];
         this.range2 = "$ " + this.rangeValues[1];
     }
 
     // Range Slider
     handleChange(e: any) {
+        console.log(e);
         this.range1 = "$ " + e.values[0];
         this.range2 = "$ " + e.values[1];
+
+        let min = e.values[0];
+        let max = e.values[1];
+        
+        this.filtrosProductos = this.productos.filter((producto: any)=> {
+            const price = parseInt(producto.price, 10);
+            return producto.price >= min && producto.price <= max
+        });
+
+        // this.filtrosProductos = this.productos.filter((producto: any) => {
+        //     return producto.price  ;
+        // });
+    }
+
+    buscarPalabra(e: any){
+        console.log(e);
+
+        if(!e){
+            
+            this.filtrosProductos = this.productos
+        }else{
+            const palabraMinuscula = e.toLowerCase();
+            console.log(palabraMinuscula);
+ 
+            this.filtrosProductos = this.productos.filter((producto: any) => {
+                return producto.name.toLowerCase().includes(palabraMinuscula);
+            })
+            console.log(this.filtrosProductos.length)
+            if(this.filtrosProductos.length === 0){
+                this.notFound = true;
+            }else{
+                this.notFound = false;
+            }
+
+        }
     }
 
     // Pagination
@@ -77,12 +123,27 @@ export class ProductGridComponent {
     // Sorting
     onSortChange(event: any) {
         let value = event.target.value;
+        console.log(value)
         if (value == "low_to_high") {
-            this.products.sort((a: any, b: any) => parseFloat(a.price) - parseFloat(b.price));
+            this.filtrosProductos.sort((a: any, b: any) => parseFloat(a.price) - parseFloat(b.price));
         } else if (value == "high_to_low") {
-            this.products.sort((a: any, b: any) => parseFloat(b.price) - parseFloat(a.price));
+            this.filtrosProductos.sort((a: any, b: any) => parseFloat(b.price) - parseFloat(a.price));
         } else {
-            this.products = productGrid;
+            
         }
+    }
+
+    filtros(event: any){
+        console.log(event);
+        let tipo: String;
+        if(event == 1){
+            tipo = 'Bebida Caliente'
+        }else{
+            tipo = 'Bebida Fria'
+        }
+        this.filtrosProductos = this.productos.filter((producto: any) => {
+            return producto.category === tipo;
+        });
+    
     }
 }

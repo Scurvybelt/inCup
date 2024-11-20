@@ -1,0 +1,19 @@
+.table-responsive {
+    max-height: 400px; /* Ajusta esta altura según tus necesidades */
+    overflow-y: auto;
+}
+
+.head{
+    display: flex; 
+    justify-content: space-between
+}
+
+@media (max-width:600px) {
+    .head{
+        display: block;
+    }
+    .boton{
+        margin-bottom: 1rem;
+    }
+
+}

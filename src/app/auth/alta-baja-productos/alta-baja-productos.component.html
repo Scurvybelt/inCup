@@ -5,35 +5,55 @@
     <app-login-header></app-login-header>
     <div class="w-100"> 
         <div class="container">
+
+           
+            
             <div>
                 <h1 class="text-center">Alta y Baja de productos</h1>
-                <div>
-                    <button class="btn btn-primary" [routerLink]="['/auth/formulario']">+ Crear Producto</button>
+                <div class="head">
+                    <button class="btn btn-primary boton" [routerLink]="['/auth/formulario']">+ Crear Producto</button>
+                   
+                    <div class="search-box">
+                        <input type="text" pInputText class="form-control" id="searchProductList" autocomplete="off" placeholder="Buscar Producto..." (input)="buscarPalabra($event.target.value)" />
+                        <i class="ri-search-line search-icon"></i>
+                    </div>
+                   
                 </div>
+                
             </div>
-            <table class="table table-hover text-center">
-                <thead>
-                    <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">nombre</th>
-                    <th scope="col">Img</th>
-                    <th scope="col">Acción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let producto of productos ">
-                        <th scope="row">{{producto.id}}</th>
-                        <td>{{producto.name}}</td>
-                        <td>
-                            <img [src]="producto.img" alt="Imagen del producto" class="img-fluid" style="max-width: 100px;">
-                        </td>
-                        <td>
-                            <button class="btn btn-link " (click)="eliminar(producto)">Eliminar</button>
-                            <button class="btn btn-link " [routerLink]="['/auth/formulario/',producto.id]">Editar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+
+            
+
+            <div class="table-responsive">
+                <table class="table table-hover text-center">
+                    <thead>
+                        <tr>
+                        <th style="font-size: x-large;" scope="col">id</th>
+                        <th style="font-size: x-large;"  scope="col">nombre</th>
+                        <th style="font-size: x-large;" scope="col">Img</th>
+                        <th style="font-size: x-large;"  scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let producto of filtroProductos ">
+                            <th scope="row">{{producto.id}}</th>
+                            <td>{{producto.name}}</td>
+                            <td>
+                                <img [src]="producto.img" alt="Imagen del producto" class="img-fluid" style="max-width: 100px;">
+                            </td>
+                            <td>
+                                <button class="btn btn-link text-danger" (click)="eliminar(producto)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                                <button class="btn btn-link text-primary" [routerLink]="['/auth/formulario/', producto.id]">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
             <div>
                 <h1 class="text-center">{{noHayProductos}}</h1>
             </div>

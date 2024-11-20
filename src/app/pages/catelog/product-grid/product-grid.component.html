@@ -35,16 +35,8 @@
                                 <div class="col-xl-5 col-md-6">
                                     <div>
                                         <label class="form-label">Category</label>
-                                        <select class="form-control" name="select-category" id="select-category" (change)="dv.filter($event.target.value)">
-                                            <option value="">Select Category</option>
-                                            <option value="Grocery">Grocery</option>
-                                            <option value="Fashion">Fashion</option>
-                                            <option value="Watches">Watches</option>
-                                            <option value="Electronics">Electronics</option>
-                                            <option value="Furniture">Furniture</option>
-                                            <option value="Automotive Accessories">Automotive Accessories</option>
-                                            <option value="Appliances">Appliances</option>
-                                            <option value="Kids">Kids</option>
+                                        <select class="form-control" name="select-category" id="select-category" (change)="filtros($event.target.value)">
+                                            <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.nombre }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -53,10 +45,10 @@
                                     <div>
                                         <label class="form-label">Price</label>
                                         <div class="pb-3">
-                                            <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="0" [max]="2000" (onChange)="handleChange($event)"></p-slider>
+                                            <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="0" [max]="5000" (onChange)="handleChange($event)"></p-slider>
                                             <div class="formCost d-flex gap-2 align-items-center mt-3">
                                                 <input class="form-control form-control-sm" type="text" id="minCost" value="0" [(ngModel)]="range1" /> <span class="fw-semibold text-muted">to</span>
-                                                <input class="form-control form-control-sm" type="text" id="maxCost" value="1000" [(ngModel)]="range2" />
+                                                <input class="form-control form-control-sm" type="text" id="maxCost" value="5000" [(ngModel)]="range2" />
                                             </div>
                                         </div>
                                     </div>
@@ -81,21 +73,21 @@
                 </div>
             </div>
 
-            <p-dataView #dv [value]="products" dataKey="id" [paginator]="true" [rows]="12" filterBy="title,price,type,rating,discount" (onPage)="onPageChange($event)" [sortField]="sortField" [sortOrder]="sortOrder">
+            <p-dataView >
                 <ng-template pTemplate="header">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="row align-items-center mb-4">
                                 <div class="col-md-auto">
                                     <div class="search-box">
-                                        <input type="text" pInputText class="form-control" id="searchProductList" autocomplete="off" placeholder="Buscar Producto..." (input)="dv.filter($event.target.value)" />
+                                        <input type="text" pInputText class="form-control" id="searchProductList" autocomplete="off" placeholder="Buscar Producto..." (input)="buscarPalabra($event.target.value)" />
                                         <i class="ri-search-line search-icon"></i>
                                     </div>
                                 </div>
                                 <div class="col-md">
                                     <div class="d-flex gap-2 justify-content-md-end">
                                         <div class="flex-shrink-0">
-                                            <label for="sort-elem" class="col-form-label">Filtar por:</label>
+                                            <label for="sort-elem" class="col-form-label">Filtrar por:</label>
                                         </div>
                                         <div class="flex-shrink-0">
                                             <select class="form-select w-md" id="sort-elem" (change)="onSortChange($event)">
@@ -114,7 +106,7 @@
                 <ng-template let-products pTemplate="listItem">
                     <div class="row">
                         <!-- @for(data of products; track $index){ -->
-                        <div *ngFor="let producto of productos" class="col-xxl-3 col-lg-4 col-md-6">
+                        <div *ngFor="let producto of filtrosProductos" class="col-xxl-3 col-lg-4 col-md-6">
                         <div [routerLink]="['/catelog/product-details/',producto.id]" class="card overflow-hidden element-item" style="cursor: pointer;">
                                 <div class="bg-light py-4">
                                     <div class="gallery-product"><img src="{{producto.img}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" /></div>
@@ -180,23 +172,29 @@
                     <!-- } -->
                     </div>
                 </ng-template>
-                <ng-template pTemplate="empty" class="row" id="search-result-elem">
-                    <div class="col-lg-12">
-                        <div class="text-center py-5">
-                            <div class="avatar-lg mx-auto mb-4">
-                                <div class="avatar-title bg-primary-subtle text-primary rounded-circle fs-24">
-                                    <i class="bi bi-search"></i>
-                                </div>
-                            </div>
+                
+                
+            </p-dataView>
 
-                            <h5>No matching records found</h5>
+            <div  *ngIf="notFound" class="col-lg-12">
+                <div class="text-center py-5">
+                    <div class="avatar-lg mx-auto mb-4">
+                        <div class="avatar-title bg-primary-subtle text-primary rounded-circle fs-24">
+                            <i class="bi bi-search"></i>
                         </div>
                     </div>
-                    <!--end col-->
-                </ng-template>
 
-                <ng-template pTemplate="paginatorleft"></ng-template>
-            </p-dataView>
+                    <h5>no se encontro ningun resultado</h5>
+                </div>
+            </div>
+            <div class="flex-auto">
+                <p-paginator 
+                    (onPageChange)="onPageChange($event)" 
+                    [first]="first" 
+                    [rows]="rows" 
+                    [totalRecords]="filtrosProductos.length" 
+                    [rowsPerPageOptions]="[10, 20, 30]" />
+            </div>
         </div>
     </div>
     <!--end container-->

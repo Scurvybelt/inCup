@@ -43,12 +43,17 @@ export class ProductsService {
       // }
   }
 
+
   updateProduct(product: any){
     return this.http.put(`${BASE_URL}`,product);
   }
 
   getCatalogo(catalog:any){
     return this.http.get(`${BASE_URL}?catalogo=${catalog}`)
+  }
+
+  getProductsFileter(filter: any){
+    return this.http.get(`${BASE_URL}/filter/?category=${filter.category}&price=${filter.price}&name=${filter.name}`);
   }
 
 
