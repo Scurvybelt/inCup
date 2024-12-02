@@ -74,7 +74,7 @@
                     <div class="col-lg-12">
                         <div class="mt-3">
                             <div class="hstack gap-2">
-                                <a [href]="'https://wa.me/5215566968800?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%20'+productoDetalle[0].name+'.'"  target="_blank" type="button" class="btn btn-success btn-hover w-100"><i class="mdi mdi-whatsapp"></i> Preguntar por WhatsApp</a>
+                                <a [href]="whatsappLink"  target="_blank" type="button" class="btn btn-success btn-hover w-100"><i class="mdi mdi-whatsapp"></i> Preguntar por WhatsApp</a>
                                 <!-- <button type="button" class="btn btn-primary btn-hover w-100"><i class="bi bi-cart2 me-2"></i> Buy Now</button>
                                 <button class="btn btn-soft-danger custom-toggle btn-hover" data-bs-toggle="button" aria-pressed="true">
                                     <span class="icon-on"><i class="ri-heart-line"></i></span> <span class="icon-off"><i class="ri-heart-fill"></i></span>
@@ -111,9 +111,9 @@
                         <!-- <p class="text-muted mb-4">{{productoDetalle[0].category}}</p>
                         <p class="text-muted mb-4">{{productoDetalle[0].tipo}}</p> -->
 
-                        <h5 class="fs-24 mb-4">
+                        <!-- <h5 class="fs-24 mb-4">
                             Precio: {{productoDetalle[0].price | currency: 'MXN'}}
-                        </h5>
+                        </h5> -->
                         <ul class="list-unstyled vstack gap-2">
                             <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>En stock
                             </li>

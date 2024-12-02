@@ -15,6 +15,7 @@ export class ProductDetailsComponent {
   id: any;
   productoDetalle: any;
   whatsappLink: string = '';
+  nombreProducto: any;
 
   constructor(private route: ActivatedRoute, private productoServicio: ProductsService){
 
@@ -23,31 +24,44 @@ export class ProductDetailsComponent {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
 
-    this.productoServicio.getProducById(this.id).subscribe(data => {
-      console.log(data);
-      if(data){
-        this.productoDetalle = data;
-      }
-      this.slides = [
-        {
-          previewImageSrc: this.productoDetalle.img
-        },
-        {
-          previewImageSrc: 'assets/images/products/img-32.png'
-        },
-        {
-          previewImageSrc: 'assets/images/products/img-33.png'
-        },
-        {
-          previewImageSrc: 'assets/images/products/img-34.png'
-        },
-        {
-          previewImageSrc: 'assets/images/products/img-32.png'
-        }
-      ]
-    });
-    this.generateWhatsAppLink();
+    this.loadProductDetails();
+    // this.generateWhatsAppLink();
     
+  }
+
+  async loadProductDetails() {
+    if (this.id) {
+      try {
+        const data = await this.productoServicio.getProducById(this.id).toPromise();
+        if (data) {
+          this.productoDetalle = data;
+          this.nombreProducto = this.productoDetalle[0].name;
+          console.log(this.nombreProducto);
+          console.log(this.productoDetalle[0]);
+
+          this.slides = [
+            {
+              previewImageSrc: this.productoDetalle.img
+            },
+            {
+              previewImageSrc: 'assets/images/products/img-32.png'
+            },
+            {
+              previewImageSrc: 'assets/images/products/img-33.png'
+            },
+            {
+              previewImageSrc: 'assets/images/products/img-34.png'
+            },
+            {
+              previewImageSrc: 'assets/images/products/img-32.png'
+            }
+          ];
+        }
+        await this.generateWhatsAppLink();
+      } catch (error) {
+        console.error('Error loading product details:', error);
+      }
+    }
   }
 
   slideConfig = {
@@ -89,9 +103,9 @@ export class ProductDetailsComponent {
     }
   }
 
-  generateWhatsAppLink(): void {
+  async generateWhatsAppLink() {
     const phoneNumber = '5215566968800'; // Número de teléfono en formato internacional
-    const message = `Hola, estoy interesado en el producto ${this.productoDetalle[0]?.name}.`;
+    const message = `Hola, estoy interesado en el producto ${this.nombreProducto}.`;
     this.whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   }
 

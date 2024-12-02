@@ -34,7 +34,7 @@
                             <div class="row gy-4">
                                 <div class="col-xl-5 col-md-6">
                                     <div>
-                                        <label class="form-label">Category</label>
+                                        <label class="form-label">Categoría</label>
                                         <select class="form-control" name="select-category" id="select-category" (change)="filtros($event.target.value)">
                                             <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.nombre }}</option>
                                         </select>
@@ -43,7 +43,7 @@
 
                                 <div class="col-xl-5 col-md-6">
                                     <div>
-                                        <label class="form-label">Price</label>
+                                        <label class="form-label">Precio</label>
                                         <div class="pb-3">
                                             <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="0" [max]="5000" (onChange)="handleChange($event)"></p-slider>
                                             <div class="formCost d-flex gap-2 align-items-center mt-3">
@@ -193,7 +193,7 @@
                     [first]="first" 
                     [rows]="rows" 
                     [totalRecords]="filtrosProductos.length" 
-                    [rowsPerPageOptions]="[10, 20, 30]" />
+                    [rowsPerPageOptions]="[5, 10, 30]" />
             </div>
         </div>
     </div>

@@ -14,7 +14,7 @@ export class ProductGridComponent {
     rating: any;
     discount: any;
 
-    first: number = 1;
+    first: number = 0;
     endIndex: number = 12;
 
     rangeValues: number[] = [0, 2000];
@@ -28,7 +28,7 @@ export class ProductGridComponent {
     categories: any;
     filtrosProductos: any;
     notFound: boolean = false;
-    rows: number = 3;
+    rows: number = 2;
 
     constructor(private servicioProductos: ProductsService) {
         this.rating = [
@@ -107,17 +107,19 @@ export class ProductGridComponent {
         }
     }
 
+    paginate() {
+        const start = this.first;
+        const end = this.first + this.rows;
+        this.filtrosProductos = this.productos.slice(start, end);
+    }
+    
+
     // Pagination
     onPageChange(event: any) {
-        this.first = event.first + 1;
-        if (this.products.length > 0) {
-            var last = this.first + event.rows;
-            if (last <= this.products.length) {
-                this.endIndex = event.first + event.rows;
-            } else {
-                this.endIndex = this.products.length;
-            }
-        }
+        console.log(event);
+        this.first = event.first;
+        this.rows = event.rows;
+        this.paginate();
     }
 
     // Sorting
