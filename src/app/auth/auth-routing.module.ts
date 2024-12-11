@@ -11,6 +11,7 @@ import { SuccessMsgBasicComponent } from "./success-msg-basic/success-msg-basic.
 import { TwostepBasicComponent } from "./twostep-basic/twostep-basic.component";
 import { AltaBajaProductosComponent } from "./alta-baja-productos/alta-baja-productos.component";
 import { FormularioCreacionEdicionComponent } from "./formulario-creacion-edicion/formulario-creacion-edicion.component";
+import { authGuard } from "../auth.guard";
 
 // component
 
@@ -25,7 +26,8 @@ const routes: Routes = [
   },
   {
     path: "administrador",
-    component: AltaBajaProductosComponent
+    component: AltaBajaProductosComponent,
+    canActivate: [authGuard]
   },
   {
     path: "formulario",//A esto falta que le pase el id
