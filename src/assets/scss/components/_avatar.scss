@@ -13,8 +13,8 @@
 }
 
 .avatar-sm {
-    height: 3rem;
-    width: 3rem;
+    height: 4rem;
+    width: 4rem;
 }
 
 .avatar-md {
@@ -34,13 +34,24 @@
 
 .avatar-title {
     align-items: center;
-    background-color: $primary;
+    background-color: $azulClaro;
     color: $white;
     display: flex;
     font-weight: $font-weight-medium;
     height: 100%;
     justify-content: center;
     width: 100%;
+}
+.avatar-title2 {
+    align-items: center;
+    background-color: $azulClaro;
+    color: $white;
+    display: flex;
+    font-weight: $font-weight-medium;
+    height: 100px; /* Ajusta el tamaño según tus necesidades */
+    justify-content: center;
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    border-radius: 50%; /* Hace que el div sea un círculo */
 }
 
 // avatar group

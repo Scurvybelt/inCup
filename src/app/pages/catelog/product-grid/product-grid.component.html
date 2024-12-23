@@ -1,18 +1,18 @@
 <!-- Header -->
 <app-header></app-header>
 
-<section class="ecommerce-about" style="background-image: url('assets/images/ecommerce/vasosTransparentes.jpg'); background-size: cover; background-position: center;">
-    <div class="bg-overlay bg-primary" style="opacity: 0.85;"></div>
+<section class="ecommerce-about poppins-bold" style="background-image: url('assets/images/ecommerce/bannerProducto2.jpg'); background-size: cover; background-position: center;">
+    <div class="" style="opacity: 0.85;"></div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="text-center">
-                    <h1 class="text-white mb-0">Catálogo de productos</h1>
+                    <h1 class="text-white mb-0 poppins-bold">Catálogo de productos</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb breadcrumb-light justify-content-center mt-4">
-                            <li class="breadcrumb-item"><a href="javascript:void(0);">Productos</a></li>
+                            <li class="breadcrumb-item poppins-regular "><a href="javascript:void(0);">Productos</a></li>
                             <!-- <li class="breadcrumb-item"><a href="javascript:void(0);">Grid View</a></li> -->
-                            <li class="breadcrumb-item active" aria-current="page">Catálogo de Productos</li>
+                            <li class="breadcrumb-item active poppins-regular" aria-current="page">Catálogo de Productos</li>
                         </ol>
                     </nav>
                 </div>
@@ -41,7 +41,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-5 col-md-6">
+                                <!-- <div class="col-xl-5 col-md-6">
                                     <div>
                                         <label class="form-label">Precio</label>
                                         <div class="pb-3">
@@ -52,7 +52,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <!-- <div class="col-xl-3 col-md-6">
                                     <div>
@@ -108,7 +108,7 @@
                         <!-- @for(data of products; track $index){ -->
                         <div *ngFor="let producto of filtrosProductos" class="col-xxl-3 col-lg-4 col-md-6">
                         <div [routerLink]="['/catelog/product-details/',producto.id]" class="card overflow-hidden element-item" style="cursor: pointer;">
-                                <div class="bg-light py-4">
+                                <div class=" py-4" style="background-color: #409EFF;">
                                     <div class="gallery-product"><img src="{{producto.img}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" /></div>
                                     <!-- @if(data.tag){
                                     <p class=" fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival
@@ -150,7 +150,7 @@
                                             </li>
                                         </ul>
                                         <a href="javascript:void(0);">
-                                            <h6 class="fs-16 lh-base text-truncate mb-0">{{producto.name}}</h6>
+                                            <h6 class="fs-16 lh-base text-truncate mb-0 poppins-regular">{{producto.name}}</h6>
                                         </a>
                                         <div class="mt-3">
                                             <!-- <span class="float-end">{{data.rating}} <i class="ri-star-half-fill text-warning align-bottom"></i></span> -->
@@ -160,8 +160,8 @@
                                                 <span class="text-muted fs-12"><del>${{data.mrp}}</del></span>
                                                 } -->
                                             </h5>
-                                            <ul class="mt-4">
-                                                <li>{{producto.category}}</li>
+                                            <ul class="mt-4 poppins-regular">
+                                                <li >{{producto.category}}</li>
                                                 <li>{{producto.tipo}}</li>
                                             </ul>
                                         </div>
@@ -211,7 +211,7 @@
                     <img src="assets/images/ecommerce/instagram/img-4.jpg" alt="" class="img-fluid h-100 object-fit-cover">
                 </div><!--end col-->
                 <div class="col-lg-7">
-                    <div class="card-body bg-dark h-100 p-xxl-5">
+                    <div class="card-body bg-color-azulFuerte h-100 p-xxl-5">
                         <div class="p-4">
                             <p class="text-white opacity-75 text-uppercase fs-15">Ofertas limitadas</p>
                             <h1 class="lh-base text-capitalize text-white mb-3">Suscríbete a nuestras ofertas por correo y recibe ofertas antes que nadie.</h1>
@@ -222,7 +222,7 @@
                                     <form action="#!">
                                         <div class="subscribe-input position-relative">
                                             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingresa tu correo">
-                                            <button type="submit" class="btn btn-primary">Suscríbete</button>
+                                            <button type="submit" class="btn btn-azulClaro">Suscríbete</button>
                                         </div>
                                     </form>
                                 </div>

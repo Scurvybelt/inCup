@@ -5,16 +5,16 @@
 <section class="position-relative overflow-hidden">
     <ngx-slick-carousel dir="ltr" class="" id="ecommerceHero" [config]="NavAndPagination" #slickModal>
         <div class="swiper-slide" ngxSlickItem>
-            <div class="ecommerce-home bg-danger-subtle" style="background-image: url('assets/images/ecommerce/home/imgVasos.jpg');">
+            <div class="ecommerce-home bg-danger-subtle" style="background-image: url('assets/images/ecommerce/home/imagenBannerPrincipal.jpg');">
                 <div class="container">
                     <div class="row justify-content-end">
                         <div class="col-lg-7">
-                            <div class="text-sm-end">
+                            <div class="text-sm-end" style="margin-bottom: 9rem;">
                                 <!-- <p class="fs-15 fw-semibold text-uppercase"><i class="ri-flashlight-fill text-primary align-bottom me-1"></i> In this
                                     season, find the best</p> -->
-                                <h1 class="display-4 fw-bold lh-base text-capitalize mb-3">Los Mejores productos</h1>
+                                <h1 class="poppins-bold  display-4 fw-bold lh-base text-capitalize mb-3" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  text-align: center;">Los Mejores productos</h1>
                                 <!-- <p class="fs-20 mb-4">Biggest offers on this season</p> -->
-                                <button class="btn btn-danger btn-hover" routerLink="catelog/product-grid">
+                                <button class="btn btn-gray btn-hover" routerLink="catelog/product-grid">
                                     Ver Productos<i class="ph-arrow-up-right align-middle ms-1"></i></button>
                             </div>
                         </div>
@@ -23,15 +23,16 @@
             </div>
         </div>
         <div class="swiper-slide" ngxSlickItem>
-            <div class="ecommerce-home bg-primary-subtle" style="background-image: url('assets/images/ecommerce/instagram/traste.jpg');">
+            <div class="ecommerce-home bg-primary-subtle" style="background-image: url('assets/images/ecommerce/home/imagenBannerPrincipal2.jpg');">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div>
-                                <!-- <p class="fs-15 fw-semibold text-uppercase"><i class="ri-flashlight-fill text-info align-bottom me-1"></i> Save up to <span class="text-danger">50%</span> off</p> -->
-                                <h1 class="display-4 fw-semibold text-capitalize lh-base">Con la Mejor Calidad</h1>
-                                <!-- <p class="fs-18 mb-4"><b>40% off</b> up to on all selected products</p> -->
-                                <button class="btn btn-primary btn-hover" routerLink="catelog/product-grid">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-7">
+                            <div class="text-sm-end" style="margin-bottom: 9rem;">
+                                <!-- <p class="fs-15 fw-semibold text-uppercase"><i class="ri-flashlight-fill text-primary align-bottom me-1"></i> In this
+                                    season, find the best</p> -->
+                                <h1 class=" poppins-bold  display-4 fw-bold lh-base text-capitalize mb-3" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  text-align: center;">Con la mejor Calidad</h1>
+                                <!-- <p class="fs-20 mb-4">Biggest offers on this season</p> -->
+                                <button class="btn btn-gray btn-hover" routerLink="catelog/product-grid">
                                     Ver Productos<i class="ph-arrow-up-right align-middle ms-1"></i></button>
                             </div>
                         </div>
@@ -39,24 +40,23 @@
                 </div>
             </div>
         </div>
-        <div class="swiper-slide" ngxSlickItem>
+        <!-- <div class="swiper-slide" ngxSlickItem>
             <div class="ecommerce-home" style="background-image: url('assets/images/ecommerce/instagram/img-2.jpg'); background-size: cover;">
                 <div class="container">
                     <div class="row justify-content-end">
                         <div class="col-lg-6">
                             <div class="text-end">
-                                <!-- <p class="fs-15 fw-semibold text-uppercase text-body">Jewelry Design with Love</p> -->
-                                <!-- <p class="text-body lead fs-19 mb-4">Jewelry are like a tribute to being a woman</p> -->
+                                
                                 <div class="hstack gap-2 justify-content-end" routerLink="catelog/product-grid">
                                     <button class="btn btn-success btn-hover">Ver Productos<i class="ph-arrow-up-right align-middle ms-1"></i></button>
-                                    <!-- <button class="btn btn-ghost-secondary btn-hover">Watch Now <i class="ph-play-circle align-middle ms-1 fs-16"></i></button> -->
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </ngx-slick-carousel>
     <!-- </swiper> -->
 </section>
@@ -97,12 +97,13 @@
         <div class="row justify-content-center" style="margin-top: 5rem;">
             <div class="col-lg-7">
                 <div class="text-center">
-                    <h3 class="mb-3">Nuestros Productos</h3>
-                    <p class="text-muted fs-15 mb-0">Descubre nuestros mejores productos</p>
+                    <h3 class="mb-3 poppins-semibold" style="color: #00236F; font-size: 2rem;">Nuestros Productos</h3>
+                    <hr class="custom-hr">
+                    <p class="text-muted fs-15 mb-0 poppins-regular" style="color: #00236F;">Descubre nuestros mejores productos</p>
                 </div>
             </div>
         </div>
-
+        
         <div class="row mt-5">
             <div class="col-lg-12">
                 <!-- <div class="text-center">
@@ -121,7 +122,7 @@
                     <!-- @for(data of productsData; track $index){ -->
                     <div *ngFor="let producto of productsData" class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot arrival" data-category="hot arrival">
                         <div [routerLink]="['/catelog/product-details/',producto.id]" class="card overflow-hidden" style="cursor: pointer;">
-                            <div class="bg-info-subtle rounded-top py-4">
+                            <div class=" rounded-top py-4" style="background-color: #409EFF;">
                                 <div class="gallery-product">
                                     <img src="{{producto.img}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" />
                                 </div>
@@ -144,13 +145,13 @@
                                     </div> -->
                                 </div>
                                 <div class="product-btn px-3">
-                                    <a [routerLink]="['/catelog/product-details/',producto.id]" class="btn btn-primary btn-sm w-75 add-btn">Ver Producto</a>
+                                    <a [routerLink]="['/catelog/product-details/',producto.id]" class="btn btn-gray btn-sm w-75 add-btn">Ver Producto</a>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div>
                                     <a routerLink="/catelog/product-details">
-                                        <h6 class="fs-15 lh-base text-truncate mb-0">{{producto.name}}</h6>
+                                        <h6 class="fs-15 lh-base text-truncate mb-0 poppins-bold ">{{producto.name}}</h6>
                                     </a>
                                     <div class="mt-3">
                                         <!-- <span class="float-end">{{data.rate}} <i class="ri-star-half-fill text-warning align-bottom"></i></span> -->
@@ -159,7 +160,7 @@
                                              -->
                                             <!-- @if(data.mrp){ <span class="text-muted fs-12"><del>${{data.mrp}}</del></span>} -->
                                         <!-- </h5> -->
-                                        <ul class="mt-4">
+                                        <ul class="mt-4 poppins-regular">
                                             <li>{{producto.category}}</li>
                                             <li>{{producto.tipo}}</li>
                                         </ul>
@@ -174,7 +175,7 @@
                 </div>
 
                 <div class="mt-4 text-center">
-                    <a routerLink="catelog/product-grid" class="btn btn-soft-primary btn-hover">Ver todos los productos<i class="mdi mdi-arrow-right align-middle ms-1"></i></a>
+                    <a routerLink="catelog/product-grid" class="btn btn-gray btn-hover">Ver todos los productos<i class="mdi mdi-arrow-right align-middle ms-1"></i></a>
                 </div>
             </div>
         </div>
@@ -186,7 +187,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="section-content text-center mb-5 pb-3">
-                    <h2 class="title fw-normal"><span>¿Por que <span class="fw-semibold">comprar</span> con nosotros?</span></h2>
+                    <h2  class="title fw-normal color-azul-fuerte poppins-semibold"><span class="poppins-semibold">¿Por que <span class="fw-semibold poppins-semibold">comprar</span > con nosotros?</span></h2>
                 </div>
             </div><!--end col-->
         </div><!--end row-->
@@ -195,12 +196,12 @@
                 <div class="card border-0 text-center">
                     <div class="card-body">
                         <div class="avatar-md mx-auto mb-4">
-                            <div class="avatar-title bg-light text-reset fs-2 rounded">
-                                <i class="bi bi-shield-check"></i>
+                            <div class="avatar-title text-reset fs-2 rounded-circle">
+                                <img src="assets\images\ecommerce\home\ProductoCalidad.png" style="width: 100%;">
                             </div>
                         </div>
-                        <h5>Productos de Calidad</h5>
-                        <p class="text-muted mb-0">Nuestros productos satisfacen las necesidades de los clientes y cumplen con los estándares de la industria</p>
+                        <h5 class="color-azul-fuerte poppins-bold">Productos de Calidad</h5>
+                        <p class="text-muted mb-0 color-azul-fuerte poppins-regular">Nuestros productos satisfacen las necesidades de los clientes y cumplen con los estándares de la industria</p>
                     </div>
                 </div>
             </div><!--end col-->
@@ -208,12 +209,12 @@
                 <div class="card border-0 text-center">
                     <div class="card-body">
                         <div class="avatar-md mx-auto mb-4">
-                            <div class="avatar-title bg-light text-reset fs-2 rounded">
-                                <i class="bi bi-truck"></i>
+                            <div class="avatar-title text-reset fs-2 rounded-circle">
+                                <img src="assets\images\ecommerce\home\enviosRapidos.png" style="width: 100%;">
                             </div>
                         </div>
-                        <h5>Rapido Envio</h5>
-                        <p class="text-muted mb-0">
+                        <h5 class="color-azul-fuerte poppins-bold">Rapido Envio</h5>
+                        <p class="text-muted mb-0 color-azul-fuerte poppins-regular">
                             La forma más económica de enviar un paquete dependerá de factores como el tamaño y el peso del paquete, así como la distancia y la velocidad de entrega.</p>
                     </div>
                 </div>
@@ -222,12 +223,12 @@
                 <div class="card border-0 text-center">
                     <div class="card-body">
                         <div class="avatar-md mx-auto mb-4">
-                            <div class="avatar-title bg-light text-reset fs-2 rounded">
-                                <i class="bi bi-cash-coin"></i>
+                            <div class="avatar-title text-reset fs-2 rounded-circle">
+                                <img src="assets\images\ecommerce\home\metodosDePago.png" style="width: 100%;">
                             </div>
                         </div>
-                        <h5>Metodos de Pago seguros</h5>
-                        <p class="text-muted mb-0">Contamos con formas de pago segura, para la protecion y privacidad de los clientes.</p>
+                        <h5 class="color-azul-fuerte poppins-bold">Metodos de Pago seguros</h5>
+                        <p class="text-muted mb-0 color-azul-fuerte poppins-regular">Contamos con formas de pago segura, para la protecion y privacidad de los clientes.</p>
                     </div>
                 </div>
             </div><!--end col-->
@@ -235,12 +236,16 @@
                 <div class="card border-0 text-center">
                     <div class="card-body">
                         <div class="avatar-md mx-auto mb-4">
-                            <div class="avatar-title bg-light text-reset fs-2 rounded">
-                                <i class="bi bi-house-door"></i>
+                            <div>
+                                <div class="avatar-title text-reset fs-2 rounded-circle">
+                                   
+                                    <img src="assets\images\ecommerce\home\EnviosNacionales.png" style="width: 100%;">
+                                    
+                                </div>
                             </div>
                         </div>  
-                        <h5>Envios Nacionales</h5>
-                        <p class="text-muted mb-0">Contamos con envios a toda la repulica Mexicana.</p>
+                        <h5 class="color-azul-fuerte poppins-bold">Envios Nacionales</h5>
+                        <p class="text-muted mb-0 color-azul-fuerte poppins-regular">Contamos con envios a toda la repulica Mexicana.</p>
                     </div>
                 </div>
             </div><!--end col-->
@@ -362,8 +367,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="text-center">
-                    <h3 class="mb-3">¿Qué dicen nuestros clientes de nuestros productos?</h3>
-                    <p class="text-muted fs-15">En el corazón de nuestro negocio están ustedes, nuestros valiosos clientes. Cada vez que eligen nuestros productos o servicios, no solo están haciendo una compra; están formando parte de nuestra familia. Su apoyo es fundamental, ya que nos impulsa a innovar y mejorar constantemente. Gracias a ustedes, podemos seguir creciendo y ofreciendo lo mejor. ¡Su satisfacción es nuestra mayor recompensa!</p>
+                    <h3 style="color: #00236F;" class="mb-3 poppins-semibold">¿Qué dicen nuestros clientes de nuestros productos?</h3>
+                    <p style="color:#00236F;" class=" fs-15 poppins-regular">En el corazón de nuestro negocio están ustedes, nuestros valiosos clientes. Cada vez que eligen nuestros productos o servicios, no solo están haciendo una compra; están formando parte de nuestra familia. Su apoyo es fundamental, ya que nos impulsa a innovar y mejorar constantemente. Gracias a ustedes, podemos seguir creciendo y ofreciendo lo mejor. <strong>¡Su satisfacción es nuestra mayor recompensa!</strong></p>
                 </div>
             </div>
             <!--end col-->
@@ -376,15 +381,17 @@
                     @for(item of customer; track $index){
                     <div class="swiper-slide pe-4" ngxSlickItem>
                         <div class=" client-box m-1">
-                            <div class="client-desc p-4 border rounded">
-                                <p class="mb-0 fs-16">{{item.content}}</p>
+                            <div class="client-desc p-4 border rounded" style="background-color: #9dceff;">
+                                <p class="mb-0 fs-16 poppins-regular">{{item.content}}</p>
                             </div>
-                            <div class="pt-4">
-                                <div class="d-flex align-items-center mt-4 pt-1">
+                            <div class="">
+                                <div class=" align-items-center " style="text-align: center; display: flex; flex-direction: column;">
+                                   
                                     <img src="{{item.img}}" alt="" class="avatar-sm rounded" />
+                                    
                                     <div class="flex-grow-1 ms-3">
                                         <h5 class="mb-2 fs-16">{{item.name}}</h5>
-                                        <p class="text-muted mb-0">{{item.type}}</p>
+                                        <!-- <p class="text-muted mb-0">{{item.type}}</p> -->
                                     </div>
                                 </div>
                             </div>
@@ -534,8 +541,8 @@
 <!-- END BLOG -->
 
 <!-- START INSTAGRAM -->
-<section class="section pb-0">
-    <div class="container">
+<section class="section pb-0" style="padding-top: 0px ;">
+    <!-- <div class="container">
         <div class="row justify-content-center g-0">
             <div class="col-lg-7">
                 <div class="text-center">
@@ -544,7 +551,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="position-relative">
         <div class="row g-0 mt-5">
@@ -602,7 +609,7 @@
         </div>
 
         <div class="insta-lable text-center">
-            <a href="https://www.instagram.com/incupmexico_/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" class="btn btn-primary btn-hover"> <i class="ph-instagram-logo align-middle me-1"></i>Síguenos en Instagram</a>
+            <a href="https://www.instagram.com/incupmexico_/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" class="btn btn-azul "> <i class="ph-instagram-logo align-middle me-1"></i>Síguenos en Instagram</a>
         </div>
     </div>
 </section>

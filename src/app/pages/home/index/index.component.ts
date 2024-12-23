@@ -65,30 +65,26 @@ export class IndexComponent {
     {
       id: '1',
       img: 'assets/images/users/avatar-2.jpg',
-      content: " Clean design. document is just a fews page but i should be like this cuz when looking on laravel project it well prepare. everytime i need a component or something else. easy to find. ",
-      name: 'George Obrien',
-      type: 'Velzon User',
+      content: "El servicio es muy bueno y los productos son de excelente calidad. Los recomiendo mucho.",
+      name: 'Diana V. Alvarado',
     },
     {
       id: '2',
       img: 'assets/images/users/avatar-7.jpg',
-      content: " Thank you for supporting CakePHP 4, we have purchased the template because of this support, please push forward more integration ",
-      name: 'Chadwick A. Scott',
-      type: 'Velzon User',
+      content: "Estoy muy satisfecho con el servicio y la calidad de los productos. Definitivamente los recomiendo.",
+      name: 'Carlos M. Rodríguez',
     },
     {
       id: '3',
       img: 'assets/images/users/avatar-8.jpg',
-      content: " We have used your other templates as well and seems it's amazing with the design and code quality. Wish you best for the future updates. Keep updated you will be #1 in near future. ",
-      name: 'Tommy Moreno',
-      type: 'Skote User',
+      content: "El servicio y los productos son excepcionales. Los recomiendo a todos.",
+      name: 'Tamariz Moreno',
     },
     {
       id: '4',
       img: 'assets/images/users/avatar-10.jpg',
-      content: " The template is very complete as an admin panel and was well written in a way that makes it easy to use. ",
-      name: 'Mary Atkinson',
-      type: 'Velzon User',
+      content: "El servicio es excelente y los productos son de alta calidad. Los recomiendo mucho.",
+      name: 'María C. Rodríguez',
     }
   ];
 

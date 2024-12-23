@@ -184,7 +184,7 @@
     @each $color,
     $value in $theme-colors {
         .ribbon-#{$color} {
-            background: ($value);
+            background: (#75C339);
 
             &.vertical-shape{
                 &:after{

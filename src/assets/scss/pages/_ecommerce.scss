@@ -312,7 +312,7 @@
             padding: 8px 15px;
             margin: 5px;
             cursor: pointer;
-            background-color: var(--#{$prefix}light);
+            background-color: var($azulFuerte);
         }
     }
 }
@@ -495,19 +495,19 @@
     .client-desc {
         position: relative;
 
-        &:before {
-            content: "";
-            position: absolute;
-            width: 25px;
-            height: 60px;
-            background-color: var(--#{$prefix}body-bg);
-            border: 1px solid var(--#{$prefix}border-color);
-            transform: rotate(67deg);
-            border-color: transparent var(--#{$prefix}border-color) var(--#{$prefix}border-color) transparent;
-            bottom: -30px;
-            left: 80px;
-            margin-top: 10px;
-        }
+        // &:before {
+        //     content: "";
+        //     position: absolute;
+        //     width: 25px;
+        //     height: 60px;
+        //     background-color: var(--#{$prefix}body-bg);
+        //     border: 1px solid var(--#{$prefix}border-color);
+        //     transform: rotate(67deg);
+        //     border-color: transparent var(--#{$prefix}border-color) var(--#{$prefix}border-color) transparent;
+        //     bottom: -30px;
+        //     left: 80px;
+        //     margin-top: 10px;
+        // }
     }
 }
 

@@ -1,15 +1,16 @@
 <!-- Header -->
 <app-header></app-header>
 
-<section class="ecommerce-about bg-primary">
+<section class="ecommerce-about bg-primary" style="background: linear-gradient(to top, #80ee2d, rgba(210, 250, 206, 0.972));">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="text-center">
-                    <h1 class="text-white mb-0">Preguntas Frecuentes</h1>
+                    <h1 class="text-white mb-0 poppins-bold">Preguntas Frecuentes</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb breadcrumb-light justify-content-center mt-4 fs-15">
-                            <li class="breadcrumb-item active" aria-current="page">Faq's</li>
+                            <li class="breadcrumb-item active poppins-regular" aria-current="page">Comencemos algo grande juntos. ¡Ponte en contacto con uno
+                                de nuestros miembros del equipo hoy!</li>
                         </ol>
                     </nav>
                 </div>
@@ -26,7 +27,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="text-center">
-                    <h3>¿Tienes alguna pregunta?</h3>
+                    <h3 class="poppins-bold color-azul-fuerte" >¿Tienes alguna pregunta?</h3>
                     <!-- <p class="text-muted mb-4">You can ask anything you want to know about Feedback.</p>
                     <div class="hstack flex-wrap gap-2 justify-content-center">
                         <button type="button" class="btn btn-primary btn-label rounded-pill"><i class="ri-mail-line label-icon align-middle rounded-pill fs-16"></i> Email Us</button>
@@ -43,10 +44,10 @@
                     <div class="card-body">
                         <div class="avatar-md mx-auto mb-4">
                             <div class="avatar-title bg-success-subtle text-success rounded-circle h1 m-0">
-                                <i class="bi bi-box-seam"></i>
+                                <img src="assets/images/ecommerce/caja.png" style="width: 100%;">
                             </div>
                         </div>
-                        <h5 class="fs-16 mb-3"><a href="javascript:void(0);" class="text-body stretched-link">Orden</a></h5>
+                        <h5 class="fs-16 mb-3"><a href="javascript:void(0);" class="text-body stretched-link color-azul-fuerte poppins-bold">Orden</a></h5>
                     </div>
                 </div>
             </div>
@@ -56,10 +57,10 @@
                     <div class="card-body">
                         <div class="avatar-md mx-auto mb-4">
                             <div class="avatar-title bg-success-subtle text-success rounded-circle h1 m-0">
-                                <i class="bi bi-cash-coin"></i>
+                                <img src="assets/images/ecommerce/moneda.png" style="width: 100%;">
                             </div>
                         </div>
-                        <h5 class="fs-16 mb-3"><a href="javascript:void(0);" class="text-body stretched-link">Pagos</a></h5>
+                        <h5 class="fs-16 mb-3"><a href="javascript:void(0);" class="text-body stretched-link color-azul-fuerte poppins-bold">Pagos</a></h5>
                     </div>
                 </div>
             </div>
@@ -69,10 +70,10 @@
                     <div class="card-body">
                         <div class="avatar-md mx-auto mb-4">
                             <div class="avatar-title bg-success-subtle text-success rounded-circle h1 m-0">
-                                <i class="bi bi-truck"></i>
+                                <img src="assets/images/ecommerce/camion.png" style="width: 100%;">
                             </div>
                         </div>
-                        <h5 class="fs-16 mb-3"><a href="javascript:void(0);" class="text-body stretched-link">Envios</a></h5>
+                        <h5 class="fs-16 mb-3"><a href="javascript:void(0);" class="text-body stretched-link color-azul-fuerte poppins-bold">Envios</a></h5>
                     </div>
                 </div>
             </div>
@@ -95,13 +96,13 @@
             <div class="col-xxl-8 col-lg-8">
                 <div>
                     <div class="mb-4">
-                        <h5 class="fs-16 mb-0 fw-semibold">Preguntas Generales</h5>
+                        <h5 class="fs-16 mb-0 fw-semibold color-azul-fuerte poppins-bold">Preguntas Generales</h5>
                     </div>
 
                     <p-accordion collapseIcon="mdi mdi-chevron-up" expandIcon="mdi mdi-chevron-down" [activeIndex]="0">
                         <p-accordionTab styleClass="accordion-item" iconPos="end">
                             <ng-template pTemplate="header" headerStyleClass="accordion-header" id="genques-headingOne">
-                                <button class="accordion-button" type="button">
+                                <button class="accordion-button color-azul-fuerte" type="button">
                                     ¿Qué tipo de productos ofrecen?
                                 </button>
                             </ng-template>
@@ -113,61 +114,61 @@
                             </ng-template>
                         </p-accordionTab>
 
-                        <p-accordionTab header="¿Cuáles son las opciones de personalización para los vasos y contenedores?" iconPos="end">
-                            <div>
+                        <p-accordionTab class="color-azul-fuerte"  header="¿Cuáles son las opciones de personalización para los vasos y contenedores?" iconPos="end">
+                            <div class = "poppins-regular">
                                 Podemos personalizar tus productos con el <b>diseño o logotipo de tu marca</b>, aplicando diferentes técnicas de serigrafía y asegurando una <b>alta calidad de impresión</b>. Trabajamos con una variedad de tamaños y estilos de productos para adaptarnos a tus necesidades.
                             </div>
                         </p-accordionTab>
 
-                        <p-accordionTab header="¿Puedo pedir un diseño personalizado en cualquier tipo de vaso o contenedor?" iconPos="end">
-                            <div>
+                        <p-accordionTab class="color-azul-fuerte" header="¿Puedo pedir un diseño personalizado en cualquier tipo de vaso o contenedor?" iconPos="end">
+                            <div class = "poppins-regular">
                                 Sí, ofrecemos personalización en la mayoría de nuestros productos. Si tienes en mente un artículo específico, contáctanos para confirmar la disponibilidad y opciones de personalización.
                             </div>
                         </p-accordionTab>
 
-                        <p-accordionTab header="¿Cuál es la cantidad mínima de productos para un pedido personalizado?" iconPos="end">
-                            <div>
+                        <p-accordionTab class="color-azul-fuerte" header="¿Cuál es la cantidad mínima de productos para un pedido personalizado?" iconPos="end">
+                            <div class = "poppins-regular">
                                 La cantidad mínima de productos varía según el tipo de producto y la complejidad del diseño. Por lo general, los pedidos personalizados requieren un mínimo de 3000 unidades.
                             </div>
                         </p-accordionTab>
 
-                        <p-accordionTab header="¿Ofrecen ayuda para diseñar el arte o logo en el producto?" iconPos="end">
-                            <div>
+                        <p-accordionTab class="color-azul-fuerte" header="¿Ofrecen ayuda para diseñar el arte o logo en el producto?" iconPos="end">
+                            <div class = "poppins-regular">
                                 No
                             </div>
                         </p-accordionTab>
-                        <p-accordionTab header="¿Cómo solicito una cotización?" iconPos="end">
-                            <div>
+                        <p-accordionTab class="color-azul-fuerte" header="¿Cómo solicito una cotización?" iconPos="end">
+                            <div class = "poppins-regular">
                                 Puedes solicitar una cotización a través de nuestro <b>contacto en la web, enviándonos un correo electrónico o comunicándote con nosotros por teléfono</b>. Asegúrate de incluir detalles como el tipo de producto, cantidad, y diseño deseado para que podamos ofrecerte una cotización precisa.
                             </div>
                         </p-accordionTab>
-                        <p-accordionTab header="¿Cuánto tiempo se tarda en recibir una cotización?" iconPos="end">
-                            <div>
+                        <p-accordionTab class="color-azul-fuerte" header="¿Cuánto tiempo se tarda en recibir una cotización?" iconPos="end">
+                            <div class = "poppins-regular">
                                 Normalmente respondemos a las solicitudes de cotización en un plazo <b>de 1 a 2 días hábiles</b>. Nuestro equipo se asegurará de brindarte toda la información necesaria para tomar una decisión informada.
                             </div>
                         </p-accordionTab>
-                        <p-accordionTab header="¿Cómo puedo realizar un pedido?" iconPos="end">
-                            <div>
+                        <p-accordionTab class="color-azul-fuerte" header="¿Cómo puedo realizar un pedido?" iconPos="end">
+                            <div class = "poppins-regular">
                                 Una vez que tengas la cotización y estés listo para proceder, contáctanos para confirmar el pedido y detallar el proceso de pago. Una vez confirmado el pago inicial, comenzaremos con el proceso de producción.
                             </div>
                         </p-accordionTab>
-                        <p-accordionTab header="¿Se pueden hacer cambios en el pedido una vez confirmado?" iconPos="end">
-                            <div>
+                        <p-accordionTab class="color-azul-fuerte" header="¿Se pueden hacer cambios en el pedido una vez confirmado?" iconPos="end">
+                            <div class = "poppins-regular">
                                 Si necesitas realizar algún cambio en tu pedido, te recomendamos contactarnos lo antes posible. Una vez que el proceso de producción haya comenzado, los cambios pueden estar sujetos a costos adicionales.
                             </div>
                         </p-accordionTab>
-                        <p-accordionTab header="¿Tienen precios especiales para pedidos al por mayor?" iconPos="end">
-                            <div>
+                        <p-accordionTab class="color-azul-fuerte" header="¿Tienen precios especiales para pedidos al por mayor?" iconPos="end">
+                            <div class = "poppins-regular">
                                 Sí, ofrecemos precios especiales y descuentos para pedidos al por mayor. Contáctanos para obtener más información y cotizar según tus necesidades específicas.
                             </div>
                         </p-accordionTab>
-                        <p-accordionTab header="¿Puedo solicitar muestras antes de hacer un pedido grande?" iconPos="end">
-                            <div>
+                        <p-accordionTab class="color-azul-fuerte" header="¿Puedo solicitar muestras antes de hacer un pedido grande?" iconPos="end">
+                            <div class = "poppins-regular">
                                 Sí, ofrecemos muestras de nuestros productos. Estas pueden ser genéricas o, en algunos casos, personalizadas. Consulta con nuestro equipo sobre las opciones y los costos de las muestras.
                             </div>
                         </p-accordionTab>
-                        <p-accordionTab header="¿Ofrecen descuentos por volumen o promociones especiales?" iconPos="end">
-                            <div>
+                        <p-accordionTab class="color-azul-fuerte" header="¿Ofrecen descuentos por volumen o promociones especiales?" iconPos="end">
+                            <div class = "poppins-regular">
                                 Sí, contamos con descuentos por volumen y promociones ocasionales en productos específicos. Revisa nuestra página de promociones o contáctanos para saber si tu pedido califica para algún descuento.
                             </div>
                         </p-accordionTab>
@@ -183,14 +184,14 @@
 </section>
 
 <section class="section" style="background-image: url('assets/images/ecommerce/vasosTransparentes.jpg'); background-size: cover; background-position: center;">
-    <div class="bg-overlay bg-secondary" style="opacity: 0.85;"></div>
+    <div class="bg-overlay " style="opacity: 0.85; background-color: #007EFF;"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="d-sm-flex align-items-center">
                     <h2 class="text-white text-capitalize mb-0 flex-grow-1">Dejanos saber como te podemos ayudar</h2>
                     <div class="flex-shrink-0 mt-3 mt-sm-0">
-                        <a routerLink="/extrapages/contact-us" class="btn btn-darken-secondary btn-hover"><i class="ph-phone align-middle me-1"></i>Contactanos</a>
+                        <a routerLink="/extrapages/contact-us" class="btn btn-gray btn-hover"><i class="ph-phone align-middle me-1"></i>Contactanos</a>
                     </div>
                 </div>
             </div>

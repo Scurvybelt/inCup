@@ -1,0 +1,24 @@
+.transparent-card {
+    background-color: transparent;
+}
+
+.transparent-card-body {
+    background-color: transparent;
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-gray {
+    background-color: #6c757d; /* Color de fondo gris */
+    border-color: #6c757d; /* Color del borde gris */
+    color: white; /* Color del texto */
+}
+
+.btn-gray:hover {
+    background-color: #5a6268; /* Color de fondo gris más oscuro al pasar el ratón */
+    border-color: #545b62; /* Color del borde gris más oscuro al pasar el ratón */
+}
