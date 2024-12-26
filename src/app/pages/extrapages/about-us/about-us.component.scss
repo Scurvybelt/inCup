@@ -1,0 +1,75 @@
+.blanco{
+    color: white;
+}
+
+
+.estiloContenedor{
+    background-color: rgba(0, 126, 255, 0.5);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-radius: 5px;
+}
+
+.vertical-image-container {
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-Flex{
+    display: flex;
+}
+
+@media (max-width: 990px) {
+    .display-Flex{
+        flex-direction: column;
+    }
+    
+}
+
+.bg-green {
+    background-color: #75C339; /* Color de fondo verde */
+}
+
+.padding-telefono{
+    padding: 2rem;
+}
+
+.color-Azul{
+    color: #01184A;
+}
+
+.image-container {
+    height: 100%; /* Asegura que el contenedor ocupe toda la altura disponible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+}
+
+.marginLeftNegativo{
+    margin-left: -6rem;
+}
+
+
+
+.margen-bajo{
+    margin-bottom: 2rem;
+}
+
+
+@media (max-width: 990px) {
+    .marginLeftNegativo{
+        margin-left: 0rem;
+    }
+    .margen-bajo{
+        margin-bottom: 0rem;
+    }
+    
+}

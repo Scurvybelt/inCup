@@ -1,5 +1,5 @@
 <section
-    class="auth-page-wrapper position-relative bg-light min-vh-100 d-flex align-items-center justify-content-between">
+    class="auth-page-wrapper position-relative bg-light min-vh-100 d-flex align-items-center justify-content-between" style="background: linear-gradient(to top, #80ee2d, rgba(210, 250, 206, 0.972));">
     <!-- Header -->
     <app-login-header></app-login-header>
 
@@ -9,23 +9,16 @@
                 <div class="col-lg-6">
                     <div class="auth-card mx-lg-3">
                         <div class="card border-0 mb-0">
-                            <div class="card-header bg-primary border-0">
-                                <div class="row">
-                                    <div class="col-lg-4 col-3">
-                                        <img src="assets/images/auth/img-1.png" alt="" class="img-fluid" />
-                                    </div>
-                                    <div class="col-lg-8 col-9">
-                                        <h1 class="text-white lh-base fw-lighter">Inicia Sesión</h1>
-                                    </div>
-                                </div>
+                            <div class="card-header " style="display: flex; justify-content: center;">
+                                <img src="assets/images/logoInCupSinFondo.png" style="width: 18%;">
                             </div>
                             <div class="card-body">
-                                <p class="text-muted fs-15">Inicia Sesión a InCup</p>
+                                <p class=" fs-15 poppins-bold text-center" >Inicia Sesión a InCup</p>
                                 <div class="p-2">
                                     <form [formGroup]="formularioSesion" (ngSubmit)="enviarFormulario()">
                                         <div class="mb-3">
-                                            <label for="username" class="form-label">Usuario</label>
-                                            <input formControlName="usuario" type="text" class="form-control" id="username"
+                                            <label for="username" class="form-label poppins-regular">Usuario</label>
+                                            <input formControlName="usuario" type="text" class="form-control poppins-regular" id="username"
                                                 placeholder="Enter username" />
                                         </div>
 
@@ -34,10 +27,10 @@
                                                 <a routerLink="/auth/pass-reset-basic" class="text-muted">Forgot
                                                     password?</a>
                                             </div> -->
-                                            <label class="form-label" for="password-input">Contraseña</label>
+                                            <label class="form-label" for="password-input poppins-regular">Contraseña</label>
                                             <div class="position-relative auth-pass-inputgroup mb-3">
                                                 <input type="password" [type]="fieldTextType ? 'text' : 'password'"
-                                                    class="form-control bg-light border-light pe-5 password-input "
+                                                    class="form-control bg-light border-light pe-5 password-input poppins-regular "
                                                     placeholder="Enter password" id="password-input" required formControlName="password">
                                                 <button
                                                     
@@ -54,7 +47,7 @@
                                         </div> -->
 
                                         <div class="mt-4">
-                                            <button [disabled]="formularioSesion.invalid" class="btn btn-primary w-100" type="submit">Inicia Sesión</button>
+                                            <button [disabled]="formularioSesion.invalid" class="btn bg-Azul w-100 poppins-regular" type="submit">Inicia Sesión</button>
                                         </div>
 
                                         <!-- <div class="mt-4 pt-2 text-center">

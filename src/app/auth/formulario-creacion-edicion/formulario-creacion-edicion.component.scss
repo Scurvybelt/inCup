@@ -1,0 +1,14 @@
+$azul: #007EFF;
+
+.bt-gray{
+    background-color: $azul;
+    border-color:  $azul; /* Color del borde gris */
+    color: white;
+}
+
+
+.bt-gray:hover{
+    background-color: #0261bf;
+    border-color: #0261bf; /* Color del borde gris */
+}
+

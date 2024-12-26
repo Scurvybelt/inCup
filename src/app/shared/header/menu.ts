@@ -417,11 +417,11 @@ export const MENU: MenuItem[] = [
                 label: "Proceso de Compra",
                 link: "/extrapages/purchase-guide",
             },
-            {
-                id: 4,
-                label: "Terminos y condiciones",
-                link: "/extrapages/terms-conditions",
-            },
+            // {
+            //     id: 4,
+            //     label: "Terminos y condiciones",
+            //     link: "/extrapages/terms-conditions",
+            // },
             // {
             //     id: 4,
             //     label: "MENUITEMS.PRIVACYPOLICY.TEXT",

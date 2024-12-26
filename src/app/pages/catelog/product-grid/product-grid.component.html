@@ -219,10 +219,14 @@
                                 what they'll get out of reading the rest of the email or linked article.</p> -->
                             <div class="row">
                                 <div class="col-lg-7">
-                                    <form action="#!">
+                                    <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()">
                                         <div class="subscribe-input position-relative">
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingresa tu correo">
-                                            <button type="submit" class="btn btn-azulClaro">Suscríbete</button>
+                                          <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="email" placeholder="Ingresa tu correo">
+                                          <button type="submit" class="btn btn-azulClaro">Suscríbete</button>
+                                        </div>
+                                        <div *ngIf="subscribeForm.get('email').invalid && (subscribeForm.get('email').dirty || subscribeForm.get('email').touched)" class="text-danger">
+                                          <div *ngIf="subscribeForm.get('email').errors.required">El correo es requerido.</div>
+                                          <div *ngIf="subscribeForm.get('email').errors.email">El correo no es válido.</div>
                                         </div>
                                     </form>
                                 </div>
@@ -235,7 +239,7 @@
     </div><!--end container-fluid-->
 </section>
 
-<app-features></app-features>
+
 
 <!-- Footer -->
 <app-footer></app-footer>

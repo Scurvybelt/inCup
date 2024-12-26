@@ -4,16 +4,16 @@
 
     <div class="w-100">
         <div class="container">
-            <h1 class="text-center">{{titulo}}</h1>
-            <div class="card border-0 mb-0 " style="padding: 3rem;">
+            <h1 class="text-center poppins-bold">{{titulo}}</h1>
+            <div class="card border-0 mb-0 " style="padding: 3rem;" style="background-color: #cfffaa;">
                 <div class="d-flex ">
-                    <button (click)="goBack()"  type="button" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button (click)="goBack()"  type="button" class="btn bt-gray"><i class="fa-solid fa-arrow-left"></i></button>
                 </div>
                 <form [formGroup]="productoForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
                     <div class="row justify-content-center">
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="imagen" class="form-label">Imagen</label>
-                            <input type="file" class="form-control" id="imagen" (change)="onFileSelected($event)">
+                            <label for="imagen" class="form-label poppins-bold">Imagen</label>
+                            <input type="file" class="form-control poppins-regular" id="imagen" (change)="onFileSelected($event)">
                             <div *ngIf="edicion" class="mt-3">
                                 <img [src]="productoForm.get('img')?.value" id="preview" alt="Vista previa de la imagen" class="img-fluid" style="max-width: 200px;">
                             </div>
@@ -25,22 +25,22 @@
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" formControlName="name" id="name" aria-describedby="nombreHelp">
+                            <label for="name" class="form-label poppins-bold">Nombre</label>
+                            <input type="text" class="form-control poppins-regular" formControlName="name" id="name" aria-describedby="nombreHelp">
                             <div *ngIf="productoForm.get('name')?.invalid && (productoForm.get('name')?.dirty || productoForm.get('name')?.touched)" class="text-danger">
                                 <div *ngIf="productoForm.get('name')?.errors?.['required']">El nombre es requerido.</div>
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="description" class="form-label">Descripción</label>
-                            <textarea class="form-control" id="description" formControlName="description" rows="3"></textarea>
+                            <label for="description" class="form-label poppins-bold">Descripción</label>
+                            <textarea class="form-control poppins-regular" id="description" formControlName="description" rows="3"></textarea>
                             <div *ngIf="productoForm.get('description')?.invalid && (productoForm.get('description')?.dirty || productoForm.get('description')?.touched)" class="text-danger">
                                 <div *ngIf="productoForm.get('description')?.errors?.['required']">La descripción es requerida.</div>
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="amount" class="form-label">Cantidad en almacén</label>
-                            <input type="number" class="form-control" formControlName="amount" id="amount">
+                            <label for="amount" class="form-label poppins-bold">Cantidad en almacén</label>
+                            <input type="number" class="form-control poppins-regular" formControlName="amount" id="amount">
                             <div *ngIf="productoForm.get('amount')?.invalid && (productoForm.get('amount')?.dirty || productoForm.get('amount')?.touched)" class="text-danger">
                                 <div *ngIf="productoForm.get('amount')?.errors?.['required']">La cantidad es requerida.</div>
                             </div>
@@ -54,8 +54,8 @@
                         </div> -->
                         
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="category" class="form-label">Categoría</label>
-                            <select class="form-control" formControlName="category" id="category">
+                            <label for="category" class="form-label poppins-bold">Categoría</label>
+                            <select class="form-control poppins-regular" formControlName="category" id="category">
                                 <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.nombre }}</option>
                             </select>
                             <div *ngIf="productoForm.get('category')?.invalid && (productoForm.get('category')?.dirty || productoForm.get('category')?.touched)" class="text-danger">
@@ -64,8 +64,8 @@
                         </div>
                         
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="tipo" class="form-label">Tipo</label>
-                            <select class="form-control" formControlName="tipo" id="tipo">
+                            <label for="tipo" class="form-label poppins-bold">Tipo</label>
+                            <select class="form-control poppins-regular" formControlName="tipo" id="tipo">
                                 <option *ngFor="let tipo of tipos" [value]="tipo.id">{{ tipo.nombre }}</option>
                             </select>
                             <div *ngIf="productoForm.get('tipo')?.invalid && (productoForm.get('tipo')?.dirty || productoForm.get('tipo')?.touched)" class="text-danger">
@@ -74,8 +74,8 @@
                         </div>
                         
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="indice" class="form-label">Índice</label>
-                            <select class="form-control" formControlName="indice" id="indice">
+                            <label for="indice" class="form-label poppins-bold">Índice</label>
+                            <select class="form-control poppins-regular" formControlName="indice" id="indice">
                                 <option *ngFor="let indice of indices" [value]="indice.id">{{ indice.nombre }}</option>
                             </select>
                             <div *ngIf="productoForm.get('indice')?.invalid && (productoForm.get('indice')?.dirty || productoForm.get('indice')?.touched)" class="text-danger">
@@ -84,7 +84,7 @@
                         </div>
                         
                         <div class="col-12 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary" >{{ id ? 'Actualizar' : 'Crear' }}</button>
+                            <button type="submit" class="btn bt-gray poppins-regular" >{{ id ? 'Actualizar' : 'Crear' }}</button>
                         </div>
                     </div>
                 </form> 

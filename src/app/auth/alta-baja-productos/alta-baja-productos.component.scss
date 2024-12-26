@@ -17,3 +17,17 @@
     }
 
 }
+
+$gris: #858586;
+
+.bt-gray{
+    background-color: $gris;
+    border-color:  $gris; /* Color del borde gris */
+    color: white;
+}
+
+
+.bt-gray:hover{
+    background-color: #606060;
+    border-color: #606060; /* Color del borde gris */
+}

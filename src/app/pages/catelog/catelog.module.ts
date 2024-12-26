@@ -30,6 +30,7 @@ import { ProductListDefualtComponent } from "./product-list-defualt/product-list
 import { ProductGridDefualtComponent } from "./product-grid-defualt/product-grid-defualt.component";
 import { ProductGridComponent } from "./product-grid/product-grid.component";
 import { ProductDetailsComponent } from "./product-details/product-details.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { ProductDetailsComponent } from "./product-details/product-details.compo
     SimplebarAngularModule,
     OverlayPanelModule,
     CheckboxModule,
+    ReactiveFormsModule
   ],
 })
 export class CatelogModule { }

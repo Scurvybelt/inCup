@@ -1,16 +1,16 @@
 <!-- Header -->
 <app-header></app-header>
 
-<section class="ecommerce-about">
+<section class="ecommerce-about" style="background-image: url(assets/images/ecommerce/features/bannerNosotros.jpg); background-repeat: no-repeat; background-size: cover;">
     <div class="effect d-none d-md-block">
         <div class="ecommerce-effect bg-primary"></div>
         <div class="ecommerce-effect bg-info"></div>
     </div>
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h1 class="fw-bold mb-3">¿Quiénes somos?</h1>
-                <p class="fs-16 text-muted mb-5 mb-lg-3">
+    <div class="container estiloContenedor">
+        <div class="row align-items-center" style="display: flex; justify-content: center;">
+            <div class="col-lg-8 text-center">
+                <h1 class="fw-bold mb-3 blanco poppins-bold">¿Quiénes somos?</h1>
+                <p class="fs-16 mb-5 mb-lg-3 poppins-regular blanco">
                     En InCup, somos una empresa comercializadora comprometida con la responsabilidad social, especializada en la distribución de productos como vasos, 
                     contenedores e insumos diseñados para la industria foodservice. Nos dedicamos a ayudar a las marcas a destacar, ofreciendo soluciones personalizadas 
                     en envases desechables para alimentos y bebidas, adaptándonos tanto a pequeñas como grandes escalas. Nos especializamos en atender sectores clave, 
@@ -19,7 +19,7 @@
                     por un servicio eficiente y dedicado a superar las expectativas de nuestros clientes.
                 </p>
             </div>
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-6">
                 <div>
                     <div class="row align-items-center">
                         <div class="col-md-6">
@@ -35,20 +35,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
 
-<div class="ecommerce-about-cta">
-    <div class="container">
-        <div class="row">
+<div class="ecommerce-about-cta" style="background-color: #75C339;">
+    <div class="container " >
+        <div class="row" style="padding-top: 3rem; padding-bottom: 3rem;">
             <div class="col-lg-6">
-                <div class="card card-animate border-0">
-                    <div class="card-body">
-                        <lord-icon src="https://cdn.lordicon.com/fcoczpqi.json" trigger="hover" target="div" style="width: 70px; height: 70px;"> </lord-icon>
-                        <h5 class="fs-16 mt-3">25,000+ Clientes Felices.</h5>
-                        <p class="text-muted">Customer happiness goes beyond customer satisfaction by creating an emotional connection with a brand's.</p>
+                <div class="card card-animate " style="border: 3px solid rgb(255, 255, 255); background-color: #75C339 ;">
+                    <div class="card-body" >
+                        <!-- <lord-icon src="https://cdn.lordicon.com/fcoczpqi.json" trigger="hover" target="div" style="width: 70px; height: 70px;"> </lord-icon> -->
+                        <h5 class=" mt-2 blanco poppins-bold" style="font-size: 2rem;">25,000+ Clientes Felices.</h5>
+                        <p class="blanco poppins-regular">La felicidad del cliente va más allá de la satisfacción del cliente al crear una conexión emocional con la marca.</p>
                         <div>
                             <!-- <a href="javascript:void(0);" class="link-effect link-primary">Read More <i class="bi bi-arrow-right ms-2"></i></a> -->
                         </div>
@@ -56,11 +56,11 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="card card-animate border-0">
-                    <div class="card-body">
-                        <lord-icon src="https://cdn.lordicon.com/hbwqfgcf.json" trigger="hover" target="div" style="width: 70px; height: 70px;"> </lord-icon>
-                        <h5 class="fs-16 mt-3">Más de 6 años de experiencia.</h5>
-                        <p class="text-muted">The years of experience you list on your resume represent the work experience you have if you have little experience.</p>
+                <div class="card card-animate" style="border: 3px solid rgb(255, 255, 255); background-color: #75C339 ;">
+                    <div class="card-body" >
+                        <!-- <lord-icon src="https://cdn.lordicon.com/hbwqfgcf.json" trigger="hover" target="div" style="width: 70px; height: 70px;"> </lord-icon> -->
+                        <h5 class=" mt-2 blanco poppins-bold" style="font-size: 2rem;">Más de 6 años de experiencia.</h5>
+                        <p class="blanco poppins-regular">Los años de experiencia que enumeras en tu currículum representan la experiencia laboral que tienes si tienes poca experiencia.</p>
                         <div>
                             <!-- <a href="javascript:void(0);" class="link-effect link-primary">Read More <i class="bi bi-arrow-right ms-2"></i></a> -->
                         </div>
@@ -71,58 +71,68 @@
     </div>
 </div>
 
-<section class="section" style="margin-top: 20px;">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div>
-                    <img src="assets/images/ecommerce/img-5.jpg" alt="" class="img-fluid rounded" />
-                </div>
+<section class="section mt-4" style="padding: 74px 0;">
+    <div class="row align-items-center">
+        <div class="col-lg-4">
+            <div class="image-container">
+                <img src="assets/images/ecommerce/features/bannerNosotros.jpg" alt="" class="img-fluid rounded w-100 d-block d-lg-none" />
+                <img src="assets/images/ecommerce/features/imgQuienesSomos.jpg" alt="" class="img-fluid rounded w-100 d-none d-lg-block"  />
             </div>
-            <div class="col-lg-6">
-                <div class="mt-4 mt-lg-0">
-                    <!-- <p class="text-uppercase fw-medium text-muted">Best Products Sales</p> -->
-                    <h2 class="lh-base fw-semibold mb-3">Visión</h2>
-                    <p class="text-muted fs-16">
+        </div>
+        <div class="col-lg-8 padding-telefono">
+            <div class="mt-4 mt-lg-0 display-Flex margen-bajo" style="align-items: center;">
+                <div class="col-lg-6 rounded-circle bg-green d-flex align-items-center justify-content-center marginLeftNegativo" style="width: 100px; height: 100px; margin-right: 1rem;">
+                    <img src="assets/images/ecommerce/features/iconoOjo.png" style="max-width: 138%;">
+                </div>
+                <div>
+                    <h2 class="lh-base fw-semibold mb-3 poppins-bold color-Azul">Visión</h2>
+                    <p class=" fs-16 poppins-regular color-Azul">
                         Nuestra visión es convertirnos en una empresa líder a nivel nacional en la industria de artículos desechables para el sector alimenticio, 
                         destacándonos no solo por la calidad de nuestros productos, sino por ofrecer soluciones innovadoras y sostenibles. Queremos sobresalir por nuestros 
                         diseños personalizados en envases, el uso de materiales reciclables y biodegradables, y nuestra constante innovación en tecnologías amigables con el medio ambiente. 
                         Nos comprometemos a brindar una atención excepcional a nuestros clientes, asegurando que cada interacción sea una experiencia que refuerce nuestra relación de 
                         confianza y satisfacción.
-                    <!-- <a href="javascript:void(0);" class="fw-medium link-effect">Shop Now <i class="bi bi-arrow-right ms-2"></i></a> -->
+                    </p>
                 </div>
+                
             </div>
-        </div>
-    </div>
-</section>
 
-<section class="section" style="margin-top: 20px;">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="mt-4 mt-lg-0">
-                    <!-- <p class="text-uppercase fw-medium text-muted">Best Products Sales</p> -->
-                    <h2 class="lh-base fw-semibold mb-3">Misión</h2>
-                    <p class="text-muted fs-16">
-                        Nuestra misión es transformar cada marca en una experiencia única para nuestros clientes, 
-                        destacando las fortalezas de cada producto y creando valor a través de una oferta diversa y de alta calidad. 
-                        Nos enfocamos en ofrecer una experiencia que conecte 
-                        con las necesidades y gustos de nuestros consumidores, a través de diseños innovadores y originales que los inspiren a elegirnos como su primera opción. 
-                        Al ser multimarca, nos comprometemos a personalizar cada propuesta para garantizar que cada firma tenga un impacto significativo y memorable en quienes la 
-                        eligen.
-
-                    <!-- <a href="javascript:void(0);" class="fw-medium link-effect">Shop Now <i class="bi bi-arrow-right ms-2"></i></a> -->
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div>
-                    <img src="assets/images/ecommerce/img-5.jpg" alt="" class="img-fluid rounded" />
-                </div>
-            </div>
             
+            <div class="mt-4 mt-lg-0 display-Flex margen-bajo" style="align-items: center;">
+                <div class="col-lg-6 rounded-circle bg-green d-flex align-items-center justify-content-center marginLeftNegativo" style="width: 100px; height: 100px; margin-right: 1rem;">
+                    <img src="assets/images/ecommerce/features/banderaIcono.png" style="max-width: 100%;">
+                </div>
+                <div>
+                    <h2 class="lh-base fw-semibold mb-3 poppins-bold color-Azul">Misión</h2>
+                    <p class=" fs-16 poppins-regular color-Azul">
+                        Nuestra misión es transformar cada marca en una experiencia única para nuestros clientes, destacando las fortalezas de cada producto y creando valor a través de una oferta 
+                        diversa y de alta calidad. Nos enfocamos en ofrecer una experiencia que conecte con las necesidades y gustos de nuestros consumidores, a través de diseños innovadores 
+                        y originales que los inspiren a elegirnos como su primera opción. Al ser multimarca, nos comprometemos a personalizar cada propuesta para garantizar que cada firma tenga un 
+                        impacto significativo y memorable en quienes la eligen.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-4 mt-lg-0 display-Flex margen-bajo" style="align-items: center;">
+                <div class="col-lg-6 rounded-circle bg-green d-flex align-items-center justify-content-center marginLeftNegativo" style="width: 100px; height: 100px; margin-right: 1rem;">
+                    <img src="assets/images/ecommerce/features/iconoEstrella.png" style="max-width: 100%;">
+                </div>
+                <div>
+                    <h2 class="lh-base fw-semibold mb-3 poppins-bold color-Azul">Objetivo</h2>
+                    <p class=" fs-16 poppins-regular color-Azul">
+                        Nuestro objetivo es comercializar productos que logren un equilibrio óptimo entre las necesidades del consumidor, la calidad, el rendimiento, el precio y la conveniencia, 
+                        siempre con un compromiso hacia la sostenibilidad ambiental. Nos enfocamos en promover marcas y productos de calidad superior que no solo respondan a las demandas actuales, 
+                        sino que también generen un valor duradero en la vida de nuestros consumidores, tanto en el presente como en el futuro.
+
+                    </p>
+                </div>
+                
+            </div>
         </div>
     </div>
 </section>
+
 <!-- 
 <section class="ecommerce-about-team bg-light bg-opacity-50">
     <div class="container">
@@ -213,31 +223,8 @@
     </div>
 </section> -->
 
-<app-features></app-features>
+<!-- <app-features></app-features> -->
 
-<section class="section" style="margin-top: 20px;">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div>
-                    <img src="assets/images/ecommerce/img-5.jpg" alt="" class="img-fluid rounded" />
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="mt-4 mt-lg-0">
-                    <!-- <p class="text-uppercase fw-medium text-muted">Best Products Sales</p> -->
-                    <h2 class="lh-base fw-semibold mb-3">Objetivo</h2>
-                    <p class="text-muted fs-16">
-                        Nuestro objetivo es comercializar productos que logren un equilibrio óptimo entre las necesidades del consumidor, 
-                        la calidad, el rendimiento, el precio y la conveniencia, siempre con un compromiso hacia la sostenibilidad ambiental. 
-                        Nos enfocamos en promover marcas y productos de calidad superior que no solo respondan a las demandas actuales, sino que 
-                        también generen un valor duradero en la vida de nuestros consumidores, tanto en el presente como en el futuro.
 
-                    <!-- <a href="javascript:void(0);" class="fw-medium link-effect">Shop Now <i class="bi bi-arrow-right ms-2"></i></a> -->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <!-- Footer -->
 <app-footer></app-footer>

@@ -1,0 +1,13 @@
+$colorAzulClaro: #007EFF;
+
+.bg-Azul{
+    background-color: $colorAzulClaro;
+    border-color:  $colorAzulClaro; /* Color del borde gris */
+    color: white;
+}
+
+
+.bg-Azul:hover{
+    background-color: #004f9f;
+    border-color: #004f9f; /* Color del borde gris */
+}

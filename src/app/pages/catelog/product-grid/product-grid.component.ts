@@ -3,6 +3,9 @@ import { Component } from "@angular/core";
 // Data Get
 import { productGrid } from "../product-grid-right/data";
 import { ProductsService } from "src/app/core/services/products.service";
+import { FormBuilder, Validators } from "@angular/forms";
+import Swal from 'sweetalert2'
+import { EmailService } from "src/app/core/services/email.service";
 
 @Component({
     selector: "app-product-grid",
@@ -29,8 +32,9 @@ export class ProductGridComponent {
     filtrosProductos: any;
     notFound: boolean = false;
     rows: number = 2;
+    subscribeForm: any;
 
-    constructor(private servicioProductos: ProductsService) {
+    constructor(private servicioProductos: ProductsService, private fb: FormBuilder, private email:EmailService) {
         this.rating = [
             { name: "4 & Above", value: "4" },
             { name: "3 & Above", value: "3" },
@@ -48,6 +52,9 @@ export class ProductGridComponent {
     }
 
     ngOnInit(): void {
+        this.subscribeForm = this.fb.group({
+            email: ['', [Validators.required, Validators.email]]
+          });
 
         this.servicioProductos.getCatalogo('category').subscribe(data => {
             console.log(data);
@@ -63,6 +70,32 @@ export class ProductGridComponent {
         // this.products = productGrid;
         this.range1 = "$ " + this.rangeValues[0];
         this.range2 = "$ " + this.rangeValues[1];
+    }
+
+    onSubmit(): void {
+        if (this.subscribeForm.valid) {
+            let form = {
+                asunto: 'Suscripcion a promos y descuentos por correo',
+                email: this.subscribeForm.value.email,
+                message: 'El usuario desea recibir promociones y descuentos por correo',
+                name: 'Usuario',
+                tel: ' '
+            }
+            this.email.sendEmail(form).subscribe(res => {
+                Swal.fire({
+                    title: 'Correo Enviado!',
+                    text: 'Espera una pronta respuesta de nuestro equipo',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
+            },(error) => {
+                Swal.fire({
+                    title: 'Error al enviar el correo',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+            })
+        }
     }
 
     // Range Slider
