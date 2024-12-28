@@ -12,7 +12,7 @@
         opacity: 0;
         height: 40px;
         width: 40px;
-        background: $primary;
+        background-color: rgba(var(--#{$prefix}primary-rgb), 0) !important;
         top: 43%;
         border-radius: $border-radius;
         font-size: 24px;

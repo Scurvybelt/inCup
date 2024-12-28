@@ -36,6 +36,7 @@ export const MENU: MenuItem[] = [
     {
         id: 2,
         label: "Productos",
+        imagen:  "assets/images/ecommerce/features/iconoProductos.png",
         // showImage: "catalog",
         // liclass: "dropdown-mega-full",
         type: "vertical",
@@ -277,6 +278,7 @@ export const MENU: MenuItem[] = [
         id: 4,
         label: "Nosotros",
         type: "vertical",
+        imagen: "assets/images/ecommerce/features/iconoNosotros.png",
         subItems: [
             // {
             //     id: 1,
@@ -511,6 +513,7 @@ export const MENU: MenuItem[] = [
     {
         id: 5,
         label: "Contactanos",
+        imagen: "assets/images/ecommerce/features/contactanos.png",
         link: "/extrapages/contact-us",
         isTitle: true,
     },

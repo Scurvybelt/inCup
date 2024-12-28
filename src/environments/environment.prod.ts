@@ -1,14 +1,4 @@
 export const environment = {
   production: true,
-  defaultauth: 'fackbackend',
-  firebaseConfig: {
-    apiKey: '',
-    authDomain: '',
-    databaseURL: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: '',
-    appId: '',
-    measurementId: ''
-  }
+  api: 'https://incup.com.mx/api-products/productsController.php'
 };

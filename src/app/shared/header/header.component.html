@@ -58,13 +58,19 @@
                     @if(item.isTitle){
                     <li class="nav-item">
                         @if(!hasItems(item)){
-                        <a class="nav-link" routerLink="{{item.link}}" (click)="toggleItem($event)">{{item.label | translate}}</a>
+                            
+                        <a class="nav-link" routerLink="{{item.link}}" (click)="toggleItem($event)">
+                            <img [src]="item.imagen" class="me-2" style="width: 28px; height: 28px; object-fit: contain;">
+                            {{item.label | translate}} 
+                            
+                        </a>
                         }
                     </li>
                     }
                     @if(item.subItems && item.type == 'horizontal'){
                     <li class="nav-item dropdown dropdown-hover {{item.liclass}}">
                         <a class="nav-link dropdown-toggle" data-key="t-catalog" href="javascript:void(0);" (click)="toggleSubItem($event)">
+                            
                             {{item.label | translate}}
                         </a>
                         <div class="dropdown-menu {{item.menuclass}} p-0">
@@ -114,6 +120,7 @@
                                         <div>
                                             @for(subchild of subitem.subChild; track $index){
                                             <li class="nav-item">
+                                                
                                                 <a routerLink="{{subchild.link | translate}}" class="nav-link" (click)="updateActive($event)" data-key="t-clothing">{{subchild.label | translate}}</a>
                                             </li>}
                                         </div>
@@ -125,13 +132,16 @@
                     </li>
                     }@else if(item.subItems && item.type == 'vertical'){
                     <li class="nav-item dropdown dropdown-hover">
+                        
                         <a class="nav-link dropdown-toggle" data-key="t-pages" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="toggleParentItem($event)">
+                            <img [src]="item.imagen" class="me-2" style="width: 28px; height: 28px; object-fit: contain;">
                             {{item.label | translate}}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-md dropdown-menu-center dropdown-menu-list submenu">
                             @for(subitem of item.subItems; track $index){
                             <li class="nav-item dropdown dropdown-hover">
                                 <a routerLink="{{subitem.link}}" class="nav-link" (click)="toggleSubItem($event)" [ngClass]="subitem.subChild?'dropdown-toggle':''" data-bs-toggle="dropdown" data-key="t-products">
+                                    
                                     {{subitem.label | translate}}
                                 </a>
                                 @if(subitem.subChild){
@@ -139,12 +149,14 @@
                                     @for(subchild of subitem.subChild; track $index){
                                     <li class="dropdown dropdown-hover">
                                         <a routerLink="{{subchild.link}}" class="nav-link" [ngClass]="subchild.subItems?'dropdown-toggle':''" data-bs-toggle="dropdown" aria-expanded="false" data-key="t-grid-view" (click)="toggleExtraSubItem($event)">
+                                            
                                             {{subchild.label | translate}}
                                         </a>
                                         @if(subchild.subItems){
                                         <ul class="dropdown-menu submenu">
                                             @for(submenu of subchild.subItems; track $index){
                                             <li>
+                                                
                                                 <a class="nav-link" (click)="updateActive($event)" routerLink="{{submenu.link}}" data-key="t-default">{{submenu.label |
                                                     translate}}</a>
                                             </li>}

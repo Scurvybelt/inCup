@@ -1,6 +1,7 @@
 export interface MenuItem {
   id?: number;
   label?: any;
+  imagen?: string;
   icon?: string;
   link?: string;
   liclass?: string;
