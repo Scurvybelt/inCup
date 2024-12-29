@@ -18,7 +18,7 @@ export const environment = {
 };
 
 export const environmentLocal = {
-  api: 'http://api-products.test/productsController.php',
+  api: 'https://incup.com.mx/api-products/productsController.php',
 }
 
 /*

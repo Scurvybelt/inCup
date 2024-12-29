@@ -65,28 +65,28 @@ export class IndexComponent {
     {
       id: '1',
       img: 'assets/images/users/avatar-2.jpg',
-      content: "El servicio es muy bueno y los productos son de excelente calidad. Los recomiendo mucho.",
+      content: "Excelente servicio, calidad garantizada.",
       name: 'Diana V. Alvarado',
     },
     {
       id: '2',
       img: 'assets/images/users/avatar-7.jpg',
-      content: "Estoy muy satisfecho con el servicio y la calidad de los productos. Definitivamente los recomiendo.",
+      content: "Productos de primera. Entrega rápida y confiable.",
       name: 'Carlos M. Rodríguez',
     },
     {
       id: '3',
       img: 'assets/images/users/avatar-8.jpg',
-      content: "El servicio y los productos son excepcionales. Los recomiendo a todos.",
+      content: "Atención personalizada y resultados increíbles.",
       name: 'Tamariz Moreno',
     },
     {
       id: '4',
       img: 'assets/images/users/avatar-10.jpg',
-      content: "El servicio es excelente y los productos son de alta calidad. Los recomiendo mucho.",
+      content: "Servicio profesional y precios justos.",
       name: 'María C. Rodríguez',
     }
-  ];
+];
 
   productData: any;
   tutorials: Tutorial[] = [];

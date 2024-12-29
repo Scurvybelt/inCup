@@ -376,13 +376,13 @@
         <!--end row-->
 
         <div class="row" class="mt-5">
-            <div class="col-lg-12">
+            <div class="col-12">
                 <ngx-slick-carousel dir="ltr" [config]="Customers">
                     @for(item of customer; track $index){
-                    <div class="swiper-slide pe-4" ngxSlickItem>
+                    <div class="swiper-slide px-2" ngxSlickItem>
                         <div class=" client-box m-1">
                             <div class="client-desc p-4 border rounded" style="background-color: #9dceff;">
-                                <p class="mb-0 fs-16 poppins-regular">{{item.content}}</p>
+                                <p class="mb-0 poppins-regular text-wrap text-break fs-6 fs-md-5">{{item.content}}</p>
                             </div>
                             <div class="">
                                 <div class=" align-items-center " style="text-align: center; display: flex; flex-direction: column;">
