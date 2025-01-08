@@ -103,8 +103,8 @@ export class ProductDetailsComponent {
     }
   }
 
-  async generateWhatsAppLink() {
-    const phoneNumber = '5215566968800'; // Número de teléfono en formato internacional
+  async generateWhatsAppLink() {//5618816047
+    const phoneNumber = '5618816047'; // Número de teléfono en formato internacional
     const message = `Hola, estoy interesado en el producto ${this.nombreProducto}.`;
     this.whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   }

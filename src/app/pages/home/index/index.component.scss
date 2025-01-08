@@ -64,9 +64,19 @@ $azulFuerte: #00236F;
 .rounded-circle{
     border-radius: 3rem;
 }
+.carousel {
+    width: 100%;
+    max-width: 800px; /* o el ancho que prefieras */
+    margin: 0 auto;
+}
+
+.slide-item {
+    width: 50% !important; /* Fuerza a que cada slide ocupe la mitad del espacio */
+}
 
 @media (max-width: 768px) {
-    .tarjetas {
-        
+    .slide-item {
+        width: 100% !important; /* En móviles, ocupa todo el ancho */
     }
 }
+

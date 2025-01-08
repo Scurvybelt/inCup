@@ -108,7 +108,7 @@
                         <!-- @for(data of products; track $index){ -->
                         <div *ngFor="let producto of filtrosProductos" class="col-xxl-3 col-lg-4 col-md-6">
                         <div [routerLink]="['/catelog/product-details/',producto.id]" class="card overflow-hidden element-item" style="cursor: pointer;">
-                                <div class=" py-4" style="background-color: #409EFF;">
+                                <div class=" py-4" style="background-color: #000000;">
                                     <div class="gallery-product"><img src="{{producto.img}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" /></div>
                                     <!-- @if(data.tag){
                                     <p class=" fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival
