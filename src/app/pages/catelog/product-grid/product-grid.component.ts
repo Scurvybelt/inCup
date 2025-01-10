@@ -28,7 +28,7 @@ export class ProductGridComponent {
     sortOrder: any;
     sortField: any;
     productos: any;
-    categories: any;
+    tipo: any;
     filtrosProductos: any;
     notFound: boolean = false;
     rows: number = 2;
@@ -56,9 +56,9 @@ export class ProductGridComponent {
             email: ['', [Validators.required, Validators.email]]
           });
 
-        this.servicioProductos.getCatalogo('category').subscribe(data => {
+        this.servicioProductos.getCatalogo('tipo').subscribe(data => {
             console.log(data);
-            this.categories = data;
+            this.tipo = data;
         })
 
         this.servicioProductos.getProducts().subscribe((data: any) => {
@@ -170,14 +170,51 @@ export class ProductGridComponent {
 
     filtros(event: any){
         console.log(event);
-        let tipo: String;
-        if(event == 1){
-            tipo = 'Bebida Caliente'
-        }else{
-            tipo = 'Bebida Fria'
+        let filtroTipo: String;
+        
+
+        switch(event){
+            case '1':
+                filtroTipo = 'Vaso Biodegradable';
+            break;
+            case '2':
+                filtroTipo = 'Vasos Compostables'
+            break;
+            case '3':
+                filtroTipo = 'Doble Pared'
+            break;
+            case '4':
+                filtroTipo = 'Papel'
+            break;
+            case '5':
+                filtroTipo = 'Polipropileno'
+            break;
+            case '6':
+                filtroTipo = 'Pla'
+            break;
+            case '7':
+                filtroTipo = 'Tapas'
+            break;
+            case '8':
+                filtroTipo = 'fajillas'
+            break;
+            case '9':
+                filtroTipo = 'Envases'
+            break;
+            case '10':
+                filtroTipo = 'Bowls y Ensaladas'
+            break;
+            case '11':
+                filtroTipo = 'Buckets y Palomeros'
+            break;
+            case '12':
+                filtroTipo = 'Almejas'
+            break;
         }
+        
+        
         this.filtrosProductos = this.productos.filter((producto: any) => {
-            return producto.category === tipo;
+            return producto.tipo === filtroTipo;
         });
     
     }

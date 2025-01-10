@@ -63,7 +63,7 @@
                             <div class="ribbon ribbon-danger ribbon-shape trending-ribbon"><span class="trending-ribbon-text">Top Productos</span> <i class="ri-flashlight-fill text-white align-bottom float-end ms-1"></i></div>
                             <ngx-slick-carousel class="carousel bg-light" dir="ltr" #slickModal="slick-carousel" [config]="slideConfig" (afterChange)="slickChange($event)">
                                 @for(slide of productoDetalle; track $index){
-                                <div ngxSlickItem class="">
+                                <div ngxSlickItem style="background-color:  #f0ebd2ff;">
                                     <img src="{{ slide.img }}" alt="" width="100%">
                                 </div>}
                             </ngx-slick-carousel>

@@ -34,9 +34,9 @@
                             <div class="row gy-4">
                                 <div class="col-xl-5 col-md-6">
                                     <div>
-                                        <label class="form-label">Categoría</label>
+                                        <label class="form-label">Tipo</label>
                                         <select class="form-control" name="select-category" id="select-category" (change)="filtros($event.target.value)">
-                                            <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.nombre }}</option>
+                                            <option *ngFor="let cat of tipo" [value]="cat.id">{{ cat.nombre }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
                         <!-- @for(data of products; track $index){ -->
                         <div *ngFor="let producto of filtrosProductos" class="col-xxl-3 col-lg-4 col-md-6">
                         <div [routerLink]="['/catelog/product-details/',producto.id]" class="card overflow-hidden element-item" style="cursor: pointer;">
-                                <div class=" py-4" style="background-color: #000000;">
+                                <div class=" py-4" style="background-color: #f0ebd2ff;">
                                     <div class="gallery-product"><img src="{{producto.img}}" alt="" style="max-height: 215px; max-width: 100%;" class="mx-auto d-block" /></div>
                                     <!-- @if(data.tag){
                                     <p class=" fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">Best Arrival

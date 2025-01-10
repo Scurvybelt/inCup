@@ -60,7 +60,7 @@
                         @if(!hasItems(item)){
                             
                         <a class="nav-link" routerLink="{{item.link}}" (click)="toggleItem($event)">
-                            <img [src]="item.imagen" class="me-2" style="width: 28px; height: 28px; object-fit: contain;">
+                            <img [src]="item.imagen" class="me-2" style="width: 48px; height: 48px; object-fit: contain;">
                             {{item.label | translate}} 
                             
                         </a>
@@ -134,7 +134,7 @@
                     <li class="nav-item dropdown dropdown-hover">
                         
                         <a class="nav-link dropdown-toggle" data-key="t-pages" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="toggleParentItem($event)">
-                            <img [src]="item.imagen" class="me-2" style="width: 28px; height: 28px; object-fit: contain;">
+                            <img [src]="item.imagen" class="me-2" style="width: 48px; height: 48px; object-fit: contain;">
                             {{item.label | translate}}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-md dropdown-menu-center dropdown-menu-list submenu">
