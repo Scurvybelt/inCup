@@ -45,19 +45,19 @@ export class AltaBajaProductosComponent {
   eliminar(producto: any){
 
     Swal.fire({
-      title: "Quieres eliminar este producto " + producto.name,
-      text: "No podras revertir el cambio",
+      title: "¿Quieres eliminar este producto " + producto.name + "?",
+      text: "No podrás revertir el cambio",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Si, eliminar"
+      confirmButtonText: "Sí, eliminar"
     }).then((result) => {
       if (result.isConfirmed) {
         this.productService.deleteProduct(producto.id).subscribe((data:any) => {
           Swal.fire({
-            title: 'Producto Elimiando!',
-            text: "Se elimino el producto",
+            title: '¡Producto Eliminado!',
+            text: "Se eliminó el producto",
             icon: "success"
           });
           this.getProductos();

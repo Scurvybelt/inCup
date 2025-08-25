@@ -44,7 +44,7 @@ export const MENU: MenuItem[] = [
             {
     
                 id: 4,
-                label: "Catalogo",
+                label: "Catálogo",
                 link: "/catelog/product-grid",
                 // id: 1,
                 // label: "MENUITEMS.PAGES.TEXT",
@@ -512,7 +512,7 @@ export const MENU: MenuItem[] = [
     },
     {
         id: 5,
-        label: "Contactanos",
+        label: "Contáctanos",
         imagen: "assets/images/ecommerce/features/contactanos.png",
         link: "/extrapages/contact-us",
         isTitle: true,

@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-6 mb-3">
-                            <label for="amount" class="form-label poppins-bold">Cantidad en almacén</label>
+                            <label for="amount" class="form-label poppins-bold">Cantidad disponible</label>
                             <input type="number" class="form-control poppins-regular" formControlName="amount" id="amount">
                             <div *ngIf="productoForm.get('amount')?.invalid && (productoForm.get('amount')?.dirty || productoForm.get('amount')?.touched)" class="text-danger">
                                 <div *ngIf="productoForm.get('amount')?.errors?.['required']">La cantidad es requerida.</div>

@@ -13,13 +13,13 @@
                                 <img src="assets/images/logoInCupSinFondo.png" style="width: 18%;">
                             </div>
                             <div class="card-body">
-                                <p class=" fs-15 poppins-bold text-center" >Inicia Sesión a InCup</p>
+                                <p class=" fs-15 poppins-bold text-center" >Inicia Sesión en InCup</p>
                                 <div class="p-2">
                                     <form [formGroup]="formularioSesion" (ngSubmit)="enviarFormulario()">
                                         <div class="mb-3">
                                             <label for="username" class="form-label poppins-regular">Usuario</label>
                                             <input formControlName="usuario" type="text" class="form-control poppins-regular" id="username"
-                                                placeholder="Enter username" />
+                                                placeholder="Ingresa tu usuario" />
                                         </div>
 
                                         <div class="mb-3">
@@ -31,7 +31,7 @@
                                             <div class="position-relative auth-pass-inputgroup mb-3">
                                                 <input type="password" [type]="fieldTextType ? 'text' : 'password'"
                                                     class="form-control bg-light border-light pe-5 password-input poppins-regular "
-                                                    placeholder="Enter password" id="password-input" required formControlName="password">
+                                                    placeholder="Ingresa tu contraseña" id="password-input" required formControlName="password">
                                                 <button
                                                     
                                                     type="button" id="password-addon"><i class="align-middle" [ngClass]="{'ri-eye-off-fill': !fieldTextType, 'ri-eye-line': fieldTextType
